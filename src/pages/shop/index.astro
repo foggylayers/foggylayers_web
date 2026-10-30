@@ -1,0 +1,18 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import products from '../../data/products.json';
+const categories = ['All prints', ...new Set(products.map(product => product.category))];
+const descriptions = {
+ 'Small figures': 'Pick a favorite or mix a few. Every small figure is $2 each.',
+ 'Keychains': 'Little characters to take along, plus a miniature accessory.',
+ 'Dragons': 'Longer bodies, sculpted details, and colorful finishes.',
+ 'Fidgets': 'Curious shapes and movement for your desk.',
+ 'Home & decor': 'Printed texture and useful shapes for your space.',
+ 'Signs': 'Bold lettering with a little personality.'
+};
+---
+<Layout title="Shop the prints">
+ <section class="page-intro"><div class="container"><p class="breadcrumb"><a href="/">Home</a><span>/</span><span>The collection</span></p><p class="eyebrow kicker">Small figures · $2 each</p><h1>A collection of character.</h1><p class="lede">Find your favorite family, choose a design, and make it yours. Small figures are $2 apiece. Explore larger prints, fidgets, and pieces for your space below.</p></div></section>
+ <section class="container catalog-section" aria-label="Product collection"><div class="shop-toolbar"><div class="filters" aria-label="Filter products">{categories.map((label,index)=><button class="filter-button" data-filter={index === 0 ? 'all' : label} aria-pressed={index === 0 ? 'true' : 'false'}>{label}</button>)}</div><label><span class="eyebrow" style="display:block;font-size:8px">Find a print</span><input type="search" class="search-input" placeholder="Try fox, dragon, or pumpkin…" data-shop-search aria-label="Search products"/></label></div>{categories.slice(1).map(label=><section class="catalog-group" data-product-group aria-label={label}><div class="catalog-group-heading"><h2>{label}</h2><p>{descriptions[label]}</p></div><div class="product-grid" data-product-grid>{products.filter(product=>product.category===label).map(product=><ProductCard product={product} index={products.indexOf(product)}/>)}</div></section>)}<p class="catalog-empty" data-catalog-empty role="status" hidden>No prints match that search. Try another name or choose All prints.</p><div class="collection-foot"><span>Have something else in mind?</span><a href="/project/">Let's talk about a custom print ↗</a></div></section>
+</Layout>

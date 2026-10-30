@@ -1,0 +1,11 @@
+---
+const { light = false } = Astro.props;
+---
+<a class:list={['brand', { 'brand-light': light }]} href="/" aria-label="Foggy Layers home">
+  <svg viewBox="0 0 160 152" aria-hidden="true" class="brand-mark">
+    <path d="M7 43 64 12Q80 3 96 12l57 31-39 21q-15 8-30 0L65 53Q48 44 33 52L22 58Z" fill="currentColor"/>
+    <path d="m7 82 26-15q15-8 32 1l20 11q15 8 29 0l17-9 22 12-39 22q-15 8-30 0L65 93q-17-9-32-1l-11 6Z" fill="currentColor"/>
+    <path d="m7 120 26-15q15-8 32 1l20 11q15 8 29 0l17-9 22 12-57 31q-16 8-32 0Z" fill="currentColor"/>
+  </svg>
+  <span class="brand-type"><strong>FOGGY</strong><span>LAYERS</span></span>
+</a>

@@ -1,0 +1,54 @@
+---
+import Brand from '../components/Brand.astro';
+import Icon from '../components/Icon.astro';
+import site from '../data/site.json';
+import '../styles/global.css';
+const { title = 'Custom 3D printing & curious little things', description = 'Shop printed figures, request a print from your own model, or get help designing a custom piece. Shipping and local pickup in Everett, WA.', noindex = false } = Astro.props;
+const path = Astro.url.pathname;
+const canonical = new URL(path, site.url).href;
+const links = [{href:'/shop/',label:'Shop the prints'},{href:'/custom-printing/',label:'Custom printing'},{href:'/design-services/',label:'Design help'},{href:'/about/',label:'Our story'}];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} | Foggy Layers</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#233e33" />
+    {noindex && <meta name="robots" content="noindex,follow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={`${title} | Foggy Layers`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/images/foggy-landscape.png', site.url).href} />
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="announcement"><span>Good things come in layers.</span><a href="/shipping-pickup/">Shipping + Everett, WA pickup <Icon name="arrow" size={14}/></a></div>
+    <header class="site-header">
+      <div class="header-inner container">
+        <Brand />
+        <nav id="primary-nav" class="primary-nav" aria-label="Main navigation">
+          {links.map(link => <a href={link.href} aria-current={path.startsWith(link.href) ? 'page' : undefined}>{link.label}</a>)}
+          <a class="mobile-project" href="/project/">Start a project</a>
+        </nav>
+        <div class="header-actions"><a class="header-project" href="/project/">Start a project <Icon name="diagonal" size={17}/></a><a class="cart-link" href="/cart/" aria-label="Shopping bag"><Icon name="bag" size={21}/><span data-cart-count hidden>0</span></a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav"><Icon name="menu"/></button></div>
+      </div>
+    </header>
+    <main id="main"><slot /></main>
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <div class="footer-brand"><Brand light/><p>For big ideas.<br/>And little curiosities.</p></div>
+        <div><h2>Find your next print</h2><a href="/shop/">Shop the collection</a><a href="/custom-printing/">Print your model</a><a href="/design-services/">Create something custom</a></div>
+        <div><h2>Around here</h2><a href="/about/">Our story</a><a href="/shipping-pickup/">Shipping & pickup</a><a href="/privacy/">Privacy</a></div>
+        <div class="footer-contact"><h2>Let's make something.</h2><a href="/project/" class="footer-cta">Start a project <Icon name="diagonal" size={20}/></a><span><Icon name="pin" size={16}/> Everett, Washington pickup</span>{site.contactEmail && <a href={`mailto:${site.contactEmail}`}>{site.contactEmail}</a>}</div>
+      </div>
+      <div class="container footer-bottom"><span>© {new Date().getFullYear()} Foggy Layers</span><span>One idea. A whole lot of layers.</span><a href="#main">Back to top ↑</a></div>
+    </footer>
+    <script>import '../scripts/site.js';</script>
+  </body>
+</html>

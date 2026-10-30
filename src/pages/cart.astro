@@ -1,0 +1,8 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+---
+<Layout title="Your shopping bag" noindex>
+ <section class="page-intro"><div class="container"><p class="eyebrow kicker">Good things, gathered</p><h1>Your bag.</h1><p class="lede">Choose shipping or Everett pickup before heading to checkout.</p></div></section>
+ <div class="container"><section class="cart-empty" data-cart-empty><Icon name="bag" size={40}/><h2>A little room for something good.</h2><p>Your bag is empty. Find your next print in the collection.</p><a class="button" href="/shop/">Explore the prints <Icon name="arrow" size={17}/></a></section><div class="cart-layout" data-cart-layout hidden><div><div data-cart-items></div><a class="text-link" style="margin-top:25px" href="/shop/">Keep exploring <Icon name="arrow" size={17}/></a></div><aside class="cart-summary"><h2>A few final details.</h2><div class="summary-line"><span>Items subtotal</span><strong data-cart-subtotal></strong></div><fieldset class="choice-row"><legend>Delivery preference</legend><label><input type="radio" name="cart-fulfillment" value="shipping" checked/> Shipping</label><label><input type="radio" name="cart-fulfillment" value="pickup"/> Everett pickup</label></fieldset><p>Any shipping charges and applicable tax are shown at checkout. Pickup instructions are provided when your print is ready.</p><p class="form-notice" data-checkout-availability role="status">Checking checkout availability…</p><button class="button full-width" data-checkout disabled>Continue to checkout <Icon name="arrow" size={17}/></button><p class="form-error" data-cart-error role="alert" hidden></p></aside></div></div>
+</Layout>

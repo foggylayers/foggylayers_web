@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import ProductCard from '../components/ProductCard.astro';
+import products from '../data/products.json';
+const featured = ['mini-animal-figures','platypus-keychain','rainbow-dragon'].map(id => products.find(product => product.id === id)).filter(Boolean);
+---
+<Layout>
+  <section class="hero">
+    <div class="hero-art"><img src="/images/foggy-landscape.png" alt="A 3D printer among misty forests and hills made from flowing layers" width="1660" height="950" fetchpriority="high"/></div>
+    <div class="container hero-inner"><div class="hero-copy">
+      <p class="eyebrow kicker">3D printing & curious little things</p>
+      <h1>Good things.<br/>Made in <em>layers.</em></h1>
+      <p class="lede">A little character for your shelf. A big idea brought to life. Find your next print, or let's make something that's entirely yours.</p>
+      <div class="button-row"><a class="button" href="/shop/">Shop the prints <Icon name="arrow" size={17}/></a><a class="button button-outline" href="/project/">Start a project <Icon name="diagonal" size={17}/></a></div>
+      <p class="hero-note"><span class="dot"/> Shipping available <span aria-hidden="true">·</span> Local pickup in Everett, WA</p>
+    </div></div><span class="hero-caption">A little imagination. Layer by layer.</span>
+  </section>
+  <section class="path-strip" aria-label="Three ways to make something"><div class="container path-inner">
+    <a href="/shop/"><span class="path-number">01</span><div><h2>Find a little something.</h2><p>Explore the ready-made collection.</p></div><Icon name="diagonal" size={17}/></a>
+    <a href="/custom-printing/"><span class="path-number">02</span><div><h2>Your model. Our printer.</h2><p>Send a file. We'll take it from there.</p></div><Icon name="diagonal" size={17}/></a>
+    <a href="/design-services/"><span class="path-number">03</span><div><h2>Have an idea?</h2><p>Let's work out the shape of it.</p></div><Icon name="diagonal" size={17}/></a>
+  </div></section>
+  <section class="container section" aria-labelledby="collection-heading">
+    <div class="section-head"><div><p class="eyebrow">Fresh from the print bed</p><h2 id="collection-heading">Little things. Big personality.</h2></div><a class="text-link" href="/shop/">See the collection <Icon name="arrow" size={16}/></a></div>
+    <div class="product-grid">{featured.map((product,index) => <ProductCard product={product} index={index}/>)}</div>
+    <div class="collection-foot"><span>Real prints. Real photos. Details you can get close to.</span><a href="/shipping-pickup/">Shipping or Everett pickup <span aria-hidden="true" style="display:inline">↗</span></a></div>
+  </section>
+  <section class="custom-section section"><div class="container custom-inner">
+    <div class="custom-copy"><p class="eyebrow kicker">Something a little more you</p><h2>From “what if”<br/>to right here.</h2><p class="lede">Already have a 3D model? Send it our way. Starting with a sketch or just an idea? We can help you work toward a printable design.</p><a href="/project/" class="button">Tell us what you're thinking <Icon name="diagonal" size={17}/></a></div>
+    <div class="custom-process"><div class="process-row"><span>01</span><div><h3>Share your idea.</h3><p>Upload your model or tell us what you'd like to create. Reference photos and sketches are welcome.</p></div></div><div class="process-row"><span>02</span><div><h3>Work out the details.</h3><p>We'll review the size, material, quantity, and design needs with you, then put together a quote.</p></div></div><div class="process-row"><span>03</span><div><h3>Make it real.</h3><p>Once you approve the plan, we print your piece. Choose shipping or pickup in Everett.</p></div></div></div>
+  </div></section>
+  <section class="container section story-section"><figure class="story-photo"><img src="/images/packaged-skeletons.jpeg" alt="White skeleton prints individually packaged with Foggy Layers cards" loading="lazy" width="1536" height="2048"/><figcaption>From our print bed to your hands.</figcaption></figure><div class="story-copy"><p class="eyebrow kicker">Meet Foggy Layers</p><h2>A name inspired by fog.<br/>A world made of layers.</h2><p>Foggy Layers brings together playful printed pieces and the possibilities of custom 3D printing. Bradley Scherer is the person behind the name.</p><p>From a small character to an idea you've been turning over for a while, it starts with a conversation—and a few layers.</p><a class="text-link" href="/about/">A little about us <Icon name="arrow" size={17}/></a></div></section>
+  <section class="wide-cta"><div class="container"><div><h2>Your next idea starts here.</h2><p>A model, a sketch, or a “could you make this?”—we'd love to see it.</p></div><a class="button button-light" href="/project/">Let's make something <Icon name="diagonal" size={18}/></a></div></section>
+</Layout>
