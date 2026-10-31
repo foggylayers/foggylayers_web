@@ -66,6 +66,14 @@ const detailProduct = catalog.get(document.querySelector('[data-product-detail]'
 const variantSelect = document.querySelector('[data-product-variant]');
 function showPhoto(src) {
   if (!mainPhoto) return;
+  document.querySelector('[data-photo-zoom]').hidden = !src;
+  document.querySelector('[data-photo-instructions]').hidden = !src;
+  document.querySelector('[data-photo-availability]').hidden = Boolean(src);
+  if (!src) {
+    mainPhoto.removeAttribute('src');
+    document.querySelectorAll('[data-photo-src]').forEach(item => item.setAttribute('aria-pressed','false'));
+    return;
+  }
   const settings = detailProduct?.variants?.find(variant => variant.image === src) || detailProduct;
   mainPhoto.src = src;
   mainPhoto.alt = settings?.name || detailProduct?.name || 'Product photograph';
@@ -77,7 +85,7 @@ function showPhoto(src) {
 }
 function updateVariant() {
   const variant = variantFor(detailProduct, variantSelect?.value);
-  if (variant) showPhoto(variant.image);
+  showPhoto(variant ? variant.image : detailProduct.images[0]);
   const caption = document.querySelector('[data-selected-design]');
   if (caption) caption.textContent = variant?.name || detailProduct.color;
   const inquiry = document.querySelector('[data-product-inquiry]');
@@ -134,7 +142,11 @@ function renderCart() {
     const variant = variantFor(product, item.variantId);
     subtotal += product.priceCents * item.quantity;
     const row = document.createElement('article'); row.className = 'cart-row';
-    const image = document.createElement('img'); image.src = variant?.image || product.images[0]; image.alt = variant?.name || product.name; image.style.objectPosition = variant?.imagePosition || product.imagePosition;
+    const imageSrc = variant ? variant.image : product.images[0];
+    if (imageSrc) {
+      const image = document.createElement('img'); image.src = imageSrc; image.alt = variant?.name || product.name; image.style.objectPosition = variant?.imagePosition || product.imagePosition;
+      row.append(image);
+    } else row.classList.add('cart-row--text');
     const details = document.createElement('div');
     const heading = document.createElement('h2');
     const link = document.createElement('a'); link.href = `/shop/${product.id}/`; link.textContent = product.name; heading.append(link);
@@ -144,7 +156,7 @@ function renderCart() {
     remove.addEventListener('click', () => { bag = bag.filter(entry => lineKey(entry) !== lineKey(item)); saveBag(); renderCart(); });
     details.append(heading, design, line, remove);
     const amount = document.createElement('span'); amount.textContent = currency(product.priceCents * item.quantity); amount.style.fontSize = '12px';
-    row.append(image, details, amount); container.append(row);
+    row.append(details, amount); container.append(row);
   }
   document.querySelector('[data-cart-subtotal]').textContent = currency(subtotal);
 }

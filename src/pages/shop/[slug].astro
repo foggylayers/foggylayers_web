@@ -4,6 +4,7 @@ import Icon from '../../components/Icon.astro';
 import products from '../../data/products.json';
 export function getStaticPaths() { return products.map(product => ({params:{slug:product.id},props:{product}})); }
 const { product } = Astro.props;
+const hasPhotos = product.images.length > 0;
 const purchasable = product.status === 'available' && Number.isInteger(product.priceCents) && product.priceCents >= 50;
 const price = purchasable ? new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(product.priceCents/100) : 'Ask us for pricing & availability';
 const photoStyle = `object-position:${product.imagePosition};object-fit:${product.imageFit || 'cover'};--photo-scale:${product.imageScale || 1};transform-origin:${product.imageOrigin || product.imagePosition}`;
@@ -11,19 +12,21 @@ const photoStyle = `object-position:${product.imagePosition};object-fit:${produc
 <Layout title={product.name} description={product.description}>
  <section class="container product-detail" data-product-detail={product.id}>
   <p class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/shop/">The collection</a><span>/</span><span>{product.name}</span></p>
-  <div class="product-layout">
-   <div class="product-gallery">
+  <div class:list={['product-layout',{'product-layout--text':!hasPhotos}]}>
+   {hasPhotos && <div class="product-gallery">
     <button class="product-main-image" data-photo-zoom aria-label={`Enlarge photo of ${product.name}`}><img src={product.images[0]} alt={product.name} data-main-photo width="768" height="1024" style={photoStyle}/></button>
     {product.images.length > 1 && <div class="thumbs" aria-label="Product photographs">{product.images.map((src,index) => {
      const variant = product.variants?.find(variant => variant.image === src);
      return <button data-photo-src={src} data-photo-variant={variant?.id} aria-pressed={index===0?'true':'false'} aria-label={variant ? `View ${variant.name}` : `View photo ${index+1} of ${product.name}`}><img src={src} alt="" width="76" height="88" loading="lazy"/></button>;
     })}</div>}
-    <p class="privacy-note">Actual product photographs. Click the image for a closer look.</p>
+    <p class="privacy-note" data-photo-instructions>Actual product photographs. Click the image for a closer look.</p>
+    <p class="privacy-note" data-photo-availability hidden>No photo is available for this design.</p>
     {product.videos?.map(video => <figure class="product-video"><video controls playsinline preload="none" poster={video.poster || product.images[0]} aria-label={video.caption}><source src={video.src} type="video/mp4"/>Your browser does not support this video.</video><figcaption>{video.caption}</figcaption></figure>)}
-   </div>
+   </div>}
    <div class="detail-copy">
     <p class="eyebrow">{product.category} / Foggy Layers</p><h1>{product.name}</h1>
     <p class="detail-price">{price}{purchasable && <span> each</span>}</p><p class="detail-description">{product.description}</p>
+    {!hasPhotos && <p class="privacy-note">No photo is available for this print.</p>}
     {product.variants && <label class="variant-field">{product.variantLabel}<select data-product-variant required={purchasable} aria-label={product.variantLabel}><option value="">Select a design…</option>{product.variants.map(variant => <option value={variant.id}>{variant.name}</option>)}</select></label>}
     <dl class="detail-specs"><div><dt>Shown in</dt><dd data-selected-design>{product.color}</dd></div><div><dt>Size</dt><dd>{product.size || 'Please ask for details'}</dd></div><div><dt>Material</dt><dd>{product.material || 'Please ask for details'}</dd></div><div><dt>Getting it to you</dt><dd>Shipping or Everett pickup</dd></div></dl>
     {purchasable ? <>
@@ -35,5 +38,5 @@ const photoStyle = `object-position:${product.imagePosition};object-fit:${produc
    </div>
   </div>
  </section>
- <dialog class="zoom-dialog" data-zoom-dialog aria-label="Enlarged product photograph"><button data-close-zoom aria-label="Close photo"><Icon name="close"/></button><img src={product.images[0]} alt={`Enlarged photo of ${product.name}`} data-zoom-photo/></dialog>
+ {hasPhotos && <dialog class="zoom-dialog" data-zoom-dialog aria-label="Enlarged product photograph"><button data-close-zoom aria-label="Close photo"><Icon name="close"/></button><img src={product.images[0]} alt={`Enlarged photo of ${product.name}`} data-zoom-photo/></dialog>}
 </Layout>

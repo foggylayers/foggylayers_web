@@ -6,18 +6,15 @@
     "eyebrow": "A whole little menagerie. $2 each.",
     "description": "Pick a tiny companion with an oversized personality. From a striped tiger and bright-eyed fox to a duck, penguin, rabbit, wolf, otter, or woodland friend, each design brings its own face and printed details. Choose one favorite or mix a few. The price is $2 for one figure; keychain versions are listed separately.",
     "images": [
-      "/images/tiger-figure.jpeg",
       "/images/fox-figure.jpeg",
-      "/images/duck-figure.jpeg",
       "/images/penguin-figure.jpeg",
       "/images/rabbit-figure.jpeg",
       "/images/wolf-figure.jpeg",
-      "/images/otter-figure.jpeg",
       "/images/red-woodland-figure.jpeg",
       "/images/tan-woodland-figure.jpeg"
     ],
-    "imagePosition": "50% 0%",
-    "imageScale": 1.75,
+    "imagePosition": "50% 53%",
+    "imageScale": 1.4,
     "imageFit": "cover",
     "color": "See photographed options",
     "priceCents": 200,
@@ -28,7 +25,6 @@
       {
         "id": "tiger-figure",
         "name": "Tiger · orange and black",
-        "image": "/images/tiger-figure.jpeg",
         "imageScale": 1.75,
         "imagePosition": "50% 0%",
         "imageFit": "cover",
@@ -45,7 +41,6 @@
       {
         "id": "duck-figure",
         "name": "Mallard duck · brown and green",
-        "image": "/images/duck-figure.jpeg",
         "imageScale": 1.65,
         "imagePosition": "50% 46%",
         "imageFit": "cover"
@@ -77,7 +72,6 @@
       {
         "id": "otter-figure",
         "name": "Otter · brown",
-        "image": "/images/otter-figure.jpeg",
         "imageScale": 1.2,
         "imagePosition": "50% 50%",
         "imageFit": "contain"
@@ -99,8 +93,7 @@
         "imageFit": "cover"
       }
     ],
-    "variantLabel": "Choose your design",
-    "imageOrigin": "50% 12%"
+    "variantLabel": "Choose your design"
   },
   {
     "id": "mini-dragon-figures",
@@ -111,8 +104,7 @@
     "images": [
       "/images/green-crystal-dragon.jpeg",
       "/images/lilac-crystal-dragon.jpeg",
-      "/images/black-winged-dragon.jpeg",
-      "/images/teal-mini-dragon.jpeg"
+      "/images/black-winged-dragon.jpeg"
     ],
     "imagePosition": "50% 0%",
     "imageScale": 1.7,
@@ -151,7 +143,6 @@
       {
         "id": "teal-mini-dragon",
         "name": "Fin dragon · teal",
-        "image": "/images/teal-mini-dragon.jpeg",
         "imageScale": 1,
         "imagePosition": "50% 50%",
         "imageFit": "contain"
@@ -167,12 +158,11 @@
     "eyebrow": "A friendly little fright. $2 each.",
     "description": "Bring a little spooky character to your desk or seasonal display. Choose a grinning pumpkin with a ribbed body, a green monster with dark clothes, or a black bear with white skeleton details and mismatched eyes. Each one has a rounded character shape and visible printed texture. Priced individually at $2, so you can build your own little Halloween crew.",
     "images": [
-      "/images/pumpkin-figure.jpeg",
       "/images/monster-figure.jpeg",
       "/images/skeleton-bear.jpeg"
     ],
     "imagePosition": "50% 39%",
-    "imageScale": 1.45,
+    "imageScale": 1.65,
     "imageFit": "cover",
     "color": "See photographed options",
     "priceCents": 200,
@@ -183,7 +173,6 @@
       {
         "id": "pumpkin-figure",
         "name": "Pumpkin character · orange",
-        "image": "/images/pumpkin-figure.jpeg",
         "imageScale": 1.45,
         "imagePosition": "50% 39%",
         "imageFit": "cover"
@@ -215,7 +204,6 @@
     "description": "A white skeleton character with a rounded skull, contrasting black eyes, and a detailed ribcage. The visible print layers give this little figure its own texture. A simple addition to a desk, shelf, or growing character collection. Sold individually for $2.",
     "images": [
       "/images/skeleton-front.jpeg",
-      "/images/skeleton-angle.jpeg",
       "/images/skeleton-side.jpeg"
     ],
     "imagePosition": "50% 35%",
@@ -232,7 +220,6 @@
     "eyebrow": "A little character for $2.",
     "description": "A rounded white character with oversized black eyes and a simple, friendly shape. Browse the photos for a closer look at the printed details. A simple addition to a desk, shelf, or growing character collection. Sold individually for $2.",
     "images": [
-      "/images/character-front.jpeg",
       "/images/character-side.jpeg"
     ],
     "imagePosition": "50% 43%",
@@ -265,10 +252,7 @@
     "category": "Small figures",
     "eyebrow": "Long ears. A lively little gradient.",
     "description": "A bright rabbit with tall ears, a long segmented body, and a mix of pink, yellow, and teal. Its changing colors make the printed details stand out from head to tail. Add one to your collection for $2; the exact color placement can vary between prints.",
-    "images": [
-      "/images/rainbow-rabbit-front.jpeg",
-      "/images/rainbow-rabbit-above.jpeg"
-    ],
+    "images": [],
     "imagePosition": "50% 42%",
     "imageScale": 1.2,
     "imageFit": "cover",
@@ -289,9 +273,7 @@
       "/images/tiger-keychain.jpeg",
       "/images/duck-keychain.jpeg",
       "/images/penguin-keychain.jpeg",
-      "/images/rhino-keychain.jpeg",
       "/images/otter-keychain.jpeg",
-      "/images/red-woodland-keychain.jpeg",
       "/images/tan-woodland-loop.jpeg"
     ],
     "imagePosition": "50% 49%",
@@ -338,7 +320,6 @@
       {
         "id": "rhino-keychain",
         "name": "Rhino · key ring",
-        "image": "/images/rhino-keychain.jpeg",
         "imageScale": 1,
         "imagePosition": "50% 50%",
         "imageFit": "contain"
@@ -354,7 +335,6 @@
       {
         "id": "red-woodland-keychain",
         "name": "Woodland friend · red · key ring",
-        "image": "/images/red-woodland-keychain.jpeg",
         "imageScale": 1.1,
         "imagePosition": "50% 48%",
         "imageFit": "cover"
@@ -376,14 +356,11 @@
     "category": "Keychains",
     "eyebrow": "A little dragon for everyday adventures.",
     "description": "A small pink dragon with a segmented body, sculpted fins, and a metal key ring. The warm pink and orange tones show off its layered shape. Clip a little fantasy onto your keys or bag for $2 each.",
-    "images": [
-      "/images/mini-dragon-keychain-pair.jpeg",
-      "/images/mini-dragon-keychain-side.jpeg"
-    ],
+    "images": [],
     "imagePosition": "65% 62%",
     "imageScale": 1.15,
     "imageFit": "cover",
-    "color": "Pink gradient; teal figure also pictured",
+    "color": "Pink gradient",
     "priceCents": 200,
     "status": "available",
     "size": null,
@@ -395,10 +372,7 @@
     "category": "Keychains",
     "eyebrow": "A very small agent of adventure. $2 each.",
     "description": "A teal platypus with an orange bill and tail, a brown hat, and a segmented body full of character. A short chain and metal ring keep this little companion close to your keys or bag. Sold individually for $2.",
-    "images": [
-      "/images/platypus-close.jpeg",
-      "/images/platypus-full.jpeg"
-    ],
+    "images": [],
     "imagePosition": "50% 50%",
     "imageScale": 1,
     "imageFit": "cover",
@@ -406,13 +380,7 @@
     "priceCents": 200,
     "status": "available",
     "size": null,
-    "material": null,
-    "videos": [
-      {
-        "src": "/videos/platypus.mp4",
-        "caption": "A closer look at the platypus keychain on the table. Silent video."
-      }
-    ]
+    "material": null
   },
   {
     "id": "ocean-figures",
@@ -459,7 +427,6 @@
     "eyebrow": "Long tails. Layered scales. A world of color.",
     "description": "These longer dragons are made to show off: sculpted heads, rows of raised details, and segmented bodies that curve into expressive poses. Browse teal-and-pink, red-and-yellow, white-and-pink, and pastel examples. Choose a style to ask about its size, available colors, and price.",
     "images": [
-      "/images/teal-pink-dragon.jpeg",
       "/images/red-yellow-dragon.jpeg",
       "/images/white-pink-dragon.jpeg",
       "/images/pastel-dragon.jpeg"
@@ -476,7 +443,6 @@
       {
         "id": "teal-pink-dragon",
         "name": "Teal and pink dragon",
-        "image": "/images/teal-pink-dragon.jpeg",
         "imageScale": 1,
         "imagePosition": "50% 50%",
         "imageFit": "cover"
@@ -515,7 +481,6 @@
     "eyebrow": "The tiniest take on a favorite cup.",
     "description": "A miniature white tumbler charm with a handle, teal lid, and matching straw detail. Its removable lid adds a playful touch to this little accessory, and the metal ring lets it travel on a bag or set of keys. A decorative miniature; ask us about pricing and available colors.",
     "images": [
-      "/images/tumbler-closed.jpeg",
       "/images/tumbler-open.jpeg"
     ],
     "imagePosition": "50% 40%",
@@ -532,15 +497,12 @@
     "name": "Desk Fidgets",
     "category": "Fidgets",
     "eyebrow": "Something curious for busy hands.",
-    "description": "Choose a purple nested-star design with repeating points or a blue gear-style fidget with interlocking shapes. Each has a distinct printed pattern and movement to explore. See the short clips for a closer look, then ask about current colors and pricing.",
-    "images": [
-      "/images/nested-star-fidget.jpeg",
-      "/images/gear-fidget.jpeg"
-    ],
+    "description": "Choose a purple nested-star design with repeating points or a blue gear-style fidget with interlocking shapes. Each has a distinct printed pattern and movement to explore. Ask about current colors and pricing.",
+    "images": [],
     "imagePosition": "50% 50%",
     "imageScale": 1.15,
     "imageFit": "cover",
-    "color": "See photographed options",
+    "color": "Purple star or blue gear",
     "priceCents": null,
     "status": "inquiry",
     "size": null,
@@ -549,7 +511,6 @@
       {
         "id": "nested-star-fidget",
         "name": "Nested star · purple",
-        "image": "/images/nested-star-fidget.jpeg",
         "imageScale": 1.15,
         "imagePosition": "50% 50%",
         "imageFit": "cover"
@@ -557,25 +518,12 @@
       {
         "id": "gear-fidget",
         "name": "Gear fidget · blue",
-        "image": "/images/gear-fidget.jpeg",
         "imageScale": 1.15,
         "imagePosition": "50% 50%",
         "imageFit": "cover"
       }
     ],
-    "variantLabel": "Choose your design",
-    "videos": [
-      {
-        "src": "/videos/star-fidget.mp4",
-        "caption": "The nested star is lifted and moved by hand to show its connected layers. Silent video.",
-        "poster": "/images/nested-star-fidget.jpeg"
-      },
-      {
-        "src": "/videos/gear-fidget.mp4",
-        "caption": "The blue gear-style fidget is turned by hand. Silent video.",
-        "poster": "/images/gear-fidget.jpeg"
-      }
-    ]
+    "variantLabel": "Choose your design"
   },
   {
     "id": "forest-vase",
@@ -584,8 +532,7 @@
     "eyebrow": "A little woodland for your shelf.",
     "description": "A tall decorative vessel with raised trees and a color gradient that moves from earthy tones into green. The textured forest wraps around the outside, giving it a different view from every angle. Ask about dimensions, available colors, and pricing before choosing a spot for it.",
     "images": [
-      "/images/forest-vase-front.jpeg",
-      "/images/forest-vase-inside.jpeg"
+      "/images/forest-vase-front.jpeg"
     ],
     "imagePosition": "50% 48%",
     "imageScale": 1,
@@ -603,7 +550,6 @@
     "eyebrow": "A small tree with plenty of texture.",
     "description": "A green holiday tree with a knit-like surface, stacked branches, and a bright yellow star. The repeating texture catches the light across its printed layers, adding a cozy detail to a shelf or seasonal display. Ask about size, colors, and pricing.",
     "images": [
-      "/images/holiday-tree-front.jpeg",
       "/images/holiday-tree-angle.jpeg"
     ],
     "imagePosition": "50% 50%",
@@ -622,8 +568,7 @@
     "eyebrow": "A place for the little things.",
     "description": "An orange organizer with rows of open hexagonal compartments and a geometric honeycomb shape. The divided layout keeps small items easy to see and gives your workspace a bright graphic detail. Ask about compartment dimensions, suitable uses, and pricing.",
     "images": [
-      "/images/honeycomb-front.jpeg",
-      "/images/honeycomb-angle.jpeg"
+      "/images/honeycomb-front.jpeg"
     ],
     "imagePosition": "50% 50%",
     "imageScale": 1.15,

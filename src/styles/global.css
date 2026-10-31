@@ -20,3 +20,15 @@
   @media(max-width:540px){.hero-copy{padding-bottom:325px}.hero h1{font-size:58px;letter-spacing:-.055em}.hero-art{height:300px}.hero-art>img{width:250%}.hero .kicker{font-size:8px}.hero-copy .lede{font-size:14px}.hero .button{font-size:10px;gap:14px;padding:12px 16px;min-height:46px}.hero .button-row{gap:9px}.section-head{align-items:flex-start;gap:12px}.section-head .text-link{font-size:10px;white-space:nowrap;margin-top:8px;gap:6px}.section-head h2{font-size:37px}.product-grid{grid-template-columns:1fr;gap:36px}.product-photo{aspect-ratio:1/1.05}.product-meta{display:flex}.product-price{margin:0}.product-card h3{font-size:31px}.product-card p{font-size:12px}.product-index{font-size:8px}.product-open{width:36px;height:36px}.collection-foot{display:block}.collection-foot span{display:block;margin-bottom:10px}.custom-copy h2,.story-copy h2{font-size:43px}.shop-toolbar{flex-direction:column;gap:20px}.shop-toolbar>label{width:100%}.search-input{width:100%}.page-intro h1{font-size:49px}.page-intro .lede{font-size:14px}.product-detail{padding-top:30px}.detail-copy h1{font-size:46px}.field-grid{grid-template-columns:1fr;gap:0}.project-form{padding:23px 18px}.project-layout{padding-bottom:65px}.project-aside h2{font-size:31px}.choice-row{gap:9px}.choice-row label{font-size:11px;padding:10px 12px}.footer-main{column-gap:25px}.footer-main h2{font-size:9px}.footer-main>div>a:not(.brand){font-size:10px}.footer-contact>.footer-cta{font-size:25px!important}.cart-row{grid-template-columns:65px 1fr auto;gap:14px}.cart-row img{width:65px;height:85px}.cart-row h2{font-size:20px}.cart-summary{padding:25px}.thanks h1{font-size:45px}.prose h2{font-size:31px}}
   @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 }
+@layer components {
+  .product-card--text{align-self:start;background:var(--sage);border:1px solid var(--line);padding:26px}
+  .product-card--text .product-meta{margin-top:0}
+  .product-card--text .product-details-link{display:inline-flex;margin-top:22px;font-size:12px}
+  .product-layout--text{grid-template-columns:1fr;max-width:780px;margin-inline:auto}
+  .about-photos--single{grid-template-columns:1fr;max-width:430px}
+  .story-section--text{grid-template-columns:1fr}
+  .story-section--text .story-copy{max-width:720px}
+}
+@layer responsive {
+  .cart-row--text{grid-template-columns:1fr auto}
+}
