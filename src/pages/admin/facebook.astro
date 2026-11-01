@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import site from '../../data/site.json';
+import products from '../../data/products.json';
+const photos = [...new Set(products.flatMap(product => [...product.images, ...(product.variants || []).map(variant => variant.image).filter(Boolean)]))]
+  .filter(path => /\.(?:jpe?g|png)$/i.test(path));
+---
+<Layout title="Facebook publisher" description="Review and publish Foggy Layers Facebook posts." noindex>
+  <section class="container publisher" data-facebook-admin>
+    <div class="publisher-heading">
+      <p class="eyebrow kicker">For the Foggy Layers team</p>
+      <h1>Facebook publisher.</h1>
+      <p class="lede">Write a post, review the draft, then publish it to <a href={site.facebookUrl} target="_blank" rel="noopener noreferrer">our Facebook Page ↗</a>.</p>
+    </div>
+    <div class="publisher-access">
+      <form data-connect>
+        <label for="admin-token">Publishing admin token</label>
+        <div class="access-row"><input id="admin-token" type="password" autocomplete="off" spellcheck="false" required minlength="43" maxlength="128" aria-describedby="token-note" /><button class="button" type="submit">Connect</button><button type="button" class="button secondary" data-disconnect hidden>Disconnect</button></div>
+        <p id="token-note" class="small">Use your publishing admin token. It stays in this tab until you disconnect or close it.</p>
+      </form>
+      <p class="publisher-status" role="status" aria-live="polite" data-status>Connect to check the Page and publishing settings.</p>
+    </div>
+    <div class="publisher-columns">
+      <form class="publisher-panel" data-composer>
+        <p class="eyebrow kicker">01 · Compose</p><h2>A little news to share.</h2>
+        <fieldset data-compose-fields disabled>
+          <label for="post-message">Post message</label>
+          <textarea id="post-message" rows="7" maxlength="5000" required placeholder="Meet your next tiny desk companion…"></textarea>
+          <label for="post-image">Photo URL <span>(optional)</span></label>
+          <input id="post-image" type="url" list="website-photos" placeholder="Choose a website photo" />
+          <datalist id="website-photos">{photos.map(path => <option value={new URL(path, site.url).href}>{path.split('/').pop()}</option>)}</datalist>
+          <p class="small">Choose a JPG or PNG from the website. For a photo post, include any website link in the message.</p>
+          <label for="post-link">Website link <span>(optional, for posts without a photo)</span></label>
+          <input id="post-link" type="url" placeholder={site.url + '/shop/'} />
+          <button class="button review-button" type="submit">Review draft →</button>
+        </fieldset>
+      </form>
+      <div class="publisher-panel review-panel">
+        <p class="eyebrow kicker">02 · Review & publish</p><h2>Take one more look.</h2>
+        <p data-empty-preview>Your saved draft will appear here. Nothing is posted when you review it.</p>
+        <div data-preview hidden>
+          <div class="post-preview"><strong>Foggy Layers</strong><p data-preview-message></p><img data-preview-image hidden alt="Photo selected for the Facebook post" /><a data-preview-link hidden target="_blank" rel="noopener noreferrer"></a></div>
+          <p class="small draft-state" data-draft-state></p>
+          <p class="small">Draft ID: <code data-draft-id></code></p>
+          <p class="small">Keep this ID to check the result if your connection drops.</p>
+          <label class="confirm-row"><input type="checkbox" data-confirm disabled /><span>Publish this reviewed post to the Foggy Layers Facebook Page.</span></label>
+          <button type="button" class="button publish-button" data-publish disabled>Publish to Facebook</button>
+          <a class="published-link" data-receipt hidden target="_blank" rel="noopener noreferrer">View published post ↗</a>
+        </div>
+      </div>
+    </div>
+    <details class="publisher-recovery"><summary>Check an existing draft</summary><form data-recover><label for="recover-id">Draft ID</label><div class="access-row"><input id="recover-id" type="text" required pattern="[0-9a-fA-F-]{36}" placeholder="Paste the draft ID" /><button class="button secondary" type="submit" data-recover-button disabled>Check status</button></div></form></details>
+    <noscript><p>This publisher needs JavaScript to connect and review posts.</p></noscript>
+  </section>
+</Layout>
+<script>import '../../scripts/facebook-admin.js';</script>
+<style>
+  .publisher{max-width:1120px;padding-block:70px 100px}.publisher-heading{max-width:760px;margin-bottom:36px}.publisher h1{font-size:clamp(44px,6vw,72px);margin:12px 0 18px}.publisher .lede{font-size:18px}.publisher a:not(.button){text-decoration:underline;text-underline-offset:4px}.publisher-access{background:var(--sage);border:1px solid var(--line);padding:26px 30px;margin-bottom:28px}.publisher label{display:block;font-size:13px;font-weight:600;margin:20px 0 8px}.publisher-access label{margin-top:0}.publisher input:not([type=checkbox]),.publisher textarea{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:4px;background:var(--white);color:var(--ink)}.publisher textarea{resize:vertical}.access-row{display:flex;align-items:center;gap:12px}.access-row input{min-width:0;flex:1}.access-row .button{flex-shrink:0}.publisher .small{font-size:12px;line-height:1.6;margin-top:9px}.publisher-status{border-top:1px solid #c6cebd;padding-top:15px;margin-top:18px;font-size:14px;color:var(--ink)}.publisher-status[data-error=true]{color:#8e3029}.publisher-columns{display:grid;grid-template-columns:1fr 1fr;gap:28px}.publisher-panel{padding:30px;background:var(--white);border:1px solid var(--line)}.publisher-panel h2{font-size:34px;margin:12px 0 22px}.publisher fieldset{border:0;padding:0;margin:0;min-width:0}.publisher fieldset:disabled{opacity:.6}.publisher label span{font-weight:400;color:var(--muted)}.publisher button:disabled{opacity:.5;cursor:not-allowed}.secondary{background:transparent;color:var(--ink);border:1px solid var(--ink)}.review-button,.publish-button{margin-top:24px}.post-preview{background:white;border:1px solid var(--line);padding:20px}.post-preview p{white-space:pre-wrap;overflow-wrap:anywhere;color:var(--ink);margin-top:14px}.post-preview img{margin-top:16px;max-height:340px;width:100%;object-fit:contain}.post-preview a{display:block;overflow-wrap:anywhere;margin-top:12px}.confirm-row{display:flex!important;align-items:flex-start;gap:10px;line-height:1.5}.confirm-row input{margin-top:3px;accent-color:var(--forest)}.draft-state{font-weight:600;color:var(--ink)}.publisher code{font-size:11px;overflow-wrap:anywhere}.published-link{display:block;margin-top:18px}.publisher-recovery{margin-top:30px;border:1px solid var(--line);padding:20px 28px}.publisher-recovery summary{font-weight:600}.publisher-recovery form{margin-top:20px}
+  @media(max-width:800px){.publisher-columns{grid-template-columns:1fr}.publisher-panel,.publisher-access{padding:24px}.access-row{flex-wrap:wrap}.access-row input{flex-basis:100%}.publisher{padding-top:45px}}
+</style>
