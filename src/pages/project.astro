@@ -1,25 +1,28 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
-import products from '../data/products.json';
+import FacebookLink from '../components/FacebookLink.astro';
 ---
-<Layout title="Start a printing or design project">
- <section class="page-intro"><div class="container"><p class="breadcrumb"><a href="/">Home</a><span>/</span><span>Start a project</span></p><p class="eyebrow kicker">Let's make something</p><h1>What's on your mind?</h1><p class="lede">Send your model, describe an idea, or ask about a print from the collection. We'll review the details with you before any work begins.</p></div></section>
- <div class="container project-layout"><aside class="project-aside"><h2>Start wherever you are.</h2><p>A finished file is great. A rough sketch is great, too. Share what you have and we'll take the next step together.</p><div class="aside-note"><strong>A quote before a commitment.</strong><p>Submitting this form is a request for a conversation. It doesn't place a paid order or start production.</p></div><div class="aside-note"><strong>Shipping or local pickup.</strong><p>Choose what works for you. Local pickup is available in Everett, Washington.</p></div><div class="aside-note"><strong>Your files stay private.</strong><p>Files submitted for a project are used to review and carry out your request.</p></div></aside>
- <div><form class="project-form" id="project-form" novalidate>
- <p class="form-heading">A few details to get started</p>
- <p class="form-notice" data-request-availability role="status">Checking request availability…</p>
- <div class="honey" aria-hidden="true"><label>Leave this field empty<input name="website" tabindex="-1" autocomplete="off"/></label></div>
- <label class="field"><span>What can we help with? *</span><select name="type" id="project-type" required><option value="print">Print a model I already have</option><option value="design">Help design a custom piece</option><option value="product">Ask about a print from the collection</option></select></label>
- <label class="field" data-product-field hidden><span>Which print? *</span><select name="productId" id="project-product"><option value="">Choose a print</option>{products.map(p=><option value={p.id}>{p.name}</option>)}</select></label>
- <div class="field-grid"><label class="field"><span>Your name *</span><input name="name" autocomplete="name" required maxlength="100" placeholder="First and last name"/></label><label class="field"><span>Email address *</span><input type="email" name="email" autocomplete="email" required maxlength="254" placeholder="you@example.com"/></label></div>
- <label class="field"><span>Tell us about your project *</span><textarea name="description" required minlength="15" maxlength="5000" rows="5" placeholder="What would you like to make? How will it be used? Include dimensions, file units, or any details that matter."/></label>
- <div class="field-grid"><label class="field"><span>Quantity *</span><input type="number" name="quantity" min="1" max="999" step="1" value="1" required/></label><label class="field"><span>Color or material preference</span><input name="preferences" maxlength="250" placeholder="Or tell us: help me decide"/></label></div>
- <label class="field"><span>Desired timing <span style="font-weight:400">(optional)</span></span><input name="timeline" maxlength="150" placeholder="A target date, or no rush"/><span class="field-hint">We'll confirm whether we can meet your timeline.</span></label>
- <div class="field"><span>Models, sketches, or reference photos <span data-file-required>*</span></span><label class="upload-area"><Icon name="upload" size={26}/><span>Choose a file or drag it onto the file picker</span><input type="file" name="files" id="project-files" multiple accept=".stl,.3mf,.obj,.step,.stp,.png,.jpg,.jpeg,.pdf" aria-label="Upload models or project reference files" aria-describedby="upload-hint"/><span class="field-hint" id="upload-hint">STL, 3MF, OBJ, STEP, PNG, JPG, or PDF. Up to 3 files, 10 MB each, 20 MB total.</span></label><ul class="file-list" data-file-list aria-live="polite"></ul></div>
- <fieldset class="choice-row"><legend>How would you like to receive it? *</legend><label><input type="radio" name="fulfillment" value="shipping" checked/> Shipping</label><label><input type="radio" name="fulfillment" value="pickup"/> Everett pickup</label></fieldset>
- <label class="consent"><input type="checkbox" name="consent" required value="yes"/><span>I have permission to use any files I submit, and I agree to have my details used to respond to this request. <a href="/privacy/">Privacy details</a>.</span></label>
- <div id="turnstile-container"></div>
- <button class="button full-width" type="submit" data-submit-request disabled>Send project request <Icon name="arrow" size={17}/></button><p class="form-error" data-form-error role="alert" hidden></p><p class="privacy-note">We'll review your request before quoting or starting any work.</p>
- </form><section class="form-success" data-form-success role="status" tabindex="-1" hidden><p class="eyebrow kicker">The first layer is down</p><h2>Request received.</h2><p>Thank you for sharing your project. We'll review your details and follow up using the email address you provided.</p><p data-request-reference class="privacy-note"></p><a class="text-link" href="/shop/" style="margin-top:25px">Explore the collection <Icon name="arrow" size={17}/></a></section></div></div>
+<Layout title="Contact Foggy Layers" description="Message Foggy Layers on Facebook about printed figures, custom 3D printing, design help, shipping, or Everett pickup.">
+  <section class="page-intro"><div class="container">
+    <p class="breadcrumb"><a href="/">Home</a><span>/</span><span>Contact</span></p>
+    <p class="eyebrow kicker">Let's make something</p>
+    <h1>Let's talk on Facebook.</h1>
+    <p class="lede">Ask about a print, share an idea, or discuss a custom project. Message our Facebook Page and we'll work through the details with you.</p>
+  </div></section>
+  <section class="container project-layout" aria-label="Contact Foggy Layers">
+    <aside class="project-aside">
+      <h2>Start wherever you are.</h2>
+      <p>A finished model, a rough sketch, or a print you spotted in the collection. Tell us what you have in mind.</p>
+      <div class="aside-note"><strong>A quote before a commitment.</strong><p>We'll review size, quantity, color, pricing, and timing with you before any work begins.</p></div>
+      <div class="aside-note"><strong>Shipping or local pickup.</strong><p>Let us know what works for you. Local pickup is available in Everett, Washington.</p></div>
+    </aside>
+    <div class="project-form facebook-contact">
+      <p class="eyebrow kicker">Foggy Layers on Facebook</p>
+      <h2>Say hello.</h2>
+      <p>Open our Facebook Page and choose Message to start a conversation with Foggy Layers.</p>
+      <FacebookLink class="button">Open our Facebook Page <Icon name="diagonal" size={18}/></FacebookLink>
+      <p class="privacy-note">Include the print or project name, desired size, quantity, and color. If you have a 3D model, tell us about the file and we'll arrange how to share it.</p>
+    </div>
+  </section>
 </Layout>

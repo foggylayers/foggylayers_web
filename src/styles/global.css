@@ -32,3 +32,13 @@
 @layer responsive {
   .cart-row--text{grid-template-columns:1fr auto}
 }
+
+@layer components {
+  .footer-contact-note{font-size:11px;line-height:1.7;color:#d5dfca;margin-bottom:18px}
+  .facebook-contact{align-self:start}
+  .facebook-contact h2{font-size:42px;margin:16px 0}
+  .facebook-contact>p:not(.eyebrow){max-width:480px}
+  .facebook-contact .button{margin-block:26px 20px}
+  .cart-contact{margin-block:16px 22px}
+  .order-contact{margin-top:24px}
+}
