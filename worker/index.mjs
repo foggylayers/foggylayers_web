@@ -1,5 +1,6 @@
 import defaultProducts from '../src/data/products.json' with { type: 'json' };
 import defaultBusiness from '../src/data/site.json' with { type: 'json' };
+import { createFacebookAPI } from './facebook.mjs';
 
 const MiB = 1024 * 1024;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -94,6 +95,7 @@ export async function verifyStripeSignature(body, signature, secret, now = Date.
 }
 
 export function createWorker({ catalog = defaultProducts, business = defaultBusiness, fetcher = (...args) => fetch(...args), now = () => Date.now() } = {}) {
+  const facebookAPI = createFacebookAPI({ business, fetcher, now });
   function readiness(env) {
     const contactReady = EMAIL.test(business.contactEmail || '');
     const requestsEnabled = env.REQUESTS_ENABLED === 'true' && contactReady && Boolean(env.DB && env.UPLOADS && env.TURNSTILE_SECRET_KEY && env.TURNSTILE_SITE_KEY);
@@ -216,6 +218,7 @@ export function createWorker({ catalog = defaultProducts, business = defaultBusi
       const url = new URL(request.url);
       if (!url.pathname.startsWith('/api/')) return env.ASSETS ? env.ASSETS.fetch(request) : new Response('Not found', { status: 404 });
       try {
+        if (url.pathname.startsWith('/api/admin/facebook/')) return await facebookAPI(request, env);
         if (url.pathname === '/api/config' && request.method === 'GET') return json(readiness(env));
         if (url.pathname === '/api/stripe/webhook' && request.method === 'POST') return await webhook(request, env, ctx);
         if (request.method === 'POST' && request.headers.get('Origin') !== url.origin) throw new HttpError(403, 'This request must be sent from the Foggy Layers website.');
