@@ -88,12 +88,6 @@ function updateVariant() {
   showPhoto(variant ? variant.image : detailProduct.images[0]);
   const caption = document.querySelector('[data-selected-design]');
   if (caption) caption.textContent = variant?.name || detailProduct.color;
-  const inquiry = document.querySelector('[data-product-inquiry]');
-  if (inquiry) {
-    const params = new URLSearchParams({ type: 'product', product: detailProduct.id });
-    if (variant) params.set('variant', variant.id);
-    inquiry.href = `/project/?${params}`;
-  }
 }
 variantSelect?.addEventListener('change', updateVariant);
 document.querySelectorAll('[data-photo-src]').forEach(button => button.addEventListener('click', () => {
@@ -167,7 +161,7 @@ if (checkoutButton) {
     checkoutButton.disabled = !config.checkoutEnabled;
     const notice = document.querySelector('[data-checkout-availability]');
     notice.hidden = Boolean(config.checkoutEnabled);
-    notice.textContent = 'Online checkout is opening soon. You can ask about a print using the project request form.';
+    notice.textContent = 'Online checkout is opening soon. Message us on Facebook with the print names and quantities to ask about your bag.';
     if (config.checkoutEnabled && !config.shippingEnabled) {
       document.querySelector('[name="cart-fulfillment"][value="shipping"]').disabled = true;
       document.querySelector('[name="cart-fulfillment"][value="pickup"]').checked = true;
@@ -270,8 +264,8 @@ if (document.querySelector('[data-order-result]')) {
       }
       if (attempt < 3 && ['created', 'pending'].includes(order.status)) { window.setTimeout(() => checkOrder(attempt + 1), 2000); return; }
       heading.textContent = order.status === 'failed' ? 'Your payment wasn’t completed.' : 'Your payment is still being confirmed.';
-      message.textContent = 'Please check your payment provider’s confirmation before placing another order. If you need help, send a project request with your order details.';
-    } catch { heading.textContent = 'We couldn’t confirm that order.'; message.textContent = 'Please check your checkout confirmation or contact us through a project request. This page alone does not confirm a payment.'; }
+      message.textContent = 'Please check your payment provider’s confirmation before placing another order. If you need help, message Foggy Layers on Facebook with your order details.';
+    } catch { heading.textContent = 'We couldn’t confirm that order.'; message.textContent = 'Please check your checkout confirmation or contact Foggy Layers on Facebook. This page alone does not confirm a payment.'; }
   }
   checkOrder();
 }
