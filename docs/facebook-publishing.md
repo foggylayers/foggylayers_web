@@ -14,7 +14,7 @@ Open the **foggylayers-web** Worker in Cloudflare → **Settings → Variables a
 
 Enter those values directly in Cloudflare. Do not paste them into a chat, a commit, a URL, or an issue. The admin page takes only the separate **admin token**; it never needs your Meta Page token or app secret.
 
-Wrangler provisions the `FACEBOOK_PUBLISHER` SQLite Durable Object namespace when this code deploys. No database ID needs to be entered manually. Each draft has its own persistent record containing its content, publishing state, and receipt, without credentials.
+Wrangler provisions the `FacebookPublisher` SQLite Durable Object namespace when this code deploys. The entry point uses Cloudflare's `ctx.exports` loopback namespace internally as `FACEBOOK_PUBLISHER`, so there is no manual binding or database ID to enter. Each draft has its own persistent record containing its content, publishing state, and receipt, without credentials. The `previews` configuration enables isolated branch Previews; Page credentials are configured separately in production.
 
 ## Get a Meta Page token
 

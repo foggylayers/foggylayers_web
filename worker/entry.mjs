@@ -11,4 +11,10 @@ export class FacebookPublisher extends DurableObject {
   fetch(request) { return this.publisher.fetch(request); }
 }
 
-export default worker;
+export default {
+  fetch(request, env, ctx) {
+    // A loopback namespace avoids an env binding to an unprovisioned class during
+    // version uploads. Cloudflare provisions its storage on the first deployment.
+    return worker.fetch(request, { ...env, FACEBOOK_PUBLISHER: ctx.exports.FacebookPublisher }, ctx);
+  }
+};

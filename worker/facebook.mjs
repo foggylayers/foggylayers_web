@@ -41,7 +41,7 @@ async function readJSON(request) {
   for (const chunk of chunks) { bytes.set(chunk, offset); offset += chunk.byteLength; }
   try { return JSON.parse(new TextDecoder().decode(bytes)); } catch { throw new FacebookError(400, 'Send valid JSON.'); }
 }
-export function facebookConfiguration(env, site = business) {
+export function facebookConfiguration(env, site = business, { requirePublisher = true } = {}) {
   let pageId = '';
   try { pageId = new URL(site.facebookUrl).searchParams.get('id') || ''; } catch { /* Report an invalid public Page URL as missing configuration. */ }
   const missing = [];
@@ -50,7 +50,7 @@ export function facebookConfiguration(env, site = business) {
   if (!env.FACEBOOK_APP_SECRET) missing.push('FACEBOOK_APP_SECRET');
   if (!VERSION.test(env.FACEBOOK_API_VERSION || '')) missing.push('FACEBOOK_API_VERSION');
   if (!/^[0-9]{5,30}$/.test(pageId)) missing.push('Page ID in src/data/site.json');
-  if (!env.FACEBOOK_PUBLISHER) missing.push('FACEBOOK_PUBLISHER binding');
+  if (requirePublisher && !env.FACEBOOK_PUBLISHER) missing.push('FacebookPublisher runtime export');
   return { pageId, pageUrl: site.facebookUrl, apiVersion: env.FACEBOOK_API_VERSION, configured: missing.length === 0, publishingEnabled: env.FACEBOOK_PUBLISHING_ENABLED === 'true', missing };
 }
 async function authorize(request, env) {
@@ -66,8 +66,8 @@ async function authorize(request, env) {
   for (let i = 0; i < aa.length; i++) mismatch |= aa[i] ^ bb[i];
   if (!provided || mismatch) throw new FacebookError(401, 'Enter a valid publishing admin token.', 'FACEBOOK_UNAUTHORIZED');
 }
-function requireConfigured(env, site = business) {
-  const config = facebookConfiguration(env, site);
+function requireConfigured(env, site = business, options) {
+  const config = facebookConfiguration(env, site, options);
   if (!config.configured) throw new FacebookError(503, 'Finish the Facebook publishing setup before continuing.', 'FACEBOOK_SETUP_REQUIRED');
   return config;
 }
@@ -112,8 +112,8 @@ async function graph(env, path, parameters, method, fetcher) {
   }
   return data;
 }
-export async function verifyFacebookPage(env, site = business, fetcher = (...args) => fetch(...args)) {
-  const config = requireConfigured(env, site);
+export async function verifyFacebookPage(env, site = business, fetcher = (...args) => fetch(...args), options) {
+  const config = requireConfigured(env, site, options);
   let page;
   try { page = await graph(env, 'me', { fields: 'id,name' }, 'GET', fetcher); }
   catch (error) { if (error instanceof FacebookError) throw error; throw new FacebookError(502, 'Facebook could not verify the Page connection.', 'FACEBOOK_CONNECTION_FAILED'); }
@@ -183,13 +183,15 @@ export class FacebookPublisher {
   }
   async publish() {
     if (this.env.FACEBOOK_PUBLISHING_ENABLED !== 'true') throw new FacebookError(503, 'Publishing is disabled.', 'FACEBOOK_DISABLED');
-    requireConfigured(this.env);
+    // The object already has storage; only its public caller needs a namespace binding.
+    const options = { requirePublisher: false };
+    requireConfigured(this.env, business, options);
     const existing = await this.ctx.storage.get('draft');
     if (!existing) throw new FacebookError(404, 'Draft not found.');
     if (existing.state === 'published') return json({ draft: existing, replayed: true });
     if (existing.state !== 'draft') throw new FacebookError(409, 'This draft was already attempted. Check its status and Facebook before creating another post.', 'FACEBOOK_ATTEMPT_EXISTS');
     // Checking identity is read-only. Do it before claiming the draft or writing to Facebook.
-    await verifyFacebookPage(this.env, business, this.fetcher);
+    await verifyFacebookPage(this.env, business, this.fetcher, options);
     const claimed = await this.ctx.storage.transaction(async txn => {
       const draft = await txn.get('draft');
       if (!draft) throw new FacebookError(404, 'Draft not found.');

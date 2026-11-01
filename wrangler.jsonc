@@ -12,9 +12,7 @@
   "exports": {
     "FacebookPublisher": { "type": "durable-object", "storage": "sqlite" }
   },
-  "durable_objects": {
-    "bindings": [{ "name": "FACEBOOK_PUBLISHER", "class_name": "FacebookPublisher" }]
-  },
+  "previews": {},
   "vars": {
     "SITE_URL": "https://foggylayers.com",
     "REQUESTS_ENABLED": "false",

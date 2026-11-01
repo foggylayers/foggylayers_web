@@ -173,6 +173,14 @@ test('concurrent publish requests can make only one Facebook write', async () =>
   assert.ok(results.every(result => [200, 409].includes(result.status))); assert.equal(s.postCount(), 1);
 });
 
+test('a loopback-created object can publish without a redundant namespace in its own environment', async () => {
+  const s = setup(); await s.save();
+  const stub = s.env.FACEBOOK_PUBLISHER.get(draftId);
+  delete s.env.FACEBOOK_PUBLISHER;
+  const result = await stub.fetch(new Request('https://publisher.internal/publish', { method: 'POST' }));
+  assert.equal(result.status, 200); assert.equal(s.postCount(), 1);
+});
+
 test('timeouts, server errors, unreadable results, and malformed receipts never automatically resend', async () => {
   const cases = [
     () => { throw new Error(`Network failed ${pageToken} ${appSecret}`); },
