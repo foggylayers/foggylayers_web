@@ -425,15 +425,23 @@
     "name": "Articulated Dragons",
     "category": "Dragons",
     "eyebrow": "Long tails. Layered scales. A world of color.",
-    "description": "These longer dragons are made to show off: sculpted heads, rows of raised details, and segmented bodies that curve into expressive poses. Browse teal-and-pink, red-and-yellow, white-and-pink, and pastel examples. Choose a style to ask about its size, available colors, and price.",
+    "description": "These longer dragons are made to show off: sculpted heads, rows of raised details, and segmented bodies that curve into expressive poses. Browse mint rainbow, pink rainbow, teal-and-pink, red-and-yellow, gold-horn, and pastel examples. Choose a style to ask about its size, available colors, and price.",
     "images": [
-      "/images/red-yellow-dragon.jpeg",
-      "/images/white-pink-dragon.jpeg",
-      "/images/pastel-dragon.jpeg"
+      "/images/mint-rainbow-dragon-forest.webp",
+      "/images/gold-horn-dragon-forest.webp",
+      "/images/pink-rainbow-dragon-forest.webp",
+      "/images/teal-pink-dragon-forest.webp",
+      "/images/red-yellow-dragon-forest.webp",
+      "/images/pastel-dragon-forest.webp",
+      "/images/pastel-dragon-forest-wide.webp",
+      "/images/pastel-dragon-forest-front.webp"
     ],
     "imagePosition": "50% 50%",
     "imageScale": 1,
-    "imageFit": "cover",
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
     "color": "See photographed options",
     "priceCents": null,
     "status": "inquiry",
@@ -443,33 +451,55 @@
       {
         "id": "teal-pink-dragon",
         "name": "Teal and pink dragon",
+        "image": "/images/teal-pink-dragon-forest.webp",
         "imageScale": 1,
         "imagePosition": "50% 50%",
-        "imageFit": "cover"
+        "imageFit": "contain"
       },
       {
         "id": "red-yellow-dragon",
         "name": "Red and yellow dragon",
-        "image": "/images/red-yellow-dragon.jpeg",
+        "image": "/images/red-yellow-dragon-forest.webp",
         "imageScale": 1,
         "imagePosition": "50% 50%",
-        "imageFit": "cover"
+        "imageFit": "contain"
       },
       {
         "id": "white-pink-dragon",
-        "name": "White and pink dragon · gold horns",
-        "image": "/images/white-pink-dragon.jpeg",
-        "imageScale": 1.1,
-        "imagePosition": "50% 43%",
-        "imageFit": "cover"
+        "name": "Pastel dragon · gold horns",
+        "image": "/images/gold-horn-dragon-forest.webp",
+        "imageScale": 1,
+        "imagePosition": "50% 50%",
+        "imageFit": "contain"
       },
       {
         "id": "pastel-dragon",
         "name": "Pastel dragon",
-        "image": "/images/pastel-dragon.jpeg",
-        "imageScale": 1.15,
-        "imagePosition": "50% 46%",
-        "imageFit": "cover"
+        "image": "/images/pastel-dragon-forest.webp",
+        "images": [
+          "/images/pastel-dragon-forest.webp",
+          "/images/pastel-dragon-forest-wide.webp",
+          "/images/pastel-dragon-forest-front.webp"
+        ],
+        "imageScale": 1,
+        "imagePosition": "50% 50%",
+        "imageFit": "contain"
+      },
+      {
+        "id": "mint-rainbow-dragon",
+        "name": "Mint rainbow dragon",
+        "image": "/images/mint-rainbow-dragon-forest.webp",
+        "imageScale": 1,
+        "imagePosition": "50% 50%",
+        "imageFit": "contain"
+      },
+      {
+        "id": "pink-rainbow-dragon",
+        "name": "Pink rainbow dragon",
+        "image": "/images/pink-rainbow-dragon-forest.webp",
+        "imageScale": 1,
+        "imagePosition": "50% 50%",
+        "imageFit": "contain"
       }
     ],
     "variantLabel": "Choose your design"

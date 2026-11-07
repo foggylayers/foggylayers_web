@@ -15,10 +15,10 @@ const photoStyle = `object-position:${product.imagePosition};object-fit:${produc
   <p class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/shop/">The collection</a><span>/</span><span>{product.name}</span></p>
   <div class:list={['product-layout',{'product-layout--text':!hasPhotos}]}>
    {hasPhotos && <div class="product-gallery">
-    <button class="product-main-image" data-photo-zoom aria-label={`Enlarge photo of ${product.name}`}><img src={product.images[0]} alt={product.name} data-main-photo width="768" height="1024" style={photoStyle}/></button>
+    <button class="product-main-image" data-photo-zoom aria-label={`Enlarge photo of ${product.name}`} style={product.imageAspectRatio ? `aspect-ratio:${product.imageAspectRatio}` : undefined}><img src={product.images[0]} alt={product.name} data-main-photo width={product.imageWidth || 768} height={product.imageHeight || 1024} style={photoStyle}/></button>
     {product.images.length > 1 && <div class="thumbs" aria-label="Product photographs">{product.images.map((src,index) => {
-     const variant = product.variants?.find(variant => variant.image === src);
-     return <button data-photo-src={src} data-photo-variant={variant?.id} aria-pressed={index===0?'true':'false'} aria-label={variant ? `View ${variant.name}` : `View photo ${index+1} of ${product.name}`}><img src={src} alt="" width="76" height="88" loading="lazy"/></button>;
+     const variant = product.variants?.find(variant => variant.image === src || variant.images?.includes(src));
+     return <button data-photo-src={src} data-photo-variant={variant?.id} aria-pressed={index===0?'true':'false'} aria-label={variant ? `View ${variant.name}` : `View photo ${index+1} of ${product.name}`} style={product.imageAspectRatio ? `height:auto;aspect-ratio:${product.imageAspectRatio}` : undefined}><img src={src} alt="" width="76" height={product.imageAspectRatio ? 57 : 88} style={product.imageAspectRatio ? 'object-fit:contain' : undefined} loading="lazy"/></button>;
     })}</div>}
     <p class="privacy-note" data-photo-instructions>Actual product photographs. Click the image for a closer look.</p>
     <p class="privacy-note" data-photo-availability hidden>No photo is available for this design.</p>

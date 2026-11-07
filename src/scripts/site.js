@@ -74,7 +74,7 @@ function showPhoto(src) {
     document.querySelectorAll('[data-photo-src]').forEach(item => item.setAttribute('aria-pressed','false'));
     return;
   }
-  const settings = detailProduct?.variants?.find(variant => variant.image === src) || detailProduct;
+  const settings = detailProduct?.variants?.find(variant => variant.image === src || variant.images?.includes(src)) || detailProduct;
   mainPhoto.src = src;
   mainPhoto.alt = settings?.name || detailProduct?.name || 'Product photograph';
   mainPhoto.style.objectPosition = settings?.imagePosition || '50% 50%';
@@ -92,7 +92,7 @@ function updateVariant() {
 variantSelect?.addEventListener('change', updateVariant);
 document.querySelectorAll('[data-photo-src]').forEach(button => button.addEventListener('click', () => {
   if (button.dataset.photoVariant && variantSelect) { variantSelect.value = button.dataset.photoVariant; updateVariant(); }
-  else showPhoto(button.dataset.photoSrc);
+  showPhoto(button.dataset.photoSrc);
 }));
 const zoomDialog = document.querySelector('[data-zoom-dialog]');
 document.querySelector('[data-photo-zoom]')?.addEventListener('click', () => {
