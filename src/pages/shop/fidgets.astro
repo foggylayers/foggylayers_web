@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import FacebookLink from '../../components/FacebookLink.astro';
+import products from '../../data/products.json';
+const fidgets = products.filter(product => product.category === 'Fidgets');
+const photos = [
+ { src: '/images/fidgets-woodland-closed.webp', alt: 'Seven colorful fidgets on woodland stone, with rainbow balls closed and nested stars extended' },
+ { src: '/images/fidgets-woodland-collection.webp', alt: 'Fidget collection with flat nested stars, an orange gear cube, open rainbow balls, and a folded infinity cube' },
+ { src: '/images/fidgets-woodland-open.webp', alt: 'Fidgets in open positions, including nested stars, a twist cylinder, rainbow balls, and a flat infinity cube' },
+ { src: '/images/fidgets-woodland-twists.webp', alt: 'Fidgets showing their changing shapes, including an open green twist cylinder and a twisted orange gear cube' }
+];
+---
+<Layout title="Fidgets" description="Explore colorful 3D-printed fidgets: nested stars, gear cubes, rainbow twist balls, twist cylinders, and infinity cubes. Shipping or Everett pickup.">
+ <section class="page-intro"><div class="container">
+  <p class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/shop/">The collection</a><span>/</span><span>Fidgets</span></p>
+  <p class="eyebrow kicker">Something curious for busy hands</p>
+  <h1>Twist. Fold. Fidget.</h1>
+  <p class="lede">Colorful 3D-printed shapes with movement to explore. Browse five kinds of fidgets and seven photographed designs, then ask us about current colors and pricing. Shipping and local pickup in Everett, WA.</p>
+ </div></section>
+ <section class="container catalog-section" aria-labelledby="fidgets-heading">
+  <div class="section-head"><div><p class="eyebrow">Find your favorite movement</p><h2 id="fidgets-heading">Meet the fidgets.</h2></div><a class="text-link" href="/shop/">All prints <Icon name="arrow" size={16}/></a></div>
+  <div class="product-grid">{fidgets.map((product,index) => <ProductCard product={product} index={index}/>)}</div>
+  <div class="collection-foot"><span>Collection photos show the designs together in different poses.</span><FacebookLink>Ask about a fidget on Facebook ↗</FacebookLink></div>
+ </section>
+ <section class="container section" aria-labelledby="fidget-photos-heading">
+  <div class="section-head"><div><p class="eyebrow">Four views of the collection</p><h2 id="fidget-photos-heading">A closer look.</h2></div></div>
+  <div class="fidget-photo-grid">{photos.map(photo => <a href={photo.src} aria-label={`Enlarge photo: ${photo.alt}`}><img src={photo.src} alt={photo.alt} width="1448" height="1086" loading="lazy"/></a>)}</div>
+ </section>
+</Layout>

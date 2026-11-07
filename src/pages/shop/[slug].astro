@@ -12,7 +12,7 @@ const photoStyle = `object-position:${product.imagePosition};object-fit:${produc
 ---
 <Layout title={product.name} description={product.description}>
  <section class="container product-detail" data-product-detail={product.id}>
-  <p class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/shop/">The collection</a><span>/</span><span>{product.name}</span></p>
+  <p class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/shop/">The collection</a><span>/</span>{product.category === 'Fidgets' && <><a href="/shop/fidgets/">Fidgets</a><span>/</span></>}<span>{product.name}</span></p>
   <div class:list={['product-layout',{'product-layout--text':!hasPhotos}]}>
    {hasPhotos && <div class="product-gallery">
     <button class="product-main-image" data-photo-zoom aria-label={`Enlarge photo of ${product.name}`} style={product.imageAspectRatio ? `aspect-ratio:${product.imageAspectRatio}` : undefined}><img src={product.images[0]} alt={product.name} data-main-photo width={product.imageWidth || 768} height={product.imageHeight || 1024} style={photoStyle}/></button>
@@ -42,3 +42,4 @@ const photoStyle = `object-position:${product.imagePosition};object-fit:${produc
  </section>
  {hasPhotos && <dialog class="zoom-dialog" data-zoom-dialog aria-label="Enlarged product photograph"><button data-close-zoom aria-label="Close photo"><Icon name="close"/></button><img src={product.images[0]} alt={`Enlarged photo of ${product.name}`} data-zoom-photo/></dialog>}
 </Layout>
+

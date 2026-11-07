@@ -42,3 +42,8 @@
   .cart-contact{margin-block:16px 22px}
   .order-contact{margin-top:24px}
 }
+
+.fidget-photo-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.fidget-photo-grid a{display:block;overflow:hidden;border-radius:4px}
+.fidget-photo-grid img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:contain}
+@media(max-width:600px){.fidget-photo-grid{grid-template-columns:1fr;gap:16px}}

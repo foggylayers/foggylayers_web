@@ -446,36 +446,147 @@
   },
   {
     "id": "desk-fidgets",
-    "name": "Desk Fidgets",
+    "name": "Nested Star Fidgets",
     "category": "Fidgets",
-    "eyebrow": "Something curious for busy hands.",
-    "description": "Choose a purple nested-star design with repeating points or a blue gear-style fidget with interlocking shapes. Each has a distinct printed pattern and movement to explore. Ask about current colors and pricing.",
-    "images": [],
     "imagePosition": "50% 50%",
-    "imageScale": 1.15,
-    "imageFit": "cover",
-    "color": "Purple star or blue gear",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
     "priceCents": null,
     "status": "inquiry",
     "size": null,
-    "material": null,
+    "material": "3D-printed plastic",
+    "eyebrow": "Layers of color, ready to stretch and nest.",
+    "description": "Explore a stack of nested star outlines that extends into a stepped shape and folds back down. Choose a purple gradient with pale edges or a blue, white, and red design. The collection photos show both styles alongside the other fidgets. Ask about current colors and pricing.",
+    "images": [
+      "/images/fidgets-woodland-closed.webp",
+      "/images/fidgets-woodland-open.webp",
+      "/images/fidgets-woodland-collection.webp",
+      "/images/fidgets-woodland-twists.webp"
+    ],
+    "color": "Purple gradient or blue, white, and red",
     "variants": [
       {
         "id": "nested-star-fidget",
-        "name": "Nested star \u00b7 purple",
-        "imageScale": 1.15,
-        "imagePosition": "50% 50%",
-        "imageFit": "cover"
+        "name": "Nested star \u00b7 purple gradient"
       },
       {
-        "id": "gear-fidget",
-        "name": "Gear fidget \u00b7 blue",
-        "imageScale": 1.15,
-        "imagePosition": "50% 50%",
-        "imageFit": "cover"
+        "id": "tricolor-star-fidget",
+        "name": "Nested star \u00b7 blue, white, and red"
       }
     ],
-    "variantLabel": "Choose your design"
+    "variantLabel": "Choose your design",
+    "sharedGallery": true
+  },
+  {
+    "id": "gear-cube-fidget",
+    "name": "Gear Cube Fidget",
+    "category": "Fidgets",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic",
+    "eyebrow": "Interlocking gears with a twist.",
+    "description": "An orange cube made from interlocking gear-shaped panels. Turn it to explore the changing shapes and exposed gear teeth. See it in its cube and twisted positions in the collection photos. Ask about available colors and pricing.",
+    "images": [
+      "/images/fidgets-woodland-collection.webp",
+      "/images/fidgets-woodland-open.webp",
+      "/images/fidgets-woodland-twists.webp",
+      "/images/fidgets-woodland-closed.webp"
+    ],
+    "color": "Orange"
+  },
+  {
+    "id": "rainbow-twist-balls",
+    "name": "Rainbow Twist Balls",
+    "category": "Fidgets",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic",
+    "eyebrow": "A colorful sphere with a playful transformation.",
+    "description": "Segmented rainbow spheres that twist open into curved shapes and close back into a ball. Choose the rainbow gradient or the pastel blue-topped style with black eyes and red cheeks. The collection photos show both designs open and closed. Ask about current colors and pricing.",
+    "images": [
+      "/images/fidgets-woodland-open.webp",
+      "/images/fidgets-woodland-collection.webp",
+      "/images/fidgets-woodland-twists.webp",
+      "/images/fidgets-woodland-closed.webp"
+    ],
+    "color": "Rainbow gradient or pastel rainbow with a face",
+    "variants": [
+      {
+        "id": "rainbow-twist-ball",
+        "name": "Rainbow gradient"
+      },
+      {
+        "id": "face-twist-ball",
+        "name": "Pastel rainbow \u00b7 smiling face"
+      }
+    ],
+    "variantLabel": "Choose your design",
+    "sharedGallery": true
+  },
+  {
+    "id": "twist-cylinder-fidget",
+    "name": "Twist Cylinder Fidget",
+    "category": "Fidgets",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic",
+    "eyebrow": "A twist on your everyday desk fidget.",
+    "description": "An olive-green articulated cylinder with spiraling segments and a central opening. Twist and open the linked pieces to explore its changing shape, then bring them back into a cylinder. Browse the collection photos for its different poses and ask about pricing.",
+    "images": [
+      "/images/fidgets-woodland-twists.webp",
+      "/images/fidgets-woodland-open.webp",
+      "/images/fidgets-woodland-collection.webp",
+      "/images/fidgets-woodland-closed.webp"
+    ],
+    "color": "Olive green"
+  },
+  {
+    "id": "infinity-cube-fidget",
+    "name": "Infinity Cube Fidget",
+    "category": "Fidgets",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic",
+    "eyebrow": "Fold, flip, and start again.",
+    "description": "A blue and lavender fidget made from linked blocks that fold into new configurations. The collection photos show it folded compactly, opened flat, and arranged into an arch. Ask about current colors, availability, and pricing.",
+    "images": [
+      "/images/fidgets-woodland-collection.webp",
+      "/images/fidgets-woodland-open.webp",
+      "/images/fidgets-woodland-twists.webp",
+      "/images/fidgets-woodland-closed.webp"
+    ],
+    "color": "Blue and lavender"
   },
   {
     "id": "forest-vase",
