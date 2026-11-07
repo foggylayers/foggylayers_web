@@ -208,18 +208,15 @@
     "name": "Animal Keychains & Charms",
     "category": "Keychains",
     "eyebrow": "Your favorite little animal, to go. $2 each.",
-    "description": "Take a small animal character along on your keys or bag. Choose a fox, tiger, duck, penguin, rhino, otter, or woodland friend, with the attachment shown in its photo. The woodland loop styles use a slim strap; the other pictured styles use a metal key ring. Each small figure charm is $2, including its pictured attachment.",
+    "description": "Take a colorful little companion along on your keys or bag. These 3D-printed animal charms have articulated bodies and playful details. Browse the woodland collection photos and choose your design below. Key ring and loop-strap attachments vary by design. Each animal charm is $2, including its attachment.",
     "images": [
-      "/images/fox-keychain.jpeg",
-      "/images/tiger-keychain.jpeg",
-      "/images/duck-keychain.jpeg",
-      "/images/penguin-keychain.jpeg",
-      "/images/otter-keychain.jpeg",
-      "/images/tan-woodland-loop.jpeg"
+      "/images/keychains-woodland-collection.webp",
+      "/images/keychains-woodland-overhead.webp",
+      "/images/keychains-woodland-front.webp"
     ],
-    "imagePosition": "50% 49%",
-    "imageScale": 1.1,
-    "imageFit": "cover",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
     "color": "See photographed options",
     "priceCents": 200,
     "status": "available",
@@ -228,100 +225,88 @@
     "variants": [
       {
         "id": "fox-keychain",
-        "name": "Fox \u00b7 key ring",
-        "image": "/images/fox-keychain.jpeg",
-        "imageScale": 1.1,
-        "imagePosition": "50% 49%",
-        "imageFit": "cover"
+        "name": "Fox \u00b7 key ring"
       },
       {
         "id": "tiger-keychain",
-        "name": "Tiger \u00b7 key ring",
-        "image": "/images/tiger-keychain.jpeg",
-        "imageScale": 1.15,
-        "imagePosition": "50% 45%",
-        "imageFit": "cover"
+        "name": "Tiger \u00b7 key ring"
       },
       {
         "id": "duck-keychain",
-        "name": "Mallard duck \u00b7 key ring",
-        "image": "/images/duck-keychain.jpeg",
-        "imageScale": 1,
-        "imagePosition": "50% 50%",
-        "imageFit": "contain"
+        "name": "Mallard duck \u00b7 key ring"
       },
       {
         "id": "penguin-keychain",
-        "name": "Penguin \u00b7 key ring",
-        "image": "/images/penguin-keychain.jpeg",
-        "imageScale": 1.3,
-        "imagePosition": "50% 40%",
-        "imageFit": "cover"
+        "name": "Penguin \u00b7 key ring"
       },
       {
         "id": "rhino-keychain",
-        "name": "Rhino \u00b7 key ring",
-        "imageScale": 1,
-        "imagePosition": "50% 50%",
-        "imageFit": "contain"
+        "name": "Rhino \u00b7 key ring"
       },
       {
         "id": "otter-keychain",
-        "name": "Otter \u00b7 key ring",
-        "image": "/images/otter-keychain.jpeg",
-        "imageScale": 1.15,
-        "imagePosition": "50% 43%",
-        "imageFit": "cover"
+        "name": "Otter \u00b7 key ring"
       },
       {
         "id": "red-woodland-keychain",
-        "name": "Woodland friend \u00b7 red \u00b7 key ring",
-        "imageScale": 1.1,
-        "imagePosition": "50% 48%",
-        "imageFit": "cover"
+        "name": "Woodland friend \u00b7 red \u00b7 key ring"
       },
       {
         "id": "tan-woodland-loop",
-        "name": "Woodland friend \u00b7 tan \u00b7 loop strap",
-        "image": "/images/tan-woodland-loop.jpeg",
-        "imageScale": 1.2,
-        "imagePosition": "50% 48%",
-        "imageFit": "cover"
+        "name": "Woodland friend \u00b7 tan \u00b7 loop strap"
       }
     ],
-    "variantLabel": "Choose your design"
+    "variantLabel": "Choose your design",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "sharedGallery": true
   },
   {
     "id": "mini-dragon-keychain",
     "name": "Mini Dragon Keychain",
     "category": "Keychains",
     "eyebrow": "A little dragon for everyday adventures.",
-    "description": "A small pink dragon with a segmented body, sculpted fins, and a metal key ring. The warm pink and orange tones show off its layered shape. Clip a little fantasy onto your keys or bag for $2 each.",
-    "images": [],
-    "imagePosition": "65% 62%",
-    "imageScale": 1.15,
-    "imageFit": "cover",
-    "color": "Pink gradient",
+    "description": "A little fantasy for your keys or bag. Browse the woodland collection photos for green, pink, and purple articulated dragons with sculpted details and metal key rings. Ask about current colors and styles. Each mini dragon keychain is $2.",
+    "images": [
+      "/images/keychains-woodland-collection.webp",
+      "/images/keychains-woodland-overhead.webp",
+      "/images/keychains-woodland-front.webp"
+    ],
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "color": "Ask about current dragon colors",
     "priceCents": 200,
     "status": "available",
     "size": null,
-    "material": null
+    "material": null,
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086
   },
   {
     "id": "platypus-keychain",
     "name": "Platypus Keychain",
     "category": "Keychains",
     "eyebrow": "A very small agent of adventure. $2 each.",
-    "description": "A teal platypus with an orange bill and tail, a brown hat, and a segmented body full of character. A short chain and metal ring keep this little companion close to your keys or bag. Sold individually for $2.",
-    "images": [],
+    "description": "A teal platypus with an orange bill and tail and a playful segmented body. See it alongside the other mini pets in the woodland collection photos. A short chain and metal ring keep this little companion close to your keys or bag. Sold individually for $2.",
+    "images": [
+      "/images/keychains-woodland-collection.webp",
+      "/images/keychains-woodland-overhead.webp",
+      "/images/keychains-woodland-front.webp"
+    ],
     "imagePosition": "50% 50%",
     "imageScale": 1,
-    "imageFit": "cover",
-    "color": "Teal, orange, and brown",
+    "imageFit": "contain",
+    "color": "Teal and orange",
     "priceCents": 200,
     "status": "available",
     "size": null,
-    "material": null
+    "material": null,
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086
   },
   {
     "id": "ocean-figures",
@@ -330,7 +315,6 @@
     "eyebrow": "Little sea creatures. $2 each.",
     "description": "Bring a little ocean character to your collection. Choose a gray spotted shark with a segmented body and key ring, or a blue-and-white hammerhead figure with a wide head and sculpted fins. The photographed attachment is included where shown. Each small sea creature is $2.",
     "images": [
-      "/images/spotted-shark-keychain.jpeg",
       "/images/hammerhead-figure.jpeg"
     ],
     "imagePosition": "50% 50%",
@@ -345,7 +329,6 @@
       {
         "id": "spotted-shark-keychain",
         "name": "Spotted shark \u00b7 gray \u00b7 key ring",
-        "image": "/images/spotted-shark-keychain.jpeg",
         "imageScale": 1.2,
         "imagePosition": "50% 50%",
         "imageFit": "cover"
@@ -451,9 +434,7 @@
     "category": "Keychains",
     "eyebrow": "The tiniest take on a favorite cup.",
     "description": "A miniature white tumbler charm with a handle, teal lid, and matching straw detail. Its removable lid adds a playful touch to this little accessory, and the metal ring lets it travel on a bag or set of keys. A decorative miniature; ask us about pricing and available colors.",
-    "images": [
-      "/images/tumbler-open.jpeg"
-    ],
+    "images": [],
     "imagePosition": "50% 40%",
     "imageScale": 1.35,
     "imageFit": "cover",
