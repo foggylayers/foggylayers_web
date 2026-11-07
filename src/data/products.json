@@ -1,155 +1,127 @@
 [
   {
     "id": "mini-animal-figures",
-    "name": "Mini Animal Figures",
+    "name": "Mini Flexi Pets",
     "category": "Small figures",
-    "eyebrow": "A whole little menagerie. $2 each.",
-    "description": "Pick a tiny companion with an oversized personality. From a striped tiger and bright-eyed fox to a duck, penguin, rabbit, wolf, otter, or woodland friend, each design brings its own face and printed details. Choose one favorite or mix a few. The price is $2 for one figure; keychain versions are listed separately.",
+    "eyebrow": "Tiny companions. Fun, flexible joints. 2 for $1 or 12 for $5.",
+    "description": "Pick a tiny 3D-printed companion with an oversized personality and fun articulated joints to fidget with. Choose a tiger, fox, duck, penguin, rabbit, wolf, otter, woodland friend, or platypus. About an inch long and full of color. Mix and match with our mini dragons: 2 for $1 or 12 for $5. Keychain versions are listed separately.",
     "images": [
-      "/images/fox-figure.jpeg",
-      "/images/penguin-figure.jpeg",
-      "/images/rabbit-figure.jpeg",
-      "/images/wolf-figure.jpeg",
-      "/images/red-woodland-figure.jpeg",
-      "/images/tan-woodland-figure.jpeg"
+      "/images/mini-pets-woodland-front.webp",
+      "/images/mini-pets-woodland-overhead.webp",
+      "/images/mini-pets-woodland-collection.webp"
     ],
-    "imagePosition": "50% 53%",
-    "imageScale": 1.4,
-    "imageFit": "cover",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
     "color": "See photographed options",
-    "priceCents": 200,
+    "priceCents": 50,
     "status": "available",
-    "size": null,
+    "size": "About 1 inch long",
     "material": null,
     "variants": [
       {
         "id": "tiger-figure",
-        "name": "Tiger · orange and black",
-        "imageScale": 1.75,
-        "imagePosition": "50% 0%",
-        "imageFit": "cover",
-        "imageOrigin": "50% 12%"
+        "name": "Tiger · orange and black"
       },
       {
         "id": "fox-figure",
-        "name": "Fox · orange and white",
-        "image": "/images/fox-figure.jpeg",
-        "imageScale": 1.4,
-        "imagePosition": "50% 53%",
-        "imageFit": "cover"
+        "name": "Fox · orange and white"
       },
       {
         "id": "duck-figure",
-        "name": "Mallard duck · brown and green",
-        "imageScale": 1.65,
-        "imagePosition": "50% 46%",
-        "imageFit": "cover"
+        "name": "Mallard duck · brown and green"
       },
       {
         "id": "penguin-figure",
-        "name": "Penguin · black and white",
-        "image": "/images/penguin-figure.jpeg",
-        "imageScale": 2,
-        "imagePosition": "50% 51%",
-        "imageFit": "cover"
+        "name": "Penguin · black and white"
       },
       {
         "id": "rabbit-figure",
-        "name": "Rabbit · purple and pink",
-        "image": "/images/rabbit-figure.jpeg",
-        "imageScale": 1.15,
-        "imagePosition": "50% 45%",
-        "imageFit": "cover"
+        "name": "Rabbit · purple and pink"
       },
       {
         "id": "wolf-figure",
-        "name": "Wolf · gray and white",
-        "image": "/images/wolf-figure.jpeg",
-        "imageScale": 1,
-        "imagePosition": "50% 50%",
-        "imageFit": "contain"
+        "name": "Wolf · gray and white"
       },
       {
         "id": "otter-figure",
-        "name": "Otter · brown",
-        "imageScale": 1.2,
-        "imagePosition": "50% 50%",
-        "imageFit": "contain"
+        "name": "Otter · brown"
       },
       {
         "id": "red-woodland-figure",
-        "name": "Woodland friend · red",
-        "image": "/images/red-woodland-figure.jpeg",
-        "imageScale": 1.7,
-        "imagePosition": "50% 49%",
-        "imageFit": "cover"
+        "name": "Woodland friend · red"
       },
       {
         "id": "tan-woodland-figure",
-        "name": "Woodland friend · tan",
-        "image": "/images/tan-woodland-figure.jpeg",
-        "imageScale": 1.55,
-        "imagePosition": "50% 46%",
-        "imageFit": "cover"
+        "name": "Woodland friend · tan"
+      },
+      {
+        "id": "platypus-figure",
+        "name": "Platypus · teal and orange"
       }
     ],
-    "variantLabel": "Choose your design"
+    "variantLabel": "Choose your design",
+    "imageAspectRatio": "4 / 3",
+    "sharedGallery": true,
+    "priceLabel": "2 for $1 · 12 for $5",
+    "bundlePricing": {
+      "group": "mini-pets",
+      "quantity": 12,
+      "priceCents": 500
+    },
+    "priceNote": "Mix and match mini pets and mini dragons. Every 12 pets are $5; remaining pets are $0.50 each. Bundle savings apply automatically in your bag.",
+    "imageWidth": 1448,
+    "imageHeight": 1086
   },
   {
     "id": "mini-dragon-figures",
     "name": "Mini Dragon Figures",
     "category": "Small figures",
-    "eyebrow": "Pocket-sized fantasy. $2 each.",
-    "description": "A little dragon can make a big impression. Choose a white dragon with green or lilac crystal-like details, a black winged dragon with bright eyes, or a teal dragon with sculpted fins. Their segmented shapes and contrasting details give each design a distinct personality. $2 buys one small figure.",
+    "eyebrow": "Pocket-sized fantasy. 2 for $1 or 12 for $5.",
+    "description": "A little dragon can make a big impression. Choose a white dragon with green or lilac crystal-like details, a black winged dragon with bright eyes, or a teal dragon with sculpted fins. Their articulated bodies are fun to fidget with. Mix and match with our mini pets: 2 for $1 or 12 for $5. Keychain versions are listed separately.",
     "images": [
-      "/images/green-crystal-dragon.jpeg",
-      "/images/lilac-crystal-dragon.jpeg",
-      "/images/black-winged-dragon.jpeg"
+      "/images/mini-pets-woodland-front.webp",
+      "/images/mini-pets-woodland-overhead.webp",
+      "/images/mini-pets-woodland-collection.webp"
     ],
-    "imagePosition": "50% 0%",
-    "imageScale": 1.7,
-    "imageFit": "cover",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
     "color": "See photographed options",
-    "priceCents": 200,
+    "priceCents": 50,
     "status": "available",
-    "size": null,
+    "size": "About 1 inch long",
     "material": null,
     "variants": [
       {
         "id": "green-crystal-dragon",
-        "name": "Crystal dragon · green and white",
-        "image": "/images/green-crystal-dragon.jpeg",
-        "imageScale": 1.7,
-        "imagePosition": "50% 0%",
-        "imageFit": "cover",
-        "imageOrigin": "50% 10%"
+        "name": "Crystal dragon · green and white"
       },
       {
         "id": "lilac-crystal-dragon",
-        "name": "Crystal dragon · lilac and white",
-        "image": "/images/lilac-crystal-dragon.jpeg",
-        "imageScale": 1.65,
-        "imagePosition": "50% 41%",
-        "imageFit": "cover"
+        "name": "Crystal dragon · lilac and white"
       },
       {
         "id": "black-winged-dragon",
-        "name": "Winged dragon · black",
-        "image": "/images/black-winged-dragon.jpeg",
-        "imageScale": 1.65,
-        "imagePosition": "50% 47%",
-        "imageFit": "cover"
+        "name": "Winged dragon · black"
       },
       {
         "id": "teal-mini-dragon",
-        "name": "Fin dragon · teal",
-        "imageScale": 1,
-        "imagePosition": "50% 50%",
-        "imageFit": "contain"
+        "name": "Fin dragon · teal"
       }
     ],
     "variantLabel": "Choose your design",
-    "imageOrigin": "50% 10%"
+    "imageAspectRatio": "4 / 3",
+    "sharedGallery": true,
+    "priceLabel": "2 for $1 · 12 for $5",
+    "bundlePricing": {
+      "group": "mini-pets",
+      "quantity": 12,
+      "priceCents": 500
+    },
+    "priceNote": "Mix and match mini pets and mini dragons. Every 12 pets are $5; remaining pets are $0.50 each. Bundle savings apply automatically in your bag.",
+    "imageWidth": 1448,
+    "imageHeight": 1086
   },
   {
     "id": "halloween-figures",

@@ -140,6 +140,22 @@ test('shipping checkout adds the configured rate and destination restrictions', 
   delete env.STRIPE_SHIPPING_RATE_ID; data.checkoutKey = crypto.randomUUID();
   assert.equal((await worker.fetch(request('/api/checkout', data), env)).status, 503);
 });
+test('bundle checkout and payment verification use the exact discounted total', async () => {
+  const env = environment();
+  const miniCatalog = [{id:'mini-pet',name:'Mini pet',status:'available',priceCents:50,bundlePricing:{group:'mini-pets',quantity:12,priceCents:500}}];
+  const worker = createWorker({ business, catalog:miniCatalog, fetcher:async (_url,init) => {
+    assert.equal(init.body.get('line_items[0][price_data][unit_amount]'),'500');
+    assert.equal(init.body.get('line_items[0][quantity]'),'1');
+    assert.match(init.body.get('line_items[0][price_data][product_data][name]'),/× 12$/);
+    return Response.json({id:sessionId,url:sessionURL});
+  } });
+  const checkoutKey = crypto.randomUUID();
+  const data = {items:[{id:'mini-pet',quantity:12,priceCents:1,lineTotalCents:1}],fulfillment:'pickup',checkoutKey};
+  assert.equal((await worker.fetch(request('/api/checkout',data),env)).status,200);
+  assert.equal((await deliver(worker,env,eventFor(checkoutKey,{amount_subtotal:600}))).status,400);
+  assert.equal((await deliver(worker,env,eventFor(checkoutKey,{amount_subtotal:500}))).status,200);
+  assert.equal(env.DB.db.prepare('SELECT status FROM orders WHERE id = ?').get(checkoutKey).status,'paid');
+});
 test('webhook signatures reject tampering and expired signatures while allowing rotation', async () => {
   const body = '{"test":true}'; const signature = await signedEvent(body);
   assert.equal(await verifyStripeSignature(body, signature, signatureSecret), true);

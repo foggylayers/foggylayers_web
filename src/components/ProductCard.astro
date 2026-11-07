@@ -2,7 +2,7 @@
 import Icon from './Icon.astro';
 const { product, index = 0 } = Astro.props;
 const hasPhoto = product.images.length > 0;
-const price = Number.isInteger(product.priceCents) ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(product.priceCents / 100) : 'Ask for pricing';
+const price = product.priceLabel || (Number.isInteger(product.priceCents) ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(product.priceCents / 100) : 'Ask for pricing');
 ---
 <article class:list={['product-card',{'product-card--text':!hasPhoto}]} data-category={product.category} data-name={[product.name, ...(product.variants || []).map(variant => variant.name)].join(' ').toLowerCase()}>
   {hasPhoto && <a class="product-photo" href={`/shop/${product.id}/`} aria-label={`View ${product.name}`} style={product.imageAspectRatio ? `aspect-ratio:${product.imageAspectRatio}` : undefined}>
@@ -10,7 +10,7 @@ const price = Number.isInteger(product.priceCents) ? new Intl.NumberFormat('en-U
     <span class="product-index">{String(index + 1).padStart(2, '0')} / THE COLLECTION</span>
     <span class="product-open"><Icon name="diagonal" /></span>
   </a>}
-  <div class="product-meta"><span class="eyebrow">{product.variants ? `${product.variants.length} designs` : product.category}</span><span class="product-price">{price}{product.priceCents === 200 && ' each'}</span></div>
+  <div class="product-meta"><span class="eyebrow">{product.variants ? `${product.variants.length} designs` : product.category}</span><span class="product-price">{price}{!product.priceLabel && product.priceCents === 200 && ' each'}</span></div>
   <h3><a href={`/shop/${product.id}/`}>{product.name}</a></h3>
   <p>{product.eyebrow}</p>
   {!hasPhoto && <a class="text-link product-details-link" href={`/shop/${product.id}/`}>View details <Icon name="arrow" size={16}/></a>}

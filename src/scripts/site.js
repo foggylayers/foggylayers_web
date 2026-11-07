@@ -1,6 +1,7 @@
 import products from '../data/products.json';
 import { newId } from './ids.js';
 import { sellable, variantFor, lineKey, normalizeBag } from './bag.mjs';
+import { applyBundlePricing, cartItemTotal } from './pricing.mjs';
 
 const catalog = new Map(products.map(product => [product.id, product]));
 const storageKey = 'foggy-layers-bag-v1';
@@ -85,7 +86,7 @@ function showPhoto(src) {
 }
 function updateVariant() {
   const variant = variantFor(detailProduct, variantSelect?.value);
-  showPhoto(variant ? variant.image : detailProduct.images[0]);
+  showPhoto(variant ? (variant.image || (detailProduct.sharedGallery ? detailProduct.images[0] : undefined)) : detailProduct.images[0]);
   const caption = document.querySelector('[data-selected-design]');
   if (caption) caption.textContent = variant?.name || detailProduct.color;
 }
@@ -131,12 +132,12 @@ function renderCart() {
   document.querySelector('[data-cart-empty]').hidden = bag.length > 0;
   document.querySelector('[data-cart-layout]').hidden = bag.length === 0;
   let subtotal = 0;
-  for (const item of bag) {
+  for (const item of applyBundlePricing(bag, catalog)) {
     const product = catalog.get(item.id);
     const variant = variantFor(product, item.variantId);
-    subtotal += product.priceCents * item.quantity;
+    subtotal += cartItemTotal(item);
     const row = document.createElement('article'); row.className = 'cart-row';
-    const imageSrc = variant ? variant.image : product.images[0];
+    const imageSrc = variant ? (variant.image || (product.sharedGallery ? product.images[0] : undefined)) : product.images[0];
     if (imageSrc) {
       const image = document.createElement('img'); image.src = imageSrc; image.alt = variant?.name || product.name; image.style.objectPosition = variant?.imagePosition || product.imagePosition;
       row.append(image);
@@ -144,12 +145,12 @@ function renderCart() {
     const details = document.createElement('div');
     const heading = document.createElement('h2');
     const link = document.createElement('a'); link.href = `/shop/${product.id}/`; link.textContent = product.name; heading.append(link);
-    const line = document.createElement('p'); line.textContent = `Quantity: ${item.quantity} · ${currency(product.priceCents)} each`;
+    const line = document.createElement('p'); line.textContent = `Quantity: ${item.quantity} · ${product.priceLabel || `${currency(product.priceCents)} each`}`;
     const design = document.createElement('p'); design.textContent = variant?.name || product.color;
     const remove = document.createElement('button'); remove.type = 'button'; remove.className = 'cart-remove'; remove.textContent = 'Remove'; remove.setAttribute('aria-label', `Remove ${variant?.name || product.name}`);
     remove.addEventListener('click', () => { bag = bag.filter(entry => lineKey(entry) !== lineKey(item)); saveBag(); renderCart(); });
     details.append(heading, design, line, remove);
-    const amount = document.createElement('span'); amount.textContent = currency(product.priceCents * item.quantity); amount.style.fontSize = '12px';
+    const amount = document.createElement('span'); amount.textContent = currency(cartItemTotal(item)); amount.style.fontSize = '12px';
     row.append(details, amount); container.append(row);
   }
   document.querySelector('[data-cart-subtotal]').textContent = currency(subtotal);

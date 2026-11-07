@@ -1,6 +1,7 @@
 import defaultProducts from '../src/data/products.json' with { type: 'json' };
 import defaultBusiness from '../src/data/site.json' with { type: 'json' };
 import { createFacebookAPI } from './facebook.mjs';
+import { applyBundlePricing, cartItemTotal } from '../src/scripts/pricing.mjs';
 
 const MiB = 1024 * 1024;
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
@@ -46,7 +47,7 @@ export function validateProject(form, catalog = defaultProducts) {
 export function normalizeCart(items, catalog = defaultProducts) {
   if (!Array.isArray(items) || !items.length || items.length > 50) throw new HttpError(400, 'Choose between 1 and 50 different prints for your order.');
   const seen = new Set();
-  return items.map(item => {
+  const normalized = items.map(item => {
     if (!item || typeof item.id !== 'string') throw new HttpError(400, 'Please check the items in your bag.');
     const product = catalog.find(product => product.id === item.id);
     if (!product || product.status !== 'available' || !Number.isSafeInteger(product.priceCents) || product.priceCents < 50 || product.priceCents > 1000000) throw new HttpError(400, 'One of these prints is not available for online checkout. Please request a quote.');
@@ -59,6 +60,7 @@ export function normalizeCart(items, catalog = defaultProducts) {
     // Prices and names come only from the server's catalog, never from the browser.
     return { id: product.id, name: variant ? `${product.name} — ${variant.name}` : product.name, quantity: item.quantity, priceCents: product.priceCents, ...(variant ? { variantId: variant.id } : {}) };
   }).sort((a, b) => a.id.localeCompare(b.id) || (a.variantId || '').localeCompare(b.variantId || ''));
+  return applyBundlePricing(normalized, new Map(catalog.map(product => [product.id, product])));
 }
 
 async function limitedBody(request, limit) {
@@ -165,10 +167,11 @@ export function createWorker({ catalog = defaultProducts, business = defaultBusi
     const siteURL = new URL(env.SITE_URL || business.url).origin;
     const parameters = new URLSearchParams({ mode: 'payment', success_url: `${siteURL}/order/thanks/?session_id={CHECKOUT_SESSION_ID}`, cancel_url: `${siteURL}/cart/?checkout=cancelled`, client_reference_id: id, 'metadata[order_id]': id, 'metadata[fulfillment]': data.fulfillment, 'automatic_tax[enabled]': env.STRIPE_AUTOMATIC_TAX === 'false' ? 'false' : 'true', billing_address_collection: 'required' });
     items.forEach((item, index) => {
+      const bundled = Number.isInteger(item.lineTotalCents);
       parameters.set(`line_items[${index}][price_data][currency]`, 'usd');
-      parameters.set(`line_items[${index}][price_data][product_data][name]`, item.name);
-      parameters.set(`line_items[${index}][price_data][unit_amount]`, String(item.priceCents));
-      parameters.set(`line_items[${index}][quantity]`, String(item.quantity));
+      parameters.set(`line_items[${index}][price_data][product_data][name]`, bundled ? `${item.name} × ${item.quantity}` : item.name);
+      parameters.set(`line_items[${index}][price_data][unit_amount]`, String(bundled ? cartItemTotal(item) : item.priceCents));
+      parameters.set(`line_items[${index}][quantity]`, String(bundled ? 1 : item.quantity));
     });
     if (data.fulfillment === 'shipping') {
       const countries = (env.SHIPPING_COUNTRIES || 'US').split(',').map(country => country.trim()).filter(Boolean);
@@ -200,7 +203,7 @@ export function createWorker({ catalog = defaultProducts, business = defaultBusi
     if (!order || (order.stripe_session_id && order.stripe_session_id !== session.id)) return json({ received: true });
     const paid = session.payment_status === 'paid' && ['checkout.session.completed', 'checkout.session.async_payment_succeeded'].includes(event.type);
     if (paid) {
-      const expected = JSON.parse(order.cart_json).reduce((sum, item) => sum + item.priceCents * item.quantity, 0);
+      const expected = JSON.parse(order.cart_json).reduce((sum, item) => sum + cartItemTotal(item), 0);
       if (session.currency !== 'usd' || session.amount_subtotal !== expected) throw new HttpError(400, 'Payment amount does not match the order.');
     }
     const state = paid ? 'paid' : event.type.endsWith('async_payment_failed') ? 'failed' : event.type.endsWith('expired') ? 'expired' : 'pending';
