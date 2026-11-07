@@ -2,13 +2,13 @@
   {
     "id": "mini-animal-figures",
     "name": "Mini Flexi Pets",
-    "category": "Small figures",
-    "eyebrow": "Tiny companions. Fun, flexible joints. 2 for $1 or 12 for $5.",
-    "description": "Pick a tiny 3D-printed companion with an oversized personality and fun articulated joints to fidget with. Choose a tiger, fox, duck, penguin, rabbit, wolf, otter, woodland friend, or platypus. About an inch long and full of color. Mix and match with our mini dragons: 2 for $1 or 12 for $5. Keychain versions are listed separately.",
+    "category": "Mini Pets",
+    "eyebrow": "Tiny dragons and animals. Mix and match: 2 for $1 or 12 for $5.",
+    "description": "Mix and match tiny 3D-printed dragons and animal friends in one collection. Choose a crystal dragon, winged dragon, fin dragon, tiger, fox, duck, penguin, rabbit, wolf, otter, woodland friend, or platypus. About an inch long, with colorful articulated bodies and fun joints to fidget with. Pick any mix: 2 for $1 or 12 for $5. Keychain versions are listed separately.",
     "images": [
+      "/images/mini-pets-woodland-collection.webp",
       "/images/mini-pets-woodland-front.webp",
-      "/images/mini-pets-woodland-overhead.webp",
-      "/images/mini-pets-woodland-collection.webp"
+      "/images/mini-pets-woodland-overhead.webp"
     ],
     "imagePosition": "50% 50%",
     "imageScale": 1,
@@ -21,107 +21,76 @@
     "variants": [
       {
         "id": "tiger-figure",
-        "name": "Tiger · orange and black"
+        "name": "Tiger \u00b7 orange and black"
       },
       {
         "id": "fox-figure",
-        "name": "Fox · orange and white"
+        "name": "Fox \u00b7 orange and white"
       },
       {
         "id": "duck-figure",
-        "name": "Mallard duck · brown and green"
+        "name": "Mallard duck \u00b7 brown and green"
       },
       {
         "id": "penguin-figure",
-        "name": "Penguin · black and white"
+        "name": "Penguin \u00b7 black and white"
       },
       {
         "id": "rabbit-figure",
-        "name": "Rabbit · purple and pink"
+        "name": "Rabbit \u00b7 purple and pink"
       },
       {
         "id": "wolf-figure",
-        "name": "Wolf · gray and white"
+        "name": "Wolf \u00b7 gray and white"
       },
       {
         "id": "otter-figure",
-        "name": "Otter · brown"
+        "name": "Otter \u00b7 brown"
       },
       {
         "id": "red-woodland-figure",
-        "name": "Woodland friend · red"
+        "name": "Woodland friend \u00b7 red"
       },
       {
         "id": "tan-woodland-figure",
-        "name": "Woodland friend · tan"
+        "name": "Woodland friend \u00b7 tan"
       },
       {
         "id": "platypus-figure",
-        "name": "Platypus · teal and orange"
-      }
-    ],
-    "variantLabel": "Choose your design",
-    "imageAspectRatio": "4 / 3",
-    "sharedGallery": true,
-    "priceLabel": "2 for $1 · 12 for $5",
-    "bundlePricing": {
-      "group": "mini-pets",
-      "quantity": 12,
-      "priceCents": 500
-    },
-    "priceNote": "Mix and match mini pets and mini dragons. Every 12 pets are $5; remaining pets are $0.50 each. Bundle savings apply automatically in your bag.",
-    "imageWidth": 1448,
-    "imageHeight": 1086
-  },
-  {
-    "id": "mini-dragon-figures",
-    "name": "Mini Dragon Figures",
-    "category": "Small figures",
-    "eyebrow": "Pocket-sized fantasy. 2 for $1 or 12 for $5.",
-    "description": "A little dragon can make a big impression. Choose a white dragon with green or lilac crystal-like details, a black winged dragon with bright eyes, or a teal dragon with sculpted fins. Their articulated bodies are fun to fidget with. Mix and match with our mini pets: 2 for $1 or 12 for $5. Keychain versions are listed separately.",
-    "images": [
-      "/images/mini-pets-woodland-front.webp",
-      "/images/mini-pets-woodland-overhead.webp",
-      "/images/mini-pets-woodland-collection.webp"
-    ],
-    "imagePosition": "50% 50%",
-    "imageScale": 1,
-    "imageFit": "contain",
-    "color": "See photographed options",
-    "priceCents": 50,
-    "status": "available",
-    "size": "About 1 inch long",
-    "material": null,
-    "variants": [
+        "name": "Platypus \u00b7 teal and orange"
+      },
       {
         "id": "green-crystal-dragon",
-        "name": "Crystal dragon · green and white"
+        "name": "Crystal dragon \u00b7 green and white"
       },
       {
         "id": "lilac-crystal-dragon",
-        "name": "Crystal dragon · lilac and white"
+        "name": "Crystal dragon \u00b7 lilac and white"
       },
       {
         "id": "black-winged-dragon",
-        "name": "Winged dragon · black"
+        "name": "Winged dragon \u00b7 black"
       },
       {
         "id": "teal-mini-dragon",
-        "name": "Fin dragon · teal"
+        "name": "Fin dragon \u00b7 teal"
       }
     ],
     "variantLabel": "Choose your design",
     "imageAspectRatio": "4 / 3",
     "sharedGallery": true,
-    "priceLabel": "2 for $1 · 12 for $5",
+    "priceLabel": "2 for $1 \u00b7 12 for $5",
     "bundlePricing": {
       "group": "mini-pets",
       "quantity": 12,
       "priceCents": 500
     },
-    "priceNote": "Mix and match mini pets and mini dragons. Every 12 pets are $5; remaining pets are $0.50 each. Bundle savings apply automatically in your bag.",
+    "priceNote": "Mix any mini dragon or animal design. Every 12 pets are $5; remaining pets are $0.50 each. Bundle savings apply automatically in your bag.",
     "imageWidth": 1448,
-    "imageHeight": 1086
+    "imageHeight": 1086,
+    "legacyIds": [
+      "mini-dragon-figures"
+    ]
   },
   {
     "id": "halloween-figures",
@@ -144,14 +113,14 @@
     "variants": [
       {
         "id": "pumpkin-figure",
-        "name": "Pumpkin character · orange",
+        "name": "Pumpkin character \u00b7 orange",
         "imageScale": 1.45,
         "imagePosition": "50% 39%",
         "imageFit": "cover"
       },
       {
         "id": "monster-figure",
-        "name": "Monster character · green",
+        "name": "Monster character \u00b7 green",
         "image": "/images/monster-figure.jpeg",
         "imageScale": 1.65,
         "imagePosition": "50% 39%",
@@ -159,7 +128,7 @@
       },
       {
         "id": "skeleton-bear",
-        "name": "Skeleton bear · black and white",
+        "name": "Skeleton bear \u00b7 black and white",
         "image": "/images/skeleton-bear.jpeg",
         "imageScale": 1.35,
         "imagePosition": "50% 34%",
@@ -259,7 +228,7 @@
     "variants": [
       {
         "id": "fox-keychain",
-        "name": "Fox · key ring",
+        "name": "Fox \u00b7 key ring",
         "image": "/images/fox-keychain.jpeg",
         "imageScale": 1.1,
         "imagePosition": "50% 49%",
@@ -267,7 +236,7 @@
       },
       {
         "id": "tiger-keychain",
-        "name": "Tiger · key ring",
+        "name": "Tiger \u00b7 key ring",
         "image": "/images/tiger-keychain.jpeg",
         "imageScale": 1.15,
         "imagePosition": "50% 45%",
@@ -275,7 +244,7 @@
       },
       {
         "id": "duck-keychain",
-        "name": "Mallard duck · key ring",
+        "name": "Mallard duck \u00b7 key ring",
         "image": "/images/duck-keychain.jpeg",
         "imageScale": 1,
         "imagePosition": "50% 50%",
@@ -283,7 +252,7 @@
       },
       {
         "id": "penguin-keychain",
-        "name": "Penguin · key ring",
+        "name": "Penguin \u00b7 key ring",
         "image": "/images/penguin-keychain.jpeg",
         "imageScale": 1.3,
         "imagePosition": "50% 40%",
@@ -291,14 +260,14 @@
       },
       {
         "id": "rhino-keychain",
-        "name": "Rhino · key ring",
+        "name": "Rhino \u00b7 key ring",
         "imageScale": 1,
         "imagePosition": "50% 50%",
         "imageFit": "contain"
       },
       {
         "id": "otter-keychain",
-        "name": "Otter · key ring",
+        "name": "Otter \u00b7 key ring",
         "image": "/images/otter-keychain.jpeg",
         "imageScale": 1.15,
         "imagePosition": "50% 43%",
@@ -306,14 +275,14 @@
       },
       {
         "id": "red-woodland-keychain",
-        "name": "Woodland friend · red · key ring",
+        "name": "Woodland friend \u00b7 red \u00b7 key ring",
         "imageScale": 1.1,
         "imagePosition": "50% 48%",
         "imageFit": "cover"
       },
       {
         "id": "tan-woodland-loop",
-        "name": "Woodland friend · tan · loop strap",
+        "name": "Woodland friend \u00b7 tan \u00b7 loop strap",
         "image": "/images/tan-woodland-loop.jpeg",
         "imageScale": 1.2,
         "imagePosition": "50% 48%",
@@ -375,7 +344,7 @@
     "variants": [
       {
         "id": "spotted-shark-keychain",
-        "name": "Spotted shark · gray · key ring",
+        "name": "Spotted shark \u00b7 gray \u00b7 key ring",
         "image": "/images/spotted-shark-keychain.jpeg",
         "imageScale": 1.2,
         "imagePosition": "50% 50%",
@@ -383,7 +352,7 @@
       },
       {
         "id": "hammerhead-figure",
-        "name": "Hammerhead · blue and white · figure",
+        "name": "Hammerhead \u00b7 blue and white \u00b7 figure",
         "image": "/images/hammerhead-figure.jpeg",
         "imageScale": 1.2,
         "imagePosition": "50% 50%",
@@ -399,11 +368,11 @@
     "eyebrow": "Long tails. Layered scales. A world of color.",
     "description": "These longer dragons are made to show off: sculpted heads, rows of raised details, and segmented bodies that curve into expressive poses. Browse mint rainbow, pink rainbow, teal-and-pink, red-and-yellow, gold-horn, and pastel examples. Choose a style to ask about its size, available colors, and price.",
     "images": [
+      "/images/red-yellow-dragon-forest.webp",
       "/images/mint-rainbow-dragon-forest.webp",
       "/images/gold-horn-dragon-forest.webp",
       "/images/pink-rainbow-dragon-forest.webp",
       "/images/teal-pink-dragon-forest.webp",
-      "/images/red-yellow-dragon-forest.webp",
       "/images/pastel-dragon-forest.webp",
       "/images/pastel-dragon-forest-wide.webp",
       "/images/pastel-dragon-forest-front.webp"
@@ -438,7 +407,7 @@
       },
       {
         "id": "white-pink-dragon",
-        "name": "Pastel dragon · gold horns",
+        "name": "Pastel dragon \u00b7 gold horns",
         "image": "/images/gold-horn-dragon-forest.webp",
         "imageScale": 1,
         "imagePosition": "50% 50%",
@@ -512,14 +481,14 @@
     "variants": [
       {
         "id": "nested-star-fidget",
-        "name": "Nested star · purple",
+        "name": "Nested star \u00b7 purple",
         "imageScale": 1.15,
         "imagePosition": "50% 50%",
         "imageFit": "cover"
       },
       {
         "id": "gear-fidget",
-        "name": "Gear fidget · blue",
+        "name": "Gear fidget \u00b7 blue",
         "imageScale": 1.15,
         "imagePosition": "50% 50%",
         "imageFit": "cover"

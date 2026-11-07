@@ -25,7 +25,7 @@ test('mini pet pairs, dozens, and remainders use the advertised prices', () => {
     assert.equal(cart.reduce((sum,item)=>sum+cartItemTotal(item),0),expected);
   }
 });
-test('mixed animals and dragons share bundle savings with exact cent totals', () => {
+test('legacy dragon bags and combined pet designs share bundle savings with exact cent totals', () => {
   const input = [
     {id:'mini-dragon-figures',variantId:'black-winged-dragon',quantity:7},
     {id:'mini-animal-figures',variantId:'fox-figure',quantity:5},
@@ -41,6 +41,18 @@ test('mixed animals and dragons share bundle savings with exact cent totals', ()
   }
   const reordered = normalizeCart([...input].reverse());
   assert.deepEqual(reordered,cart);
+});
+test('saved dragon selections move into Mini Pets without losing quantities or bundle savings', () => {
+  const bag = normalizeBag([
+    {id:'mini-dragon-figures',variantId:'black-winged-dragon',quantity:3},
+    {id:'mini-animal-figures',variantId:'black-winged-dragon',quantity:4},
+    {id:'mini-animal-figures',variantId:'fox-figure',quantity:5}
+  ],catalog);
+  assert.deepEqual(bag.map(item=>[item.id,item.variantId,item.quantity]),[
+    ['mini-animal-figures','black-winged-dragon',7],
+    ['mini-animal-figures','fox-figure',5]
+  ]);
+  assert.equal(normalizeCart(bag).reduce((sum,item)=>sum+cartItemTotal(item),0),500);
 });
 test('multiple dozens are discounted across separate designs', () => {
   const cart = normalizeCart([

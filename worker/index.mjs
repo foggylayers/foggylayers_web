@@ -49,7 +49,7 @@ export function normalizeCart(items, catalog = defaultProducts) {
   const seen = new Set();
   const normalized = items.map(item => {
     if (!item || typeof item.id !== 'string') throw new HttpError(400, 'Please check the items in your bag.');
-    const product = catalog.find(product => product.id === item.id);
+    const product = catalog.find(product => product.id === item.id || product.legacyIds?.includes(item.id));
     if (!product || product.status !== 'available' || !Number.isSafeInteger(product.priceCents) || product.priceCents < 50 || product.priceCents > 1000000) throw new HttpError(400, 'One of these prints is not available for online checkout. Please request a quote.');
     const variant = product.variants?.find(variant => variant.id === item.variantId);
     if ((product.variants?.length && !variant) || (!product.variants?.length && item.variantId)) throw new HttpError(400, 'Choose an available design for each print.');

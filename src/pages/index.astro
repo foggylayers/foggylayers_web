@@ -4,7 +4,7 @@ import Icon from '../components/Icon.astro';
 import FacebookLink from '../components/FacebookLink.astro';
 import ProductCard from '../components/ProductCard.astro';
 import products from '../data/products.json';
-const preferred = ['mini-animal-figures','platypus-keychain','rainbow-dragon'];
+const preferred = ['mini-animal-figures','rainbow-dragon','animal-charms'];
 const featured = [...preferred.map(id => products.find(product => product.id === id)), ...products].filter((product,index,all) => product?.images.length && all.findIndex(item => item?.id === product.id) === index).slice(0,3);
 ---
 <Layout>

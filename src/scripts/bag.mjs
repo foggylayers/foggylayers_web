@@ -7,7 +7,7 @@ export function normalizeBag(items, catalog) {
   const merged = new Map();
   for (const item of items) {
     if (!item || typeof item.id !== 'string') continue;
-    const product = catalog.get(item.id);
+    const product = catalog.get(item.id) || [...catalog.values()].find(product => product.legacyIds?.includes(item.id));
     if (!sellable(product) || !Number.isInteger(item.quantity) || item.quantity < 1 || item.quantity > 20) continue;
     const variant = variantFor(product, item.variantId);
     if ((product.variants?.length && !variant) || (!product.variants?.length && item.variantId)) continue;
