@@ -1,0 +1,31 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Icon from '../../components/Icon.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import FacebookLink from '../../components/FacebookLink.astro';
+import products from '../../data/products.json';
+const collection = products.filter(product => product.category === 'GrichMas');
+const photos = [
+ { src: '/images/grichmas-six-ornaments.webp', alt: 'All six Grinch ornaments: Christmas lights, chimney, star, candy cane circle, snowflake bauble, and bow' },
+ { src: '/images/grichmas-ornament-stand-lights.webp', alt: 'Chimney, Christmas lights, and bow Grinch ornaments hanging on a green tree stand in a snowy village' },
+ { src: '/images/grichmas-ornament-stand-snowflakes.webp', alt: 'Candy cane circle, snowflake bauble, and star Grinch ornaments hanging on a green tree stand in a snowy village' },
+ { src: '/images/grichmas-stained-glass-grinch.webp', alt: 'Arched stained glass style Grinch decoration with red stars, green trees, and a red ornament in a snowy village' }
+];
+---
+<Layout title="GrichMas | Grinch Ornaments & Holiday Decor" description="Shop GrichMas: six 3D-printed Grinch ornament designs and a stained glass style Grinch decoration. Browse snowy holiday photos. Shipping or Everett pickup.">
+ <section class="page-intro"><div class="container">
+  <p class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/shop/">The collection</a><span>/</span><span>GrichMas</span></p>
+  <p class="eyebrow kicker">The Merry Grinchmas collection</p>
+  <h1>GrichMas</h1>
+  <p class="lede">A little holiday mischief, printed in layers. Pick from six Grinch ornament designs or bring home the arched stained glass style Grinch decoration. Ask us about pricing and availability. Shipping and local pickup in Everett, WA.</p>
+ </div></section>
+ <section class="container catalog-section" aria-labelledby="grichmas-products-heading">
+  <div class="section-head"><div><p class="eyebrow">Six ornaments. One festive decoration.</p><h2 id="grichmas-products-heading">Meet the collection.</h2></div><a class="text-link" href="/shop/">All prints <Icon name="arrow" size={16}/></a></div>
+  <div class="product-grid">{collection.map((product,index) => <ProductCard product={product} index={index}/>)}</div>
+  <div class="collection-foot"><span>Choose your favorite design and ask us for details.</span><FacebookLink>Ask about GrichMas on Facebook ↗</FacebookLink></div>
+ </section>
+ <section class="container section" aria-labelledby="grichmas-photos-heading">
+  <div class="section-head"><div><p class="eyebrow">A snowy holiday village</p><h2 id="grichmas-photos-heading">A closer look.</h2></div></div>
+  <div class="grichmas-photo-grid">{photos.map(photo => <a href={photo.src} aria-label={`Enlarge photo: ${photo.alt}`}><img src={photo.src} alt={photo.alt} width="1448" height="1086" loading="lazy"/></a>)}</div>
+ </section>
+</Layout>

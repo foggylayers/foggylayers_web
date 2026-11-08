@@ -3,10 +3,13 @@ import Icon from './Icon.astro';
 const { product, index = 0 } = Astro.props;
 const hasPhoto = product.images.length > 0;
 const price = product.priceLabel || (Number.isInteger(product.priceCents) ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(product.priceCents / 100) : 'Ask for pricing');
+const crop = product.cardCrop;
+const cardAspectRatio = crop ? `${crop.width} / ${crop.height}` : product.imageAspectRatio;
+const cropStyle = crop ? `position:absolute;width:${product.imageWidth / crop.width * 100}%;height:${product.imageHeight / crop.height * 100}%;max-width:none;left:${-crop.x / crop.width * 100}%;top:${-crop.y / crop.height * 100}%;object-fit:fill;` : '';
 ---
 <article class:list={['product-card',{'product-card--text':!hasPhoto}]} data-category={product.category} data-name={[product.name, ...(product.variants || []).map(variant => variant.name)].join(' ').toLowerCase()}>
-  {hasPhoto && <a class="product-photo" href={`/shop/${product.id}/`} aria-label={`View ${product.name}`} style={product.imageAspectRatio ? `aspect-ratio:${product.imageAspectRatio}` : undefined}>
-    <img src={product.images[0]} alt={`${product.name}, photographed as printed`} loading="lazy" width={product.imageWidth || 768} height={product.imageHeight || 1024} style={`object-position:${product.imagePosition};object-fit:${product.imageFit || 'cover'};--photo-scale:${product.imageScale || 1};transform-origin:${product.imageOrigin || product.imagePosition}`} />
+  {hasPhoto && <a class="product-photo" href={`/shop/${product.id}/`} aria-label={`View ${product.name}`} style={cardAspectRatio ? `aspect-ratio:${cardAspectRatio}` : undefined}>
+    <img src={product.images[0]} alt={product.cardImageAlt || `${product.name}, photographed as printed`} loading="lazy" width={product.imageWidth || 768} height={product.imageHeight || 1024} style={`object-position:${product.imagePosition};object-fit:${product.imageFit || 'cover'};--photo-scale:${product.imageScale || 1};transform-origin:${product.imageOrigin || product.imagePosition};${cropStyle}`} />
     <span class="product-index">{String(index + 1).padStart(2, '0')} / THE COLLECTION</span>
     <span class="product-open"><Icon name="diagonal" /></span>
   </a>}

@@ -1,5 +1,213 @@
 [
   {
+    "id": "grinch-christmas-lights-ornament",
+    "name": "Grinch Christmas Lights Ornament",
+    "category": "GrichMas",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "color": "Red, green, white, and black",
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic",
+    "eyebrow": "A mischievous smile and a string of lights.",
+    "description": "A flat 3D-printed Grinch ornament with a red Santa hat and a strand of red and white Christmas lights. Green, red, white, and black layers make the face and festive details stand out. This is the lights design at the upper left of the six-ornament collection photo. Ask about pricing and availability.",
+    "images": [
+      "/images/grichmas-six-ornaments.webp",
+      "/images/grichmas-ornament-stand-lights.webp",
+      "/images/grichmas-ornament-stand-snowflakes.webp"
+    ],
+    "cardCrop": {
+      "x": 135,
+      "y": 195,
+      "width": 430,
+      "height": 430
+    },
+    "cardImageAlt": "Grinch Christmas Lights Ornament shown in the snowy holiday collection photo"
+  },
+  {
+    "id": "grinch-chimney-ornament",
+    "name": "Grinch Chimney Ornament",
+    "category": "GrichMas",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "color": "Red, green, white, and black",
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic",
+    "eyebrow": "Peeking out for a little holiday mischief.",
+    "description": "The Grinch peeks over a snow-covered red brick chimney in this colorful 3D-printed ornament. A Santa hat, green hands, and bold black outlines complete the design. Find it at the upper center of the six-ornament collection photo. Ask about pricing and availability.",
+    "images": [
+      "/images/grichmas-six-ornaments.webp",
+      "/images/grichmas-ornament-stand-lights.webp",
+      "/images/grichmas-ornament-stand-snowflakes.webp"
+    ],
+    "cardCrop": {
+      "x": 490,
+      "y": 150,
+      "width": 430,
+      "height": 430
+    },
+    "cardImageAlt": "Grinch Chimney Ornament shown in the snowy holiday collection photo"
+  },
+  {
+    "id": "grinch-star-ornament",
+    "name": "Grinch Star Ornament",
+    "category": "GrichMas",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "color": "Red, green, white, and black",
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic",
+    "eyebrow": "A festive star with plenty of personality.",
+    "description": "A red open star frames the Grinch wearing a Santa hat, with his green face and hands resting along the lower edge. This flat 3D-printed design is at the upper right of the six-ornament collection photo. Ask about pricing and availability.",
+    "images": [
+      "/images/grichmas-six-ornaments.webp",
+      "/images/grichmas-ornament-stand-snowflakes.webp",
+      "/images/grichmas-ornament-stand-lights.webp"
+    ],
+    "cardCrop": {
+      "x": 865,
+      "y": 165,
+      "width": 450,
+      "height": 450
+    },
+    "cardImageAlt": "Grinch Star Ornament shown in the snowy holiday collection photo"
+  },
+  {
+    "id": "grinch-candy-cane-ornament",
+    "name": "Grinch Candy Cane Ornament",
+    "category": "GrichMas",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "color": "Red, green, white, and black",
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic",
+    "eyebrow": "A peppermint border and a familiar grin.",
+    "description": "Red and white candy cane stripes circle the Grinch in his Santa hat, with his hands peeking over the lower edge. This round 3D-printed ornament is at the lower left of the six-ornament collection photo. Ask about pricing and availability.",
+    "images": [
+      "/images/grichmas-six-ornaments.webp",
+      "/images/grichmas-ornament-stand-snowflakes.webp",
+      "/images/grichmas-ornament-stand-lights.webp"
+    ],
+    "cardCrop": {
+      "x": 30,
+      "y": 475,
+      "width": 510,
+      "height": 510
+    },
+    "cardImageAlt": "Grinch Candy Cane Ornament shown in the snowy holiday collection photo"
+  },
+  {
+    "id": "grinch-snowflake-bauble-ornament",
+    "name": "Grinch Snowflake Bauble Ornament",
+    "category": "GrichMas",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "color": "Red, green, white, and black",
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic",
+    "eyebrow": "Snowflakes below. Mischief above.",
+    "description": "The Grinch peeks over a red bauble decorated with white snowflakes in this flat 3D-printed ornament. His green face, red Santa hat, and black outlines add bright contrast. Find it at the lower center of the six-ornament collection photo. Ask about pricing and availability.",
+    "images": [
+      "/images/grichmas-six-ornaments.webp",
+      "/images/grichmas-ornament-stand-snowflakes.webp",
+      "/images/grichmas-ornament-stand-lights.webp"
+    ],
+    "cardCrop": {
+      "x": 475,
+      "y": 480,
+      "width": 470,
+      "height": 470
+    },
+    "cardImageAlt": "Grinch Snowflake Bauble Ornament shown in the snowy holiday collection photo"
+  },
+  {
+    "id": "grinch-bow-ornament",
+    "name": "Grinch Bow Ornament",
+    "category": "GrichMas",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "color": "Red, green, white, and black",
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic",
+    "eyebrow": "A big red bow and a cheeky holiday face.",
+    "description": "A bright red gift bow sits beneath the Grinch wearing his Santa hat. Green, red, white, and black printed layers give this ornament its bold holiday look. This is the bow design at the lower right of the six-ornament collection photo. Ask about pricing and availability.",
+    "images": [
+      "/images/grichmas-six-ornaments.webp",
+      "/images/grichmas-ornament-stand-lights.webp",
+      "/images/grichmas-ornament-stand-snowflakes.webp"
+    ],
+    "cardCrop": {
+      "x": 895,
+      "y": 465,
+      "width": 510,
+      "height": 510
+    },
+    "cardImageAlt": "Grinch Bow Ornament shown in the snowy holiday collection photo"
+  },
+  {
+    "id": "stained-glass-grinch",
+    "name": "Stained Glass Grinch",
+    "category": "GrichMas",
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "color": "Red, green, white, and black",
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic",
+    "eyebrow": "An arched holiday scene with a stained glass look.",
+    "description": "An arched 3D-printed decorative panel with a stained glass look. The Grinch wears a red Santa coat and hat and holds a red ornament, surrounded by green trees, red stars, white panels, and bold black outlines. Made from printed plastic, this festive display piece brings color to a shelf or holiday arrangement. Ask about dimensions, pricing, and availability.",
+    "images": [
+      "/images/grichmas-stained-glass-grinch.webp"
+    ],
+    "cardCrop": {
+      "x": 270,
+      "y": 25,
+      "width": 940,
+      "height": 940
+    },
+    "cardImageAlt": "Arched stained glass style Grinch decoration in a snowy holiday village"
+  },
+  {
     "id": "mini-animal-figures",
     "name": "Mini Flexi Pets",
     "category": "Mini Pets",
