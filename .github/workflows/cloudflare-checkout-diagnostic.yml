@@ -1,8 +1,6 @@
 name: Diagnose Cloudflare checkout
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -21,7 +19,7 @@ jobs:
           echo "CONFIG_HTTP_STATUS=$config_status"
           sed -n '1,30p' /tmp/config-headers.txt || true
           if jq -e . /tmp/config-body.txt >/dev/null 2>&1; then
-            jq '{checkoutEnabled,environment,clientIdPresent:(.clientId != null and .clientId != ""),sdkUrl,currency,countryCode,minimumOrderCents,flatShippingCents,shippingEnabled,pickupLabel,notificationsEnabled}' /tmp/config-body.txt
+            jq '{checkoutEnabled,readiness,environment,clientIdPresent:(.clientId != null and .clientId != ""),sdkUrl,currency,countryCode,minimumOrderCents,flatShippingCents,shippingEnabled,pickupLabel,notificationsEnabled}' /tmp/config-body.txt
           else
             echo 'CONFIG_BODY_BEGIN'
             head -c 1000 /tmp/config-body.txt || true
