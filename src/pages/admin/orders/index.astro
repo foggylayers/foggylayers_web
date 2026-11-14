@@ -1,0 +1,40 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import '../../../styles/commerce.css';
+---
+<Layout title="Order dashboard" noindex>
+  <section class="container orders-shell" data-orders-admin>
+    <p class="eyebrow kicker">Foggy Layers operations</p>
+    <h1>Order dashboard.</h1>
+    <p class="lede">Review captured PayPal orders and move them from new through printing, pickup or shipping, and completion.</p>
+
+    <form class="orders-auth" data-orders-auth>
+      <label for="orders-token">Orders admin token
+        <input id="orders-token" name="token" type="password" autocomplete="current-password" required minlength="32" />
+      </label>
+      <p>The token stays in this browser tab and is never written to the page URL.</p>
+      <button class="button" type="submit">Open orders</button>
+    </form>
+
+    <div data-orders-dashboard hidden>
+      <div class="orders-toolbar">
+        <label for="orders-filter">Show orders
+          <select id="orders-filter" data-orders-filter>
+            <option value="all">All PayPal orders</option>
+            <option value="paid">All paid orders</option>
+            <option value="new">New</option>
+            <option value="printing">Printing</option>
+            <option value="ready">Ready for pickup</option>
+            <option value="shipped">Shipped</option>
+            <option value="completed">Completed</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </label>
+        <button class="button" type="button" data-orders-refresh>Refresh</button>
+      </div>
+      <p class="form-error" data-orders-error role="alert" hidden></p>
+      <div class="orders-list" data-orders-list aria-live="polite"></div>
+    </div>
+  </section>
+  <script>import '../../../scripts/orders-admin.js';</script>
+</Layout>
