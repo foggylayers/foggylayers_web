@@ -17,6 +17,9 @@
     "SITE_URL": "https://foggylayers.com",
     "REQUESTS_ENABLED": "false",
     "COMMERCE_ENABLED": "false",
+    "PAYPAL_COMMERCE_ENABLED": "true",
+    "MINIMUM_ORDER_CENTS": "500",
+    "FLAT_SHIPPING_CENTS": "800",
     "FACEBOOK_PUBLISHING_ENABLED": "false",
     "FACEBOOK_API_VERSION": "v26.0",
     "SHIPPING_COUNTRIES": "US"

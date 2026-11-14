@@ -2,7 +2,7 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://challenges.cloudflare.com; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self' https://checkout.stripe.com
+  Content-Security-Policy: default-src 'self'; script-src 'self' https://www.paypal.com https://www.sandbox.paypal.com https://*.paypal.com https://*.paypalobjects.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://*.paypalobjects.com; img-src 'self' data: https://www.paypal.com https://www.sandbox.paypal.com https://*.paypal.com https://*.paypalobjects.com; connect-src 'self' https://www.paypal.com https://www.sandbox.paypal.com https://*.paypal.com https://*.paypalobjects.com https://challenges.cloudflare.com; frame-src https://www.paypal.com https://www.sandbox.paypal.com https://*.paypal.com https://*.paypalobjects.com https://challenges.cloudflare.com; font-src 'self' data: https://*.paypalobjects.com; worker-src 'self' blob:; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; form-action 'self' https://www.paypal.com https://www.sandbox.paypal.com https://*.paypal.com
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 /admin/*
