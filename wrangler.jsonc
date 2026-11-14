@@ -10,7 +10,8 @@
   },
   "observability": { "enabled": true },
   "exports": {
-    "FacebookPublisher": { "type": "durable-object", "storage": "sqlite" }
+    "FacebookPublisher": { "type": "durable-object", "storage": "sqlite" },
+    "OrderStore": { "type": "durable-object", "storage": "sqlite" }
   },
   "previews": {},
   "vars": {
