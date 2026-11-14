@@ -24,14 +24,29 @@ export class OrderStore extends DurableObject {
 }
 
 export default {
-  fetch(request, env, ctx) {
+  async fetch(request, env, ctx) {
     const runtime = { ...env, FACEBOOK_PUBLISHER: ctx.exports.FacebookPublisher };
     const pathname = new URL(request.url).pathname;
     if (pathname.startsWith('/api/paypal/') || pathname === '/api/admin/orders' || pathname.startsWith('/api/admin/orders/')) {
-      return paypalAPI(request, {
-        ...runtime,
-        DB: env.DB || createOrderDatabase(ctx.exports.OrderStore)
-      }, ctx);
+      const orderDatabase = env.DB || createOrderDatabase(ctx.exports.OrderStore);
+      const apiEnvironment = { ...runtime, DB: orderDatabase };
+      const response = await paypalAPI(request, apiEnvironment, ctx);
+      if (pathname === '/api/paypal/config' && request.method === 'GET') {
+        const data = await response.json();
+        data.readiness = {
+          commerceEnabled: env.PAYPAL_COMMERCE_ENABLED === 'true',
+          orderStorageConfigured: Boolean(orderDatabase),
+          clientIdConfigured: Boolean(env.PAYPAL_CLIENT_ID),
+          clientSecretConfigured: Boolean(env.PAYPAL_CLIENT_SECRET),
+          adminTokenConfigured: Boolean(env.ORDERS_ADMIN_TOKEN || env.FACEBOOK_ADMIN_TOKEN),
+          emailProviderConfigured: Boolean(env.RESEND_API_KEY && env.MAIL_FROM)
+        };
+        return new Response(JSON.stringify(data), {
+          status: response.status,
+          headers: response.headers
+        });
+      }
+      return response;
     }
     return worker.fetch(request, runtime, ctx);
   }
