@@ -2,5 +2,17 @@
 import Layout from '../../layouts/Layout.astro';
 import Icon from '../../components/Icon.astro';
 import FacebookLink from '../../components/FacebookLink.astro';
+import '../../styles/commerce.css';
 ---
-<Layout title="Your order" noindex><section class="container thanks" data-order-result><Icon name="box" size={46}/><p class="eyebrow kicker" style="justify-content:center">Thanks for stopping by</p><h1 data-order-heading>Checking your order…</h1><p data-order-message>We're checking the payment confirmation. Please keep this page open for a moment.</p><a class="button" href="/shop/">Back to the collection <Icon name="arrow" size={17}/></a><p class="order-contact"><FacebookLink class="text-link">Get help on Facebook <Icon name="diagonal" size={16}/></FacebookLink></p></section></Layout>
+<Layout title="Your order" noindex>
+  <section class="container thanks" data-paypal-order-result>
+    <Icon name="box" size={46}/>
+    <p class="eyebrow kicker" style="justify-content:center">Thanks for stopping by</p>
+    <h1 data-order-heading>Checking your order...</h1>
+    <p data-order-message>We are checking PayPal for the completed payment. Keep this page open for a moment.</p>
+    <p class="order-reference" data-order-reference aria-live="polite"></p>
+    <a class="button" href="/shop/">Back to the collection <Icon name="arrow" size={17}/></a>
+    <p class="order-contact"><FacebookLink class="text-link">Get help on Facebook <Icon name="diagonal" size={16}/></FacebookLink></p>
+  </section>
+  <script>import '../../scripts/paypal-checkout.js';</script>
+</Layout>
