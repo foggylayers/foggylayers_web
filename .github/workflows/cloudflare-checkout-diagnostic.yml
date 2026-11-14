@@ -1,0 +1,40 @@
+name: Diagnose Cloudflare checkout
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Inspect live checkout endpoints
+        shell: bash
+        run: |
+          set -u
+          config_status=$(curl -sS -D /tmp/config-headers.txt -o /tmp/config-body.txt -w '%{http_code}' --connect-timeout 10 --max-time 30 https://foggylayers.com/api/paypal/config || true)
+          echo "CONFIG_HTTP_STATUS=$config_status"
+          sed -n '1,30p' /tmp/config-headers.txt || true
+          if jq -e . /tmp/config-body.txt >/dev/null 2>&1; then
+            jq '{checkoutEnabled,environment,clientIdPresent:(.clientId != null and .clientId != ""),sdkUrl,currency,countryCode,minimumOrderCents,flatShippingCents,shippingEnabled,pickupLabel,notificationsEnabled}' /tmp/config-body.txt
+          else
+            echo 'CONFIG_BODY_BEGIN'
+            head -c 1000 /tmp/config-body.txt || true
+            echo
+            echo 'CONFIG_BODY_END'
+          fi
+
+          for path in / /cart/ /order/thanks/ /admin/orders/; do
+            safe=$(echo "$path" | tr '/?' '__')
+            status=$(curl -sS -o "/tmp/page-${safe}.html" -w '%{http_code}' --connect-timeout 10 --max-time 30 "https://foggylayers.com${path}" || true)
+            echo "PAGE ${path} HTTP ${status}"
+          done
+
+          grep -F 'pay securely with PayPal' /tmp/page-_cart_.html || true
+          grep -F 'Checking your order' /tmp/page-_order_thanks_.html || true
+          grep -F 'Order dashboard' /tmp/page-_admin_orders_.html || true
