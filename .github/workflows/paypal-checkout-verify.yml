@@ -1,0 +1,92 @@
+name: Verify PayPal checkout
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.12.0
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run automated tests
+        run: npm test
+
+      - name: Build Astro site
+        run: npm run build
+
+      - name: Check generated site
+        run: npm run check
+
+      - name: Verify Cloudflare production deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          ready=0
+          for attempt in $(seq 1 36); do
+            status=$(curl -sS -o /tmp/paypal-config.json -w '%{http_code}' --connect-timeout 10 --max-time 20 https://foggylayers.com/api/paypal/config || true)
+            if [ "$status" = "200" ] && node -e "const c=require('/tmp/paypal-config.json'); if(!c.checkoutEnabled || !c.clientId || !c.sdkUrl || c.minimumOrderCents!==500 || c.flatShippingCents!==800 || JSON.stringify(c).toLowerCase().includes('secret')) process.exit(1)"; then
+              ready=1
+              break
+            fi
+            if [ "$attempt" -lt 36 ]; then sleep 10; fi
+          done
+          test "$ready" = "1"
+
+          node - <<'NODE'
+          const config = require('/tmp/paypal-config.json');
+          if (!['sandbox', 'live'].includes(config.environment)) throw new Error('Unexpected PayPal environment');
+          console.log(JSON.stringify({
+            checkoutEnabled: config.checkoutEnabled,
+            environment: config.environment,
+            minimumOrderCents: config.minimumOrderCents,
+            flatShippingCents: config.flatShippingCents,
+            shippingEnabled: config.shippingEnabled,
+            clientIdPresent: Boolean(config.clientId),
+            secretExposed: JSON.stringify(config).toLowerCase().includes('secret')
+          }, null, 2));
+          NODE
+
+          curl -fsS --connect-timeout 10 --max-time 30 https://foggylayers.com/cart/ -o /tmp/cart.html
+          curl -fsS --connect-timeout 10 --max-time 30 https://foggylayers.com/order/thanks/ -o /tmp/thanks.html
+          curl -fsS --connect-timeout 10 --max-time 30 https://foggylayers.com/admin/orders/ -o /tmp/admin.html
+          grep -Fq 'pay securely with PayPal' /tmp/cart.html
+          grep -Fq 'Checking your order' /tmp/thanks.html
+          grep -Fq 'Order dashboard' /tmp/admin.html
+
+          invalid_status=$(curl -sS -o /tmp/invalid-status.json -w '%{http_code}' --connect-timeout 10 --max-time 30 'https://foggylayers.com/api/paypal/orders/status?order_id=invalid')
+          test "$invalid_status" = "404"
+
+          admin_status=$(curl -sS -o /tmp/admin-status.json -w '%{http_code}' --connect-timeout 10 --max-time 30 https://foggylayers.com/api/admin/orders)
+          test "$admin_status" = "401" -o "$admin_status" = "503"
+
+          cross_origin_status=$(curl -sS -o /tmp/cross-origin.json -w '%{http_code}' --connect-timeout 10 --max-time 30 \
+            -X POST https://foggylayers.com/api/paypal/orders \
+            -H 'Content-Type: application/json' \
+            -H 'Origin: https://example.invalid' \
+            --data '{}')
+          test "$cross_origin_status" = "403"
+
+          minimum_status=$(curl -sS -o /tmp/minimum.json -w '%{http_code}' --connect-timeout 10 --max-time 30 \
+            -X POST https://foggylayers.com/api/paypal/orders \
+            -H 'Content-Type: application/json' \
+            -H 'Origin: https://foggylayers.com' \
+            --data "{\"items\":[{\"id\":\"mini-animal-figures\",\"quantity\":1}],\"fulfillment\":\"pickup\",\"checkoutKey\":\"$(node -e 'console.log(crypto.randomUUID())')\",\"paymentMethod\":\"paypal\"}")
+          test "$minimum_status" = "400"
+          node -e "const r=require('/tmp/minimum.json'); if(r.code!=='MINIMUM_ORDER') process.exit(1)"
