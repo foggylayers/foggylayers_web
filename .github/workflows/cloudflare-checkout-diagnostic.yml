@@ -35,6 +35,16 @@ jobs:
             echo "PAGE ${path} HTTP ${status}"
           done
 
+          order_status=$(curl -sS -o /tmp/order-status.json -w '%{http_code}' --connect-timeout 10 --max-time 30 'https://foggylayers.com/api/paypal/orders/status?order_id=invalid' || true)
+          echo "ORDER_STATUS_API_HTTP=$order_status"
+          cat /tmp/order-status.json || true
+          echo
+
+          admin_status=$(curl -sS -o /tmp/admin-status.json -w '%{http_code}' --connect-timeout 10 --max-time 30 https://foggylayers.com/api/admin/orders || true)
+          echo "ADMIN_API_HTTP=$admin_status"
+          cat /tmp/admin-status.json || true
+          echo
+
           grep -F 'pay securely with PayPal' /tmp/page-_cart_.html || true
           grep -F 'Checking your order' /tmp/page-_order_thanks_.html || true
           grep -F 'Order dashboard' /tmp/page-_admin_orders_.html || true
