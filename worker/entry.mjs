@@ -1,6 +1,9 @@
 import { DurableObject } from 'cloudflare:workers';
 import worker from './index.mjs';
 import { FacebookPublisher as Publisher } from './facebook.mjs';
+import { createPayPalAPI } from './paypal.mjs';
+
+const paypalAPI = createPayPalAPI();
 
 // Keep Cloudflare's runtime base class at the entry point so the core stays testable in Node.
 export class FacebookPublisher extends DurableObject {
@@ -13,8 +16,11 @@ export class FacebookPublisher extends DurableObject {
 
 export default {
   fetch(request, env, ctx) {
-    // A loopback namespace avoids an env binding to an unprovisioned class during
-    // version uploads. Cloudflare provisions its storage on the first deployment.
-    return worker.fetch(request, { ...env, FACEBOOK_PUBLISHER: ctx.exports.FacebookPublisher }, ctx);
+    const runtime = { ...env, FACEBOOK_PUBLISHER: ctx.exports.FacebookPublisher };
+    const pathname = new URL(request.url).pathname;
+    if (pathname.startsWith('/api/paypal/') || pathname === '/api/admin/orders' || pathname.startsWith('/api/admin/orders/')) {
+      return paypalAPI(request, runtime, ctx);
+    }
+    return worker.fetch(request, runtime, ctx);
   }
 };
