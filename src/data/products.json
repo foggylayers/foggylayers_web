@@ -1,5 +1,95 @@
 [
   {
+    "id": "planetary-gear-fidgets",
+    "name": "Planetary Gear Fidgets",
+    "category": "Fidgets",
+    "eyebrow": "Interlocking gears, ready for a spin.",
+    "description": "Keep your hands busy with a colorful planetary gear fidget. The circular design brings a ring of small interlocking gears together around an open center. Browse the green and blue examples in the forest and slate photos, then message us about current colors, pricing, and availability. Shipping or local pickup in Everett, WA.",
+    "images": [
+      "/images/planetary-gear-fidgets-forest.webp",
+      "/images/planetary-gear-fidgets-slate.webp"
+    ],
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "1 / 1",
+    "imageWidth": 1254,
+    "imageHeight": 1254,
+    "cardImageAlt": "Green and blue circular planetary gear fidgets on a stone surface in a misty forest",
+    "color": "Green or blue",
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic"
+  },
+  {
+    "id": "clicky-fidgets",
+    "name": "Clicky Fidgets & Keychains",
+    "category": "Fidgets",
+    "eyebrow": "A little character with every click.",
+    "description": "A cheerful collection of 3D-printed clicky fidgets, from colorful smiling faces to red gift boxes with green bows. The photo includes larger desk fidgets and smaller designs with key rings for a bag or set of keys. Pick a favorite style and message us for current colors, pricing, and availability. Shipping or local pickup in Everett, WA.",
+    "images": [
+      "/images/clicky-fidgets-holiday.webp"
+    ],
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "1 / 1",
+    "imageWidth": 1199,
+    "imageHeight": 1312,
+    "cardImageAlt": "Colorful smiling face clicky fidgets and red-and-green gift box keychains on a snowy woodland tabletop",
+    "color": "Colorful faces and red-and-green gift boxes",
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic"
+  },
+  {
+    "id": "holiday-infinity-cubes",
+    "name": "Holiday Infinity Cubes",
+    "category": "Fidgets",
+    "eyebrow": "Fold. Flip. Repeat in red and green.",
+    "description": "A festive take on the infinity cube. Linked red and green blocks fold and flip between a compact cube and an open shape, ready to start again. Browse the photo for the different arrangements and color patterns. Message us about current colors, pricing, and availability. Shipping or local pickup in Everett, WA.",
+    "images": [
+      "/images/holiday-infinity-cubes.webp"
+    ],
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "1 / 1",
+    "imageWidth": 1086,
+    "imageHeight": 1448,
+    "cardImageAlt": "Five red-and-green infinity cube fidgets folded into different shapes on a snowy woodland tabletop",
+    "color": "Red and green",
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic"
+  },
+  {
+    "id": "holiday-minis",
+    "name": "Holiday Minis",
+    "category": "Holiday Minis",
+    "eyebrow": "Tiny characters. Plenty of holiday spirit.",
+    "description": "Meet the holiday crew: little reindeer, snowmen, and green friends in Santa hats. These 3D-printed mini figures bring festive colors and playful character to a desk, holiday display, or stocking. The collection photos show a mix of upright figures and articulated designs. Message us with your favorite design and quantity for pricing and availability. Shipping or local pickup in Everett, WA.",
+    "images": [
+      "/images/holiday-minis-collection.webp",
+      "/images/holiday-minis-characters.webp"
+    ],
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "1 / 1",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "cardImageAlt": "A collection of miniature reindeer, snowmen, and green Santa-hat characters in a snowy woodland setting",
+    "color": "Red, green, white, and reindeer brown",
+    "priceCents": null,
+    "status": "inquiry",
+    "size": null,
+    "material": "3D-printed plastic"
+  },
+  {
     "id": "grinch-christmas-lights-ornament",
     "name": "Grinch Christmas Lights Ornament",
     "category": "GrichMas",
