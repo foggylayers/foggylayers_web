@@ -4,7 +4,10 @@ import { FacebookPublisher as Publisher } from './facebook.mjs';
 import { createPayPalAPI } from './paypal.mjs';
 import { createOrderDatabase, OrderStore as Store } from './order-database.mjs';
 
+import { createContactAPI } from './contact.mjs';
+
 const paypalAPI = createPayPalAPI();
+const contactAPI = createContactAPI();
 
 // Keep Cloudflare's runtime base classes at the entry point so the cores stay testable in Node.
 export class FacebookPublisher extends DurableObject {
@@ -27,6 +30,7 @@ export default {
   async fetch(request, env, ctx) {
     const runtime = { ...env, FACEBOOK_PUBLISHER: ctx.exports.FacebookPublisher };
     const pathname = new URL(request.url).pathname;
+    if (pathname === '/api/contact') return contactAPI(request, runtime);
     if (pathname.startsWith('/api/paypal/') || pathname === '/api/admin/orders' || pathname.startsWith('/api/admin/orders/')) {
       const orderDatabase = env.DB || createOrderDatabase(ctx.exports.OrderStore);
       const apiEnvironment = { ...runtime, DB: orderDatabase };

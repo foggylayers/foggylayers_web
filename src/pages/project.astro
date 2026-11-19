@@ -1,28 +1,50 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Icon from '../components/Icon.astro';
 import FacebookLink from '../components/FacebookLink.astro';
 ---
-<Layout title="Contact Foggy Layers" description="Message Foggy Layers on Facebook about printed figures, custom 3D printing, design help, shipping, or Everett pickup.">
+<Layout title="Contact Foggy Layers" description="Contact Foggy Layers about printed figures, custom 3D printing, design help, shipping, or Everett pickup.">
   <section class="page-intro"><div class="container">
     <p class="breadcrumb"><a href="/">Home</a><span>/</span><span>Contact</span></p>
     <p class="eyebrow kicker">Let's make something</p>
-    <h1>Let's talk on Facebook.</h1>
-    <p class="lede">Ask about a print, share an idea, or discuss a custom project. Message our Facebook Page and we'll work through the details with you.</p>
+    <h1>We'd love to hear your idea.</h1>
+    <p class="lede">Ask about a print, a custom project, or an order. Send us a message and we'll get back to you by email.</p>
   </div></section>
   <section class="container project-layout" aria-label="Contact Foggy Layers">
     <aside class="project-aside">
       <h2>Start wherever you are.</h2>
       <p>A finished model, a rough sketch, or a print you spotted in the collection. Tell us what you have in mind.</p>
-      <div class="aside-note"><strong>A quote before a commitment.</strong><p>We'll review size, quantity, color, pricing, and timing with you before any work begins.</p></div>
-      <div class="aside-note"><strong>Shipping or local pickup.</strong><p>Let us know what works for you. Local pickup is available in Everett, Washington.</p></div>
+      <div class="aside-note"><strong>A quote before a commitment.</strong><p>For custom work, include size, quantity, color, and timing. We'll review the details before any work begins.</p></div>
+      <div class="aside-note"><strong>Shipping or local pickup.</strong><p>Local pickup is available in Everett, Washington.</p></div>
+      <p><a class="text-link" href="mailto:orders@foggylayers.com">orders@foggylayers.com</a></p>
+      <p>Prefer Facebook? <FacebookLink>Message our Page</FacebookLink></p>
     </aside>
-    <div class="project-form facebook-contact">
-      <p class="eyebrow kicker">Foggy Layers on Facebook</p>
-      <h2>Say hello.</h2>
-      <p>Open our Facebook Page and choose Message to start a conversation with Foggy Layers.</p>
-      <FacebookLink class="button">Open our Facebook Page <Icon name="diagonal" size={18}/></FacebookLink>
-      <p class="privacy-note">Include the print or project name, desired size, quantity, and color. If you have a 3D model, tell us about the file and we'll arrange how to share it.</p>
+    <div class="project-form contact-panel">
+      <h2>Contact us.</h2>
+      <form id="contact-form" action="/api/contact" method="post">
+        <p data-contact-availability role="status">Checking message delivery…</p>
+        <label>Your name<input name="name" autocomplete="name" maxlength="100" required /></label>
+        <label>Email address<input name="email" type="email" autocomplete="email" maxlength="254" required /></label>
+        <label>Subject<input name="subject" maxlength="150" required /></label>
+        <label>Message<textarea name="message" rows="7" maxlength="5000" required></textarea></label>
+        <div class="contact-trap" aria-hidden="true"><label>Leave this blank<input name="website" tabindex="-1" autocomplete="off" /></label></div>
+        <p class="privacy-note">We'll use your details to respond to your inquiry. <a href="/privacy/">Privacy policy</a>. For model files or photos, ask us how to share them.</p>
+        <p data-contact-error role="alert" hidden></p>
+        <button class="button" type="submit" disabled>Send message</button>
+        <noscript><p>Please enable JavaScript to use this form, or email <a href="mailto:orders@foggylayers.com">orders@foggylayers.com</a>.</p></noscript>
+      </form>
+      <div data-contact-success tabindex="-1" role="status" hidden><h3>Thanks for reaching out.</h3><p>Your message has been sent to Foggy Layers. We'll reply to the email address you provided.</p></div>
     </div>
   </section>
+  <script>import '../scripts/contact.js';</script>
 </Layout>
+<style>
+  .contact-panel label{display:grid;gap:.5rem;margin-block:1.25rem;font-size:1rem}
+  .contact-panel input,.contact-panel textarea{width:100%;padding:.8rem;border:1px solid var(--line);background:var(--paper);color:var(--ink);font:inherit}
+  .contact-panel textarea{resize:vertical}
+  .contact-panel p{font-size:1rem;margin-block:1rem}
+  .contact-panel .privacy-note{font-size:.875rem}
+  .contact-panel a{text-decoration:underline}
+  .contact-panel button{font-size:1rem}
+  .contact-panel button:disabled{opacity:.6;cursor:wait}
+  .contact-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+</style>
