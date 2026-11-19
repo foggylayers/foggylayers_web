@@ -192,7 +192,7 @@
   {
     "id": "grinch-ornament-set",
     "name": "Grinch Ornament Set \u00b7 All 6 Designs",
-    "category": "GrichMas",
+    "category": "GrinchMas",
     "eyebrow": "Six festive ornament designs, together for $5.",
     "description": "The complete set of six Grinch ornaments: Christmas lights, chimney, star, candy cane, snowflake bauble, and bow. Includes one of each design, about 3 inches each. The full set is $5; individual ornaments are $1 each. Shipping or local pickup in Everett, WA.",
     "images": [
@@ -215,7 +215,7 @@
   {
     "id": "grinch-christmas-lights-ornament",
     "name": "Grinch Christmas Lights Ornament",
-    "category": "GrichMas",
+    "category": "GrinchMas",
     "imagePosition": "50% 50%",
     "imageScale": 1,
     "imageFit": "contain",
@@ -247,7 +247,7 @@
   {
     "id": "grinch-chimney-ornament",
     "name": "Grinch Chimney Ornament",
-    "category": "GrichMas",
+    "category": "GrinchMas",
     "imagePosition": "50% 50%",
     "imageScale": 1,
     "imageFit": "contain",
@@ -279,7 +279,7 @@
   {
     "id": "grinch-star-ornament",
     "name": "Grinch Star Ornament",
-    "category": "GrichMas",
+    "category": "GrinchMas",
     "imagePosition": "50% 50%",
     "imageScale": 1,
     "imageFit": "contain",
@@ -311,7 +311,7 @@
   {
     "id": "grinch-candy-cane-ornament",
     "name": "Grinch Candy Cane Ornament",
-    "category": "GrichMas",
+    "category": "GrinchMas",
     "imagePosition": "50% 50%",
     "imageScale": 1,
     "imageFit": "contain",
@@ -343,7 +343,7 @@
   {
     "id": "grinch-snowflake-bauble-ornament",
     "name": "Grinch Snowflake Bauble Ornament",
-    "category": "GrichMas",
+    "category": "GrinchMas",
     "imagePosition": "50% 50%",
     "imageScale": 1,
     "imageFit": "contain",
@@ -375,7 +375,7 @@
   {
     "id": "grinch-bow-ornament",
     "name": "Grinch Bow Ornament",
-    "category": "GrichMas",
+    "category": "GrinchMas",
     "imagePosition": "50% 50%",
     "imageScale": 1,
     "imageFit": "contain",
@@ -407,7 +407,7 @@
   {
     "id": "stained-glass-grinch",
     "name": "Stained Glass Grinch",
-    "category": "GrichMas",
+    "category": "GrinchMas",
     "imagePosition": "50% 50%",
     "imageScale": 1,
     "imageFit": "contain",
