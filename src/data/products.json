@@ -121,7 +121,7 @@
     "name": "Holiday Infinity Cubes",
     "category": "Fidgets",
     "eyebrow": "Fold. Flip. Repeat in red and green.",
-    "description": "A festive take on the infinity cube. Linked red and green blocks fold and flip between a compact cube and an open shape, ready to start again. Browse the photo for the different arrangements and color patterns. Message us about current colors, pricing, and availability. Shipping or local pickup in Everett, WA.",
+    "description": "A festive take on the infinity cube. Linked red and green blocks fold and flip between a compact cube and an open shape, ready to start again. Browse the photo for the different arrangements and color patterns. Each holiday infinity cube is $2. Message us about current colors and availability. Shipping or local pickup in Everett, WA.",
     "images": [
       "/images/holiday-infinity-cubes.webp"
     ],
@@ -133,10 +133,11 @@
     "imageHeight": 1448,
     "cardImageAlt": "Five red-and-green infinity cube fidgets folded into different shapes on a snowy woodland tabletop",
     "color": "Red and green",
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 200,
+    "status": "available",
     "size": null,
-    "material": "3D-printed plastic"
+    "material": "3D-printed plastic",
+    "priceLabel": "$2 each"
   },
   {
     "id": "holiday-minis",
@@ -867,16 +868,17 @@
     "name": "Mini Tumbler Keychain",
     "category": "Keychains",
     "eyebrow": "The tiniest take on a favorite cup.",
-    "description": "A miniature white tumbler charm with a handle, teal lid, and matching straw detail. Its removable lid adds a playful touch to this little accessory, and the metal ring lets it travel on a bag or set of keys. A decorative miniature; ask us about pricing and available colors.",
+    "description": "A miniature white tumbler charm with a handle, teal lid, and matching straw detail. Its removable lid adds a playful touch to this little accessory, and the metal ring lets it travel on a bag or set of keys. A decorative miniature for $2 each. Ask about available colors.",
     "images": [],
     "imagePosition": "50% 40%",
     "imageScale": 1.35,
     "imageFit": "cover",
     "color": "White and teal",
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 200,
+    "status": "available",
     "size": null,
-    "material": null
+    "material": null,
+    "priceLabel": "$2 each"
   },
   {
     "id": "desk-fidgets",
@@ -888,12 +890,12 @@
     "imageAspectRatio": "4 / 3",
     "imageWidth": 1448,
     "imageHeight": 1086,
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 200,
+    "status": "available",
     "size": null,
     "material": "3D-printed plastic",
     "eyebrow": "Layers of color, ready to stretch and nest.",
-    "description": "Explore a stack of nested star outlines that extends into a stepped shape and folds back down. Choose a purple gradient with pale edges or a blue, white, and red design. The collection photos show both styles alongside the other fidgets. Ask about current colors and pricing.",
+    "description": "Explore a stack of nested star outlines that extends into a stepped shape and folds back down. Choose a purple gradient with pale edges or a blue, white, and red design. The collection photos show both styles alongside the other fidgets. Each fidget is $2. Ask about current colors.",
     "images": [
       "/images/fidgets-woodland-closed.webp",
       "/images/fidgets-woodland-open.webp",
@@ -912,7 +914,8 @@
       }
     ],
     "variantLabel": "Choose your design",
-    "sharedGallery": true
+    "sharedGallery": true,
+    "priceLabel": "$2 each"
   },
   {
     "id": "gear-cube-fidget",
@@ -949,12 +952,12 @@
     "imageAspectRatio": "4 / 3",
     "imageWidth": 1448,
     "imageHeight": 1086,
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 200,
+    "status": "available",
     "size": null,
     "material": "3D-printed plastic",
     "eyebrow": "A colorful sphere with a playful transformation.",
-    "description": "Segmented rainbow spheres that twist open into curved shapes and close back into a ball. Choose the rainbow gradient or the pastel blue-topped style with black eyes and red cheeks. The collection photos show both designs open and closed. Ask about current colors and pricing.",
+    "description": "Segmented rainbow spheres that twist open into curved shapes and close back into a ball. Choose the rainbow gradient or the pastel blue-topped style with black eyes and red cheeks. The collection photos show both designs open and closed. Each fidget is $2. Ask about current colors.",
     "images": [
       "/images/fidgets-woodland-open.webp",
       "/images/fidgets-woodland-collection.webp",
@@ -973,7 +976,8 @@
       }
     ],
     "variantLabel": "Choose your design",
-    "sharedGallery": true
+    "sharedGallery": true,
+    "priceLabel": "$2 each"
   },
   {
     "id": "twist-cylinder-fidget",
@@ -985,19 +989,20 @@
     "imageAspectRatio": "4 / 3",
     "imageWidth": 1448,
     "imageHeight": 1086,
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 200,
+    "status": "available",
     "size": null,
     "material": "3D-printed plastic",
     "eyebrow": "A twist on your everyday desk fidget.",
-    "description": "An olive-green articulated cylinder with spiraling segments and a central opening. Twist and open the linked pieces to explore its changing shape, then bring them back into a cylinder. Browse the collection photos for its different poses and ask about pricing.",
+    "description": "An olive-green articulated cylinder with spiraling segments and a central opening. Twist and open the linked pieces to explore its changing shape, then bring them back into a cylinder. Browse the collection photos for its different poses. Each twist cylinder is $2.",
     "images": [
       "/images/fidgets-woodland-twists.webp",
       "/images/fidgets-woodland-open.webp",
       "/images/fidgets-woodland-collection.webp",
       "/images/fidgets-woodland-closed.webp"
     ],
-    "color": "Olive green"
+    "color": "Olive green",
+    "priceLabel": "$2 each"
   },
   {
     "id": "infinity-cube-fidget",
@@ -1009,26 +1014,27 @@
     "imageAspectRatio": "4 / 3",
     "imageWidth": 1448,
     "imageHeight": 1086,
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 200,
+    "status": "available",
     "size": null,
     "material": "3D-printed plastic",
     "eyebrow": "Fold, flip, and start again.",
-    "description": "A blue and lavender fidget made from linked blocks that fold into new configurations. The collection photos show it folded compactly, opened flat, and arranged into an arch. Ask about current colors, availability, and pricing.",
+    "description": "A blue and lavender fidget made from linked blocks that fold into new configurations. The collection photos show it folded compactly, opened flat, and arranged into an arch. Each infinity cube is $2. Ask about current colors and availability.",
     "images": [
       "/images/fidgets-woodland-collection.webp",
       "/images/fidgets-woodland-open.webp",
       "/images/fidgets-woodland-twists.webp",
       "/images/fidgets-woodland-closed.webp"
     ],
-    "color": "Blue and lavender"
+    "color": "Blue and lavender",
+    "priceLabel": "$2 each"
   },
   {
     "id": "forest-vase",
     "name": "Forest Vase",
     "category": "Home & decor",
     "eyebrow": "A little woodland for your shelf.",
-    "description": "A tall decorative vessel with raised trees and a color gradient that moves from earthy tones into green. The textured forest wraps around the outside, giving it a different view from every angle. Ask about dimensions, available colors, and pricing before choosing a spot for it.",
+    "description": "A tall decorative vessel with raised trees and a color gradient that moves from earthy tones into green. The textured forest wraps around the outside, giving it a different view from every angle. Each vase is $2. Ask about dimensions and available colors before choosing a spot for it.",
     "images": [
       "/images/forest-vase-front.jpeg"
     ],
@@ -1036,17 +1042,18 @@
     "imageScale": 1,
     "imageFit": "cover",
     "color": "Earth tones and green",
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 200,
+    "status": "available",
     "size": null,
-    "material": null
+    "material": null,
+    "priceLabel": "$2 each"
   },
   {
     "id": "textured-tree",
     "name": "Textured Holiday Tree",
     "category": "Home & decor",
     "eyebrow": "A small tree with plenty of texture.",
-    "description": "A green holiday tree with a knit-like surface, stacked branches, and a bright yellow star. The repeating texture catches the light across its printed layers, adding a cozy detail to a shelf or seasonal display. Ask about size, colors, and pricing.",
+    "description": "A green holiday tree with a knit-like surface, stacked branches, and a bright yellow star. The repeating texture catches the light across its printed layers, adding a cozy detail to a shelf or seasonal display. Each holiday tree is $2. Ask about size and colors.",
     "images": [
       "/images/holiday-tree-angle.jpeg"
     ],
@@ -1054,17 +1061,18 @@
     "imageScale": 1,
     "imageFit": "cover",
     "color": "Green with a yellow star",
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 200,
+    "status": "available",
     "size": null,
-    "material": null
+    "material": null,
+    "priceLabel": "$2 each"
   },
   {
     "id": "honeycomb-organizer",
     "name": "Honeycomb Organizer",
     "category": "Home & decor",
     "eyebrow": "A place for the little things.",
-    "description": "An orange organizer with rows of open hexagonal compartments and a geometric honeycomb shape. The divided layout keeps small items easy to see and gives your workspace a bright graphic detail. Ask about compartment dimensions, suitable uses, and pricing.",
+    "description": "An orange organizer with rows of open hexagonal compartments and a geometric honeycomb shape. The divided layout keeps small items easy to see and gives your workspace a bright graphic detail. Each organizer is $2. Ask about compartment dimensions and suitable uses.",
     "images": [
       "/images/honeycomb-front.jpeg"
     ],
@@ -1072,17 +1080,18 @@
     "imageScale": 1.15,
     "imageFit": "cover",
     "color": "Orange",
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 200,
+    "status": "available",
     "size": null,
-    "material": null
+    "material": null,
+    "priceLabel": "$2 each"
   },
   {
     "id": "fortnite-display-sign",
     "name": "Fortnite Display Sign",
     "category": "Signs",
     "eyebrow": "Bold lettering for your gaming space.",
-    "description": "A yellow display sign with chunky raised Fortnite lettering on a matching base. Its sculpted letters bring a bright focal point to a shelf or gaming setup. Ask us about size, available colors, and pricing.",
+    "description": "A yellow display sign with chunky raised Fortnite lettering on a matching base. Its sculpted letters bring a bright focal point to a shelf or gaming setup. Each display sign is $10. Ask us about size and available colors.",
     "images": [
       "/images/fortnite-sign.jpeg",
       "/images/fortnite-sign-side.jpeg"
@@ -1091,9 +1100,10 @@
     "imageScale": 1,
     "imageFit": "contain",
     "color": "Yellow",
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 1000,
+    "status": "available",
     "size": null,
-    "material": null
+    "material": null,
+    "priceLabel": "$10 each"
   }
 ]
