@@ -6,6 +6,8 @@ import FacebookLink from '../../components/FacebookLink.astro';
 import products from '../../data/products.json';
 const fidgets = products.filter(product => product.category === 'Fidgets');
 const photos = [
+ { src: '/images/spiral-fidgets-collection.webp', alt: 'Red-and-green round and pointed hexagonal spiral helix fidgets on slate', width: 1122, height: 1402 },
+ { src: '/images/spiral-fidgets-slate.webp', alt: 'Red and green spiral fidget pieces shown apart on woodland slate', width: 1122, height: 1402 },
  { src: '/images/planetary-gear-fidgets-forest.webp', alt: 'Green and blue planetary gear fidgets in a misty woodland setting', width: 1254, height: 1254 },
  { src: '/images/planetary-gear-fidgets-slate.webp', alt: 'Eight green and blue circular gear fidgets on dark slate', width: 1086, height: 1448 },
  { src: '/images/clicky-fidgets-holiday.webp', alt: 'Smiling face clicky fidgets and gift box keychains on a snowy woodland table', width: 1199, height: 1312 },
@@ -16,12 +18,12 @@ const photos = [
  { src: '/images/fidgets-woodland-twists.webp', alt: 'Fidgets showing their changing shapes, including an open green twist cylinder and a twisted orange gear cube' }
 ];
 ---
-<Layout title="Fidgets" description="Explore planetary gear fidgets, clicky fidgets and keychains, holiday infinity cubes, nested stars, and more. Shipping or Everett pickup.">
+<Layout title="Fidgets" description="Shop spiral helix fidgets and gears for $2 each, plus clickers for $3 each or 5 for $20. Explore more fidgets. Shipping or Everett pickup.">
  <section class="page-intro"><div class="container">
   <p class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/shop/">The collection</a><span>/</span><span>Fidgets</span></p>
   <p class="eyebrow kicker">Something curious for busy hands</p>
   <h1>Twist. Fold. Fidget.</h1>
-  <p class="lede">Spin interlocking gears, try a cheerful clicky fidget, or fold a red-and-green infinity cube. Browse these new arrivals alongside our nested stars, twist balls, and other colorful fidgets, then ask us about current colors and pricing. Shipping and local pickup in Everett, WA.</p>
+  <p class="lede">Twist a red-and-green spiral or spin interlocking gears for $2 each. Try a cheerful clicker for $3 each or 5 for $20. Browse folding cubes, nested stars, and other colorful fidgets below. Shipping and local pickup in Everett, WA.</p>
  </div></section>
  <section class="container catalog-section" aria-labelledby="fidgets-heading">
   <div class="section-head"><div><p class="eyebrow">Find your favorite movement</p><h2 id="fidgets-heading">Meet the fidgets.</h2></div><a class="text-link" href="/shop/">All prints <Icon name="arrow" size={16}/></a></div>
