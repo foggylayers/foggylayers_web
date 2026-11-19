@@ -1,10 +1,46 @@
 [
   {
+    "id": "spiral-fidgets",
+    "name": "Spiral Helix Fidgets",
+    "category": "Fidgets",
+    "eyebrow": "A festive twist for busy hands. $2 each.",
+    "description": "Red-and-green spiral helix fidgets with nested pieces that twist together and apart. Choose the round cylinder or pointed hexagonal design shown in the collection photos. Each complete spiral fidget is $2. Shipping or local pickup in Everett, WA.",
+    "images": [
+      "/images/spiral-fidgets-collection.webp",
+      "/images/spiral-fidgets-slate.webp"
+    ],
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 5",
+    "imageWidth": 1122,
+    "imageHeight": 1402,
+    "cardImageAlt": "Four red-and-green spiral helix fidgets on slate with a misty woodland background",
+    "color": "Red and green",
+    "priceCents": 200,
+    "priceLabel": "$2 each",
+    "status": "available",
+    "size": null,
+    "material": "3D-printed plastic",
+    "variants": [
+      {
+        "id": "round-cylinder",
+        "name": "Round cylinder \u00b7 red and green"
+      },
+      {
+        "id": "hexagonal",
+        "name": "Pointed hexagonal \u00b7 red and green"
+      }
+    ],
+    "variantLabel": "Choose your design",
+    "sharedGallery": true
+  },
+  {
     "id": "planetary-gear-fidgets",
     "name": "Planetary Gear Fidgets",
     "category": "Fidgets",
     "eyebrow": "Interlocking gears, ready for a spin.",
-    "description": "Keep your hands busy with a colorful planetary gear fidget. The circular design brings a ring of small interlocking gears together around an open center. Browse the green and blue examples in the forest and slate photos, then message us about current colors, pricing, and availability. Shipping or local pickup in Everett, WA.",
+    "description": "Keep your hands busy with a colorful planetary gear fidget. The circular design brings a ring of small interlocking gears together around an open center. Browse the green and blue examples in the forest and slate photos, then choose your favorite for $2 each. Message us about current colors and availability. Shipping or local pickup in Everett, WA.",
     "images": [
       "/images/planetary-gear-fidgets-forest.webp",
       "/images/planetary-gear-fidgets-slate.webp"
@@ -17,17 +53,30 @@
     "imageHeight": 1254,
     "cardImageAlt": "Green and blue circular planetary gear fidgets on a stone surface in a misty forest",
     "color": "Green or blue",
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 200,
+    "status": "available",
     "size": null,
-    "material": "3D-printed plastic"
+    "material": "3D-printed plastic",
+    "priceLabel": "$2 each",
+    "variants": [
+      {
+        "id": "green",
+        "name": "Green"
+      },
+      {
+        "id": "blue",
+        "name": "Blue"
+      }
+    ],
+    "variantLabel": "Choose your color",
+    "sharedGallery": true
   },
   {
     "id": "clicky-fidgets",
     "name": "Clicky Fidgets & Keychains",
     "category": "Fidgets",
     "eyebrow": "A little character with every click.",
-    "description": "A cheerful collection of 3D-printed clicky fidgets, from colorful smiling faces to red gift boxes with green bows. The photo includes larger desk fidgets and smaller designs with key rings for a bag or set of keys. Pick a favorite style and message us for current colors, pricing, and availability. Shipping or local pickup in Everett, WA.",
+    "description": "A cheerful collection of 3D-printed clicky fidgets, from colorful smiling faces to red gift boxes with green bows. The photo includes larger desk fidgets and smaller designs with key rings for a bag or set of keys. Choose a favorite style: $3 each or 5 for $20. Message us about current colors and availability. Shipping or local pickup in Everett, WA.",
     "images": [
       "/images/clicky-fidgets-holiday.webp"
     ],
@@ -39,10 +88,33 @@
     "imageHeight": 1312,
     "cardImageAlt": "Colorful smiling face clicky fidgets and red-and-green gift box keychains on a snowy woodland tabletop",
     "color": "Colorful faces and red-and-green gift boxes",
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 300,
+    "status": "available",
     "size": null,
-    "material": "3D-printed plastic"
+    "material": "3D-printed plastic",
+    "priceLabel": "$3 each \u00b7 5 for $20",
+    "bundlePricing": {
+      "group": "clicky-fidgets",
+      "quantity": 5,
+      "priceCents": 2000
+    },
+    "priceNote": "Mix designs within this collection. Every 5 clickers are $20; remaining clickers are $3 each. Bundle pricing applies automatically in your bag.",
+    "variants": [
+      {
+        "id": "smiling-face",
+        "name": "Smiling face desk clicker"
+      },
+      {
+        "id": "smiling-face-keychain",
+        "name": "Smiling face keychain"
+      },
+      {
+        "id": "gift-box-keychain",
+        "name": "Red-and-green gift box keychain"
+      }
+    ],
+    "variantLabel": "Choose your design",
+    "sharedGallery": true
   },
   {
     "id": "holiday-infinity-cubes",
@@ -71,7 +143,7 @@
     "name": "Holiday Minis",
     "category": "Holiday Minis",
     "eyebrow": "Tiny characters. Plenty of holiday spirit.",
-    "description": "Meet the holiday crew: little reindeer, snowmen, and green friends in Santa hats. These 3D-printed mini figures bring festive colors and playful character to a desk, holiday display, or stocking. The collection photos show a mix of upright figures and articulated designs. Message us with your favorite design and quantity for pricing and availability. Shipping or local pickup in Everett, WA.",
+    "description": "Meet the holiday crew: little reindeer, snowmen, and green friends in Santa hats. These 3D-printed mini figures bring festive colors and playful character to a desk, holiday display, or stocking. The collection photos show a mix of upright figures and articulated designs. Choose a favorite design: $3 each or 5 for $20. Message us about current colors and availability. Shipping or local pickup in Everett, WA.",
     "images": [
       "/images/holiday-minis-collection.webp",
       "/images/holiday-minis-characters.webp"
@@ -84,9 +156,59 @@
     "imageHeight": 1086,
     "cardImageAlt": "A collection of miniature reindeer, snowmen, and green Santa-hat characters in a snowy woodland setting",
     "color": "Red, green, white, and reindeer brown",
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 300,
+    "status": "available",
     "size": null,
+    "material": "3D-printed plastic",
+    "priceLabel": "$3 each \u00b7 5 for $20",
+    "bundlePricing": {
+      "group": "holiday-minis",
+      "quantity": 5,
+      "priceCents": 2000
+    },
+    "priceNote": "Mix designs within this collection. Every 5 Holiday Minis are $20; remaining Holiday Minis are $3 each. Bundle pricing applies automatically in your bag.",
+    "variants": [
+      {
+        "id": "reindeer",
+        "name": "Reindeer"
+      },
+      {
+        "id": "snowman",
+        "name": "Snowman"
+      },
+      {
+        "id": "green-santa-friend",
+        "name": "Green Santa-hat friend"
+      },
+      {
+        "id": "holiday-dragon",
+        "name": "Green holiday dragon"
+      }
+    ],
+    "variantLabel": "Choose your character",
+    "sharedGallery": true
+  },
+  {
+    "id": "grinch-ornament-set",
+    "name": "Grinch Ornament Set \u00b7 All 6 Designs",
+    "category": "GrichMas",
+    "eyebrow": "Six festive ornament designs, together for $5.",
+    "description": "The complete set of six Grinch ornaments: Christmas lights, chimney, star, candy cane, snowflake bauble, and bow. Includes one of each design, about 3 inches each. The full set is $5; individual ornaments are $1 each. Shipping or local pickup in Everett, WA.",
+    "images": [
+      "/images/grichmas-six-ornaments.webp"
+    ],
+    "imagePosition": "50% 50%",
+    "imageScale": 1,
+    "imageFit": "contain",
+    "imageAspectRatio": "4 / 3",
+    "imageWidth": 1448,
+    "imageHeight": 1086,
+    "cardImageAlt": "The complete collection of six red, green, white, and black Grinch ornament designs",
+    "color": "Red, green, white, and black",
+    "priceCents": 500,
+    "priceLabel": "$5 per set of 6",
+    "status": "available",
+    "size": "6 ornaments \u00b7 about 3 inches each",
     "material": "3D-printed plastic"
   },
   {
@@ -100,12 +222,12 @@
     "imageWidth": 1448,
     "imageHeight": 1086,
     "color": "Red, green, white, and black",
-    "priceCents": null,
-    "status": "inquiry",
-    "size": null,
+    "priceCents": 100,
+    "status": "available",
+    "size": "About 3 inches",
     "material": "3D-printed plastic",
     "eyebrow": "A mischievous smile and a string of lights.",
-    "description": "A flat 3D-printed Grinch ornament with a red Santa hat and a strand of red and white Christmas lights. Green, red, white, and black layers make the face and festive details stand out. This is the lights design at the upper left of the six-ornament collection photo. Ask about pricing and availability.",
+    "description": "A flat 3D-printed Grinch ornament with a red Santa hat and a strand of red and white Christmas lights. Green, red, white, and black layers make the face and festive details stand out. This is the lights design at the upper left of the six-ornament collection photo. Each ornament is $1. The complete six-design set is also available for $5.",
     "images": [
       "/images/grichmas-six-ornaments.webp",
       "/images/grichmas-ornament-stand-lights.webp",
@@ -117,7 +239,9 @@
       "width": 430,
       "height": 430
     },
-    "cardImageAlt": "Grinch Christmas Lights Ornament shown in the snowy holiday collection photo"
+    "cardImageAlt": "Grinch Christmas Lights Ornament shown in the snowy holiday collection photo",
+    "priceLabel": "$1 each",
+    "priceNote": "Want all six designs? Choose the Grinch Ornament Set for $5."
   },
   {
     "id": "grinch-chimney-ornament",
@@ -130,12 +254,12 @@
     "imageWidth": 1448,
     "imageHeight": 1086,
     "color": "Red, green, white, and black",
-    "priceCents": null,
-    "status": "inquiry",
-    "size": null,
+    "priceCents": 100,
+    "status": "available",
+    "size": "About 3 inches",
     "material": "3D-printed plastic",
     "eyebrow": "Peeking out for a little holiday mischief.",
-    "description": "The Grinch peeks over a snow-covered red brick chimney in this colorful 3D-printed ornament. A Santa hat, green hands, and bold black outlines complete the design. Find it at the upper center of the six-ornament collection photo. Ask about pricing and availability.",
+    "description": "The Grinch peeks over a snow-covered red brick chimney in this colorful 3D-printed ornament. A Santa hat, green hands, and bold black outlines complete the design. Find it at the upper center of the six-ornament collection photo. Each ornament is $1. The complete six-design set is also available for $5.",
     "images": [
       "/images/grichmas-six-ornaments.webp",
       "/images/grichmas-ornament-stand-lights.webp",
@@ -147,7 +271,9 @@
       "width": 430,
       "height": 430
     },
-    "cardImageAlt": "Grinch Chimney Ornament shown in the snowy holiday collection photo"
+    "cardImageAlt": "Grinch Chimney Ornament shown in the snowy holiday collection photo",
+    "priceLabel": "$1 each",
+    "priceNote": "Want all six designs? Choose the Grinch Ornament Set for $5."
   },
   {
     "id": "grinch-star-ornament",
@@ -160,12 +286,12 @@
     "imageWidth": 1448,
     "imageHeight": 1086,
     "color": "Red, green, white, and black",
-    "priceCents": null,
-    "status": "inquiry",
-    "size": null,
+    "priceCents": 100,
+    "status": "available",
+    "size": "About 3 inches",
     "material": "3D-printed plastic",
     "eyebrow": "A festive star with plenty of personality.",
-    "description": "A red open star frames the Grinch wearing a Santa hat, with his green face and hands resting along the lower edge. This flat 3D-printed design is at the upper right of the six-ornament collection photo. Ask about pricing and availability.",
+    "description": "A red open star frames the Grinch wearing a Santa hat, with his green face and hands resting along the lower edge. This flat 3D-printed design is at the upper right of the six-ornament collection photo. Each ornament is $1. The complete six-design set is also available for $5.",
     "images": [
       "/images/grichmas-six-ornaments.webp",
       "/images/grichmas-ornament-stand-snowflakes.webp",
@@ -177,7 +303,9 @@
       "width": 450,
       "height": 450
     },
-    "cardImageAlt": "Grinch Star Ornament shown in the snowy holiday collection photo"
+    "cardImageAlt": "Grinch Star Ornament shown in the snowy holiday collection photo",
+    "priceLabel": "$1 each",
+    "priceNote": "Want all six designs? Choose the Grinch Ornament Set for $5."
   },
   {
     "id": "grinch-candy-cane-ornament",
@@ -190,12 +318,12 @@
     "imageWidth": 1448,
     "imageHeight": 1086,
     "color": "Red, green, white, and black",
-    "priceCents": null,
-    "status": "inquiry",
-    "size": null,
+    "priceCents": 100,
+    "status": "available",
+    "size": "About 3 inches",
     "material": "3D-printed plastic",
     "eyebrow": "A peppermint border and a familiar grin.",
-    "description": "Red and white candy cane stripes circle the Grinch in his Santa hat, with his hands peeking over the lower edge. This round 3D-printed ornament is at the lower left of the six-ornament collection photo. Ask about pricing and availability.",
+    "description": "Red and white candy cane stripes circle the Grinch in his Santa hat, with his hands peeking over the lower edge. This round 3D-printed ornament is at the lower left of the six-ornament collection photo. Each ornament is $1. The complete six-design set is also available for $5.",
     "images": [
       "/images/grichmas-six-ornaments.webp",
       "/images/grichmas-ornament-stand-snowflakes.webp",
@@ -207,7 +335,9 @@
       "width": 510,
       "height": 510
     },
-    "cardImageAlt": "Grinch Candy Cane Ornament shown in the snowy holiday collection photo"
+    "cardImageAlt": "Grinch Candy Cane Ornament shown in the snowy holiday collection photo",
+    "priceLabel": "$1 each",
+    "priceNote": "Want all six designs? Choose the Grinch Ornament Set for $5."
   },
   {
     "id": "grinch-snowflake-bauble-ornament",
@@ -220,12 +350,12 @@
     "imageWidth": 1448,
     "imageHeight": 1086,
     "color": "Red, green, white, and black",
-    "priceCents": null,
-    "status": "inquiry",
-    "size": null,
+    "priceCents": 100,
+    "status": "available",
+    "size": "About 3 inches",
     "material": "3D-printed plastic",
     "eyebrow": "Snowflakes below. Mischief above.",
-    "description": "The Grinch peeks over a red bauble decorated with white snowflakes in this flat 3D-printed ornament. His green face, red Santa hat, and black outlines add bright contrast. Find it at the lower center of the six-ornament collection photo. Ask about pricing and availability.",
+    "description": "The Grinch peeks over a red bauble decorated with white snowflakes in this flat 3D-printed ornament. His green face, red Santa hat, and black outlines add bright contrast. Find it at the lower center of the six-ornament collection photo. Each ornament is $1. The complete six-design set is also available for $5.",
     "images": [
       "/images/grichmas-six-ornaments.webp",
       "/images/grichmas-ornament-stand-snowflakes.webp",
@@ -237,7 +367,9 @@
       "width": 470,
       "height": 470
     },
-    "cardImageAlt": "Grinch Snowflake Bauble Ornament shown in the snowy holiday collection photo"
+    "cardImageAlt": "Grinch Snowflake Bauble Ornament shown in the snowy holiday collection photo",
+    "priceLabel": "$1 each",
+    "priceNote": "Want all six designs? Choose the Grinch Ornament Set for $5."
   },
   {
     "id": "grinch-bow-ornament",
@@ -250,12 +382,12 @@
     "imageWidth": 1448,
     "imageHeight": 1086,
     "color": "Red, green, white, and black",
-    "priceCents": null,
-    "status": "inquiry",
-    "size": null,
+    "priceCents": 100,
+    "status": "available",
+    "size": "About 3 inches",
     "material": "3D-printed plastic",
     "eyebrow": "A big red bow and a cheeky holiday face.",
-    "description": "A bright red gift bow sits beneath the Grinch wearing his Santa hat. Green, red, white, and black printed layers give this ornament its bold holiday look. This is the bow design at the lower right of the six-ornament collection photo. Ask about pricing and availability.",
+    "description": "A bright red gift bow sits beneath the Grinch wearing his Santa hat. Green, red, white, and black printed layers give this ornament its bold holiday look. This is the bow design at the lower right of the six-ornament collection photo. Each ornament is $1. The complete six-design set is also available for $5.",
     "images": [
       "/images/grichmas-six-ornaments.webp",
       "/images/grichmas-ornament-stand-lights.webp",
@@ -267,7 +399,9 @@
       "width": 510,
       "height": 510
     },
-    "cardImageAlt": "Grinch Bow Ornament shown in the snowy holiday collection photo"
+    "cardImageAlt": "Grinch Bow Ornament shown in the snowy holiday collection photo",
+    "priceLabel": "$1 each",
+    "priceNote": "Want all six designs? Choose the Grinch Ornament Set for $5."
   },
   {
     "id": "stained-glass-grinch",
@@ -280,12 +414,12 @@
     "imageWidth": 1448,
     "imageHeight": 1086,
     "color": "Red, green, white, and black",
-    "priceCents": null,
-    "status": "inquiry",
-    "size": null,
+    "priceCents": 500,
+    "status": "available",
+    "size": "About 10 inches",
     "material": "3D-printed plastic",
     "eyebrow": "An arched holiday scene with a stained glass look.",
-    "description": "An arched 3D-printed decorative panel with a stained glass look. The Grinch wears a red Santa coat and hat and holds a red ornament, surrounded by green trees, red stars, white panels, and bold black outlines. Made from printed plastic, this festive display piece brings color to a shelf or holiday arrangement. Ask about dimensions, pricing, and availability.",
+    "description": "An arched 3D-printed decorative panel with a stained glass look. The Grinch wears a red Santa coat and hat and holds a red ornament, surrounded by green trees, red stars, white panels, and bold black outlines. Made from printed plastic, this festive display piece brings color to a shelf or holiday arrangement. About 10 inches tall and $5 each. Ask about current availability.",
     "images": [
       "/images/grichmas-stained-glass-grinch.webp"
     ],
@@ -295,14 +429,15 @@
       "width": 940,
       "height": 940
     },
-    "cardImageAlt": "Arched stained glass style Grinch decoration in a snowy holiday village"
+    "cardImageAlt": "Arched stained glass style Grinch decoration in a snowy holiday village",
+    "priceLabel": "$5 each"
   },
   {
     "id": "mini-animal-figures",
     "name": "Mini Flexi Pets",
     "category": "Mini Pets",
-    "eyebrow": "Tiny dragons and animals. Mix and match: 2 for $1 or 12 for $5.",
-    "description": "Mix and match tiny 3D-printed dragons and animal friends in one collection. Choose a crystal dragon, winged dragon, fin dragon, tiger, fox, duck, penguin, rabbit, wolf, otter, woodland friend, or platypus. About an inch long, with colorful articulated bodies and fun joints to fidget with. Pick any mix: 2 for $1 or 12 for $5. Keychain versions are listed separately.",
+    "eyebrow": "Tiny dragons and animals. $3 each or 5 for $20.",
+    "description": "Mix and match tiny 3D-printed dragons and animal friends in one collection. Choose a crystal dragon, winged dragon, fin dragon, tiger, fox, duck, penguin, rabbit, wolf, otter, woodland friend, or platypus. About an inch long, with colorful articulated bodies and fun joints to fidget with. Pick any mix: $3 each or 5 for $20. Keychain versions are listed separately.",
     "images": [
       "/images/mini-pets-woodland-collection.webp",
       "/images/mini-pets-woodland-front.webp",
@@ -312,7 +447,7 @@
     "imageScale": 1,
     "imageFit": "contain",
     "color": "See photographed options",
-    "priceCents": 50,
+    "priceCents": 300,
     "status": "available",
     "size": "About 1 inch long",
     "material": null,
@@ -377,13 +512,13 @@
     "variantLabel": "Choose your design",
     "imageAspectRatio": "4 / 3",
     "sharedGallery": true,
-    "priceLabel": "2 for $1 \u00b7 12 for $5",
+    "priceLabel": "$3 each \u00b7 5 for $20",
     "bundlePricing": {
       "group": "mini-pets",
-      "quantity": 12,
-      "priceCents": 500
+      "quantity": 5,
+      "priceCents": 2000
     },
-    "priceNote": "Mix any mini dragon or animal design. Every 12 pets are $5; remaining pets are $0.50 each. Bundle savings apply automatically in your bag.",
+    "priceNote": "Mix designs within this collection. Every 5 mini pets are $20; remaining mini pets are $3 each. Bundle pricing applies automatically in your bag.",
     "imageWidth": 1448,
     "imageHeight": 1086,
     "legacyIds": [
@@ -647,7 +782,7 @@
     "name": "Articulated Dragons",
     "category": "Dragons",
     "eyebrow": "Long tails. Layered scales. A world of color.",
-    "description": "These longer dragons are made to show off: sculpted heads, rows of raised details, and segmented bodies that curve into expressive poses. Browse mint rainbow, pink rainbow, teal-and-pink, red-and-yellow, gold-horn, and pastel examples. Choose a style to ask about its size, available colors, and price.",
+    "description": "These longer dragons are made to show off: sculpted heads, rows of raised details, and segmented bodies that curve into expressive poses. Browse mint rainbow, pink rainbow, teal-and-pink, red-and-yellow, gold-horn, and pastel examples. Each articulated dragon is about 28 inches long and $10. Choose your favorite style below.",
     "images": [
       "/images/red-yellow-dragon-forest.webp",
       "/images/mint-rainbow-dragon-forest.webp",
@@ -665,9 +800,9 @@
     "imageWidth": 1448,
     "imageHeight": 1086,
     "color": "See photographed options",
-    "priceCents": null,
-    "status": "inquiry",
-    "size": null,
+    "priceCents": 1000,
+    "status": "available",
+    "size": "About 28 inches long",
     "material": null,
     "variants": [
       {
@@ -724,7 +859,8 @@
         "imageFit": "contain"
       }
     ],
-    "variantLabel": "Choose your design"
+    "variantLabel": "Choose your design",
+    "priceLabel": "$10 each"
   },
   {
     "id": "tumbler-keychain",
@@ -788,19 +924,20 @@
     "imageAspectRatio": "4 / 3",
     "imageWidth": 1448,
     "imageHeight": 1086,
-    "priceCents": null,
-    "status": "inquiry",
+    "priceCents": 200,
+    "status": "available",
     "size": null,
     "material": "3D-printed plastic",
     "eyebrow": "Interlocking gears with a twist.",
-    "description": "An orange cube made from interlocking gear-shaped panels. Turn it to explore the changing shapes and exposed gear teeth. See it in its cube and twisted positions in the collection photos. Ask about available colors and pricing.",
+    "description": "An orange cube made from interlocking gear-shaped panels. Turn it to explore the changing shapes and exposed gear teeth. See it in its cube and twisted positions in the collection photos. Each gear cube is $2. Ask about available colors.",
     "images": [
       "/images/fidgets-woodland-collection.webp",
       "/images/fidgets-woodland-open.webp",
       "/images/fidgets-woodland-twists.webp",
       "/images/fidgets-woodland-closed.webp"
     ],
-    "color": "Orange"
+    "color": "Orange",
+    "priceLabel": "$2 each"
   },
   {
     "id": "rainbow-twist-balls",

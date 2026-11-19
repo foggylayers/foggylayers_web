@@ -6,7 +6,7 @@ import ProductCard from '../components/ProductCard.astro';
 import products from '../data/products.json';
 const preferred = ['mini-animal-figures','rainbow-dragon','animal-charms'];
 const featured = [...preferred.map(id => products.find(product => product.id === id)), ...products].filter((product,index,all) => product?.images.length && all.findIndex(item => item?.id === product.id) === index).slice(0,3);
-const newArrivals = ['planetary-gear-fidgets','clicky-fidgets','holiday-infinity-cubes','holiday-minis'].map(id => products.find(product => product.id === id));
+const newArrivals = ['spiral-fidgets','planetary-gear-fidgets','clicky-fidgets','holiday-infinity-cubes','holiday-minis'].map(id => products.find(product => product.id === id));
 ---
 <Layout>
   <section class="hero">
@@ -27,7 +27,7 @@ const newArrivals = ['planetary-gear-fidgets','clicky-fidgets','holiday-infinity
   <section class="container section" aria-labelledby="new-arrivals-heading">
     <div class="section-head"><div><p class="eyebrow">Just added to the collection</p><h2 id="new-arrivals-heading">Fresh prints. More fun.</h2></div><a class="text-link" href="/shop/">Shop all prints <Icon name="arrow" size={16}/></a></div>
     <div class="product-grid new-arrivals-grid">{newArrivals.map((product,index) => <ProductCard product={product} index={index}/>)}</div>
-    <div class="collection-foot"><span>Spinning gears, cheerful clicks, festive folds, and tiny holiday characters.</span><FacebookLink>Ask about the new prints ↗</FacebookLink></div>
+    <div class="collection-foot"><span>Spirals and gears: $2 each. Clickers and Holiday Minis: $3 each or 5 for $20 within each collection.</span><FacebookLink>Ask about the new prints ↗</FacebookLink></div>
   </section>
   <section class="container section" aria-labelledby="collection-heading">
     <div class="section-head"><div><p class="eyebrow">Fresh from the print bed</p><h2 id="collection-heading">Little things. Big personality.</h2></div><a class="text-link" href="/shop/">See the collection <Icon name="arrow" size={16}/></a></div>
