@@ -23,38 +23,43 @@ jobs:
           npm install playwright@1.49.1
           npx playwright install chromium --with-deps
           python -m pip install --upgrade yt-dlp
-      - name: Capture listing
+      - name: Capture logged-out page
         env:
           TARGET_URL: 'https://www.facebook.com/share/1EmtvAKJHh/?mibextid=wwXIfr'
           OUT_DIR: fb_capture
         run: |
           cp tools/fb_capture.js tools/fb_capture.cjs
           node tools/fb_capture.cjs
+      - name: Capture listing data and media
+        if: always()
+        env:
+          LISTING_ID: '3259969450854035'
+          OUT_DIR: fb_graphql
+        run: node tools/fb_graphql_capture.mjs
       - name: Summarize capture
         if: always()
         run: |
-          echo '--- files ---'
+          echo '--- browser capture files ---'
           find fb_capture -maxdepth 1 -type f -printf '%f %s bytes\n' | sort || true
-          echo '--- visible text ---'
-          sed -n '1,220p' fb_capture/visible_text.txt || true
-          echo '--- summary ---'
+          echo '--- graphql capture files ---'
+          find fb_graphql -maxdepth 1 -type f -printf '%f %s bytes\n' | sort || true
+          echo '--- listing summary ---'
           python - <<'PY'
           import json
           from pathlib import Path
-          p = Path('fb_capture/summary.json')
-          if p.exists():
-              data = json.loads(p.read_text())
-              keep = {k: data.get(k) for k in ['target','gotoError','finalUrl','title']}
-              keep['meta'] = data.get('meta', [])
-              keep['images'] = data.get('images', [])[:30]
-              keep['videos'] = data.get('videos', [])[:20]
-              print(json.dumps(keep, indent=2))
+          for folder in ('fb_capture', 'fb_graphql'):
+              p = Path(folder) / 'summary.json'
+              if p.exists():
+                  print(f'## {folder}')
+                  print(json.dumps(json.loads(p.read_text()), indent=2)[:30000])
           PY
       - name: Upload capture
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: fb-listing-capture
-          path: fb_capture/
+          path: |
+            fb_capture/
+            fb_graphql/
           if-no-files-found: warn
           retention-days: 1
