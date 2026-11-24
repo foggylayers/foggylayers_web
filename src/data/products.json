@@ -74,8 +74,8 @@
     "id": "microsoft-logo-ornaments",
     "name": "Microsoft Logo Ornaments",
     "category": "Christmas",
-    "eyebrow": "A little tech for your tree.",
-    "description": "Bring your favorite desktop icons to the Christmas tree. Choose the four-color Microsoft logo or a Word, Excel, Teams, PowerPoint, or Outlook design. The colorful 3D-printed ornaments have white borders and hanging loops, as shown in the collection photo. Message us for current pricing and availability. Shipping or local pickup in Everett, WA.",
+    "eyebrow": "A little tech for your tree. Mix and match 5 for $5.",
+    "description": "Bring your favorite desktop icons to the Christmas tree. Choose the four-color Microsoft logo or a Word, Excel, Teams, PowerPoint, or Outlook design. The colorful 3D-printed ornaments have white borders and hanging loops, as shown in the collection photo. Mix and match five ornaments for $5. Shipping or local pickup in Everett, WA.",
     "images": ["/images/microsoft-logo-ornaments.webp"],
     "imagePosition": "50% 50%",
     "imageScale": 1,
@@ -85,9 +85,10 @@
     "imageHeight": 1152,
     "cardImageAlt": "Colorful Microsoft, Word, Excel, Teams, PowerPoint, and Outlook logo ornaments with hanging loops",
     "color": "Multicolor logos with white borders",
-    "priceCents": null,
-    "priceLabel": "Ask for pricing",
-    "status": "inquiry",
+    "priceCents": 100,
+    "priceLabel": "5 for $5",
+    "priceNote": "Mix and match designs at $1 per ornament. Add each design and quantity to your bag; five ornaments total $5.",
+    "status": "available",
     "size": null,
     "material": "3D-printed plastic",
     "variants": [
@@ -98,7 +99,7 @@
       {"id": "powerpoint", "name": "PowerPoint"},
       {"id": "outlook", "name": "Outlook"}
     ],
-    "variantLabel": "Explore the designs",
+    "variantLabel": "Choose your logo",
     "sharedGallery": true
   },
   {
