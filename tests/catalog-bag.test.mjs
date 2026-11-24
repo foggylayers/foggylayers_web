@@ -109,14 +109,25 @@ test('missing, unknown, and injected designs cannot be purchased', () => {
   assert.throws(()=>normalizeCart([{id:'gold-dragon',quantity:1,variantId:'fake-design'}]),/available design/);
   assert.throws(()=>normalizeCart([{id:'missing-print',quantity:1}]),/not available/);
 });
-test('every catalog listing has a price and can be added to the bag and both checkouts', () => {
-  for (const product of products) {
+test('every available catalog listing has a price and can be added to the bag and both checkouts', () => {
+  for (const product of products.filter(product => product.status === 'available')) {
     assert.ok(Number.isInteger(product.priceCents) && product.priceCents >= 50,product.id);
     const input = [{id:product.id,quantity:1,...(product.variants?.length ? {variantId:product.variants[0].id} : {})}];
     const bag = normalizeBag(input,catalog);
     assert.equal(bag.length,1,product.id);
     for (const normalize of [normalizeCart,normalizePayPalCart]) {
       assert.equal(normalize(bag).reduce((sum,item)=>sum+cartItemTotal(item),0),product.priceCents,product.id);
+    }
+  }
+});
+test('inquiry listings show a pricing prompt and cannot enter either checkout', () => {
+  for (const product of products.filter(product => product.status === 'inquiry')) {
+    assert.equal(product.priceCents,null,product.id);
+    assert.match(product.priceLabel,/pricing/i,product.id);
+    const input = [{id:product.id,quantity:1,...(product.variants?.length ? {variantId:product.variants[0].id} : {})}];
+    assert.deepEqual(normalizeBag(input,catalog),[],product.id);
+    for (const normalize of [normalizeCart,normalizePayPalCart]) {
+      assert.throws(()=>normalize(input),/not available/,product.id);
     }
   }
 });

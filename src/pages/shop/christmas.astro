@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import FacebookLink from '../../components/FacebookLink.astro';
+import products from '../../data/products.json';
+const collection = products.filter(product => product.category === 'Christmas');
+---
+<Layout title="Christmas | Ornaments & Glowing Mini Figures" description="Shop Christmas at Foggy Layers: mini glowing figures with battery tealights, Lady Grinch ornaments, outdoor Merry Christmas ornaments, and Microsoft logo ornaments. Shipping or Everett pickup.">
+ <section class="page-intro"><div class="container">
+  <p class="breadcrumb"><a href="/">Home</a><span>/</span><a href="/shop/">The collection</a><span>/</span><span>Christmas</span></p>
+  <p class="eyebrow kicker">Christmas at Foggy Layers</p>
+  <h1>A little more merry.</h1>
+  <p class="lede">A warm glow for your mantel. A little personality for your tree. Shop glowing mini figures, Lady Grinch ornaments, outdoor decorations, and Microsoft favorites, printed in layers right here in Everett.</p>
+ </div></section>
+ <section class="container catalog-section christmas-collection" aria-labelledby="christmas-products-heading">
+  <div class="section-head"><div><p class="eyebrow">Little gifts. Plenty of holiday spirit.</p><h2 id="christmas-products-heading">The Christmas collection.</h2></div><a class="text-link" href="/shop/">Shop all prints</a></div>
+  <div class="product-grid">{collection.map((product,index) => <ProductCard product={product} index={index}/>)}</div>
+  <div class="collection-foot"><span>Shipping available, or pick up locally in Everett, WA.</span><FacebookLink>Ask about Christmas prints</FacebookLink></div>
+  <div class="christmas-more"><h2>A little holiday mischief?</h2><p>Find more Grinch ornaments and our stained glass style Grinch decoration in the GrinchMas collection.</p><a class="text-link" href="/shop/grichmas/">Explore GrinchMas</a></div>
+ </section>
+</Layout>
+
+<style>
+ .christmas-collection{padding-top:44px}
+ .christmas-collection .product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 32px}
+ .christmas-collection :global(.product-photo){aspect-ratio:4/3!important}
+ .christmas-collection :global(.product-card p){font-size:1rem}
+ .christmas-collection :global(.product-meta){font-size:.875rem}
+ .christmas-more{margin-top:56px;padding-top:36px;border-top:1px solid var(--line)}
+ .christmas-more h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:16px}
+ .christmas-more p{font-size:1rem;max-width:650px;margin-bottom:16px}
+ @media(max-width:600px){.christmas-collection .product-grid{grid-template-columns:1fr;gap:36px}}
+</style>
