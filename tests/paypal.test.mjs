@@ -98,6 +98,27 @@ test('configuration exposes the client ID but never the secret', () => {
   assert.equal(JSON.stringify(config).includes(env.PAYPAL_CLIENT_SECRET), false);
 });
 
+test('production deployment preserves dashboard variables and uses Live PayPal for the SDK and API', async () => {
+  const deployment = JSON.parse(readFileSync(new URL('../wrangler.jsonc', import.meta.url), 'utf8'));
+  assert.equal(deployment.keep_vars, true);
+  assert.equal(Object.hasOwn(deployment.vars, 'PAYPAL_CLIENT_SECRET'), false);
+  assert.equal(Object.hasOwn(deployment.vars, 'ORDERS_ADMIN_TOKEN'), false);
+  const env = environment(deployment.vars);
+  const config = paypalConfiguration(env, business);
+  assert.equal(config.checkoutEnabled, true);
+  assert.equal(config.environment, 'live');
+  assert.equal(config.sdkUrl, 'https://www.paypal.com/web-sdk/v6/core');
+  const requests = [];
+  const api = createPayPalAPI({ fetcher: paypalFetcher(requests), catalog, business });
+  const response = await create(api, env, {
+    items: [{id:'test-print',quantity:1}], fulfillment:'pickup',
+    checkoutKey:crypto.randomUUID(), paymentMethod:'paypal'
+  });
+  assert.equal(response.status, 201);
+  assert.ok(requests.some(({url})=>url === 'https://api-m.paypal.com/v1/oauth2/token'));
+  assert.ok(requests.some(({url})=>url === 'https://api-m.paypal.com/v2/checkout/orders'));
+});
+
 test('cart normalization trusts only catalog prices and applies bundle pricing', () => {
   const normal = normalizePayPalCart([{ id: 'test-print', quantity: 2, priceCents: 1, name: 'Fake' }], catalog);
   assert.equal(normal[0].priceCents, 1500);
