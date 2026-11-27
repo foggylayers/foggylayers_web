@@ -87,6 +87,6 @@ jobs:
             -X POST https://foggylayers.com/api/paypal/orders \
             -H 'Content-Type: application/json' \
             -H 'Origin: https://foggylayers.com' \
-            --data "{\"items\":[{\"id\":\"mini-animal-figures\",\"quantity\":1}],\"fulfillment\":\"pickup\",\"checkoutKey\":\"$(node -e 'console.log(crypto.randomUUID())')\",\"paymentMethod\":\"paypal\"}")
+            --data "{\"items\":[{\"id\":\"mini-animal-figures\",\"variantId\":\"fox-figure\",\"quantity\":1}],\"fulfillment\":\"pickup\",\"checkoutKey\":\"$(node -e 'console.log(crypto.randomUUID())')\",\"paymentMethod\":\"paypal\"}")
           test "$minimum_status" = "400"
           node -e "const r=require('/tmp/minimum.json'); if(r.code!=='MINIMUM_ORDER') process.exit(1)"
