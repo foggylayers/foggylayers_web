@@ -3,6 +3,7 @@
   "name": "foggylayers",
   "main": "worker/entry.mjs",
   "compatibility_date": "2026-10-30",
+  "keep_vars": true,
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",
